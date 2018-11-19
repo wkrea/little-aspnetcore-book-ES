@@ -1,89 +1,88 @@
-# The Little ASP.NET Core Book
+# El pequeño libro de ASP.NET Core
 
-*by Nate Barbettini*
+*Por Nate Barbettini_
 
-Copyright &copy; 2018. All rights reserved.
+Copyright © 2018. Todos los derechos reservados.
 
 ISBN: 978-1-387-75615-5
 
-Released under the Creative Commons Attribution 4.0 license. You are free to share, copy, and redistribute this book in any format, or remix and transform it for any purpose (even commercially). You must give appropriate credit and provide a link to the license.
+Liberado bajo la licencia Creative Commons Attribution 4.0. Eres libre de compartir, copiar y redistribuir este libro en cualquier formato o mezclarlo y transformarlo para cualquier propósito \(incluso comercialmente\). Debes de dar el crédito apropiado y proveer la liga a la licencia.
 
-For more information, visit https://creativecommons.org/licenses/by/4.0/
+Visita [https://creativecommons.org/licenses/by/4.0/deed.es](https://creativecommons.org/licenses/by/4.0/deed.es) para obtener más información.
 
-## Introduction
-Thanks for picking up The Little ASP.NET Core Book! I wrote this short book to help developers and people interested in web programming learn about ASP.NET Core 2.0, a framework for building web applications and APIs.
+## Introducción
+¡Gracias por elegir El pequeño libro de ASP.NET Core! Escribí este corto libro para ayudar a los desarrolladores y personas interesadas en aprender programación web a aprender acerca de ASP.NET Core 2.0, un marco de trabajo para construir aplicaciones web y APIs.
 
-The Little ASP.NET Core Book is structured as a tutorial. You'll build an application from start to finish and learn:
+El pequeño libro de ASP.NET Core está estructurado como un tutorial. Construirás una aplicación de inicio a fin y aprenderás:
 
-* The basics of the MVC (Model-View-Controller) pattern
-* How front-end code (HTML, CSS, JavaScript) works together with back-end code
-* What dependency injection is and why it's useful
-* How to read and write data to a database
-* How to add log-in, registration, and security
-* How to deploy the application to the web
+* Los fundamentos del patrón MVC\(Modelo-Vista-Controlador\)
+* Cómo funciona el código del lado del cliente \(HTML, CSS y Javascript\) junto con el código del lado del servidor.
+* Qué es la inyección de dependencias y porque es tan útil
+* Cómo leer y escribir datos a una base de datos
+* Cómo agregar inicio de sesión, registro y seguridad
+* Cómo desplegar la aplicación en la web
 
-Don't worry, you don't need to know anything about ASP.NET Core (or any of the above) to get started.
+No te preocupes, no necesitas conocer nada sobre ASP.NET Core \(o algo de lo anterior\) para iniciar.
 
-## Before you begin
+## Antes de empezar
 
-The code for the finished version of the application you'll build is available on GitHub:
+El código de la versión final de la aplicación que construirás está disponible en Github:
 
-https://www.github.com/nbarbettini/little-aspnetcore-todo
+[https://www.github.com/nbarbettini/little-aspnetcore-todo](https://www.github.com/nbarbettini/little-aspnetcore-todo)
 
-Feel free to download it if you want to see the finished product, or compare as you write your own code.
+Siéntete libre de descargarlo si quieres ver el producto final, o compararlo mientras escribes tú propio código.
 
-The book itself is updated frequently with bug fixes and new content. If you're reading a PDF, e-book, or print version, check the official website ([littleasp.net/book](http://www.littleasp.net/book)) to see if there's an updated version available. The very last page of the book contains version information and a changelog.
+El libro mismo es actualizado frecuentemente con corrección de errores y adición de nuevo contenido. Si estas leyendo un archivo PDF, libro electrónico o versión impresa verifica el sitio web oficial \(littleasp.net/book\) para ver si hay disponible una versión actualizada. La última página del libro contiene información sobre la versión y el registro de cambios.
 
-### Reading in your own language
+## Leyendo en tu propio lenguaje
 
-Thanks to some fantastic multilingual contributors, the Little ASP.NET Core Book has been translated into other languages:
+Gracias a algunos fantásticos contribuidores multilingües. El pequeño libro de ASP.NET Core ha sido traducido a otros lenguajes:
 
-* [**ASP.NET Core El Kitabı**](https://sahinyanlik.gitbooks.io/kisa-asp-net-core-kitabi/) (Turkish)
- 	 
-* [**简明 ASP.NET Core 手册**](https://windsting.github.io/little-aspnetcore-book/book/) (Chinese)
+* [**ASP.NET Core El Kitabı**](https://sahinyanlik.gitbooks.io/kisa-asp-net-core-kitabi/) \(Turco\)
+
+* [**简明 ASP.NET Core 手册**](https://windsting.github.io/little-aspnetcore-book/book/) \(Chino\)
 
 
-## Who this book is for
-If you're new to programming, this book will introduce you to the patterns and concepts used to build modern web applications. You'll learn how to build a web app (and how the big pieces fit together) by building something from scratch! While this little book won't be able to cover absolutely everything you need to know about programming, it'll give you a starting point so you can learn more advanced topics.
+## ¿A quién está dirigido este libro?
+Si eres nuevo en la programación, esté libro te introducirá los patrones y conceptos utilizados para construir aplicaciones web modernas. Aprenderás como construir una aplicación web \(y cómo las piezas se acomodan juntas\) ¡construyendo algo desde el inicio! A pesar de que este pequeño libro no es capaz de cubrir absolutamente todo lo que necesitas conocer acerca de la programación te dará un punto de inicio de tal forma que puedas aprender tópicos más avanzados.
 
-If you already code in a backend language like Node, Python, Ruby, Go, or Java, you'll notice a lot of familiar ideas like MVC, view templates, and dependency injection. The code will be in C#, but it won't look too different from what you already know.
+Si ya haz codifica en un lenguaje de lado del servidor como Node, Python, Ruby, Go o Java encontrarás muchas ideas familiares como MVC, plantillas vistas e inyección de dependencias. El código estará en C\#, pero no lucirá tan diferente de lo que ya conoces. Si eres un desarollador ASP.NET MVC, ¡te sentirás como en casa! ASP.NET Core añade algunas nuevas herramientas y reutiliza \(y simplifica\) las cosas que ya conoces. Apuntaré sobre algunas diferencias a continuación.
 
-If you're an ASP.NET MVC developer, you'll feel right at home! ASP.NET Core adds some new tools and reuses (and simplifies) the things you already know. I'll point out some of the differences below.
+No importa tú experiencia previa con la programación web, este libro te enseñará todo lo necesario para crear una aplicación web ASP.NET Core simple y útil. Aprenderás como construir las funcionalidades usando el código del lado del servidor y del cliente. Cómo interactuar con una base de datos y cómo desplegar la aplicación en un servidor real.
 
-No matter what your previous experience with web programming, this book will teach you everything you need to create a simple and useful web application in ASP.NET Core. You'll learn how to build functionality using backend and frontend code, how to interact with a database, and how to deploy the app to the world.
+## ¿Qué es  ASP.NET Core?
 
-## What is ASP.NET Core?
-ASP.NET Core is a web framework created by Microsoft for building web applications, APIs, and microservices. It uses common patterns like MVC (Model-View-Controller), dependency injection, and a request pipeline comprised of middleware. It's open-source under the Apache 2.0 license, which means the source code is freely available, and the community is encouraged to contribute bug fixes and new features.
+ASP.NET Core es un marco de trabajo web creado por Microsoft para construir aplicaciones web, APis y microservicios. Usa patrones comunes como MVC\(Modelo-Vista-Controlador\), inyección de dependencias y una canalización de solicitudes formada por middleware. Es open source bajo la licencia Apache 2.0, lo que significa que está disponible de forma gratuita y la comunidad es animada para contribuir con corrección de errores y adición nuevas características.
 
-ASP.NET Core runs on top of Microsoft's .NET runtime, similar to the Java Virtual Machine (JVM) or the Ruby interpreter. You can write ASP.NET Core applications in a number of languages (C#, Visual Basic, F#). C# is the most popular choice, and it's what I'll use in this book. You can build and run ASP.NET Core applications on Windows, Mac, and Linux.
+ASP.NET Core se ejecuta sobre el entorno de ejecución .NET de Microsoft, similar a la Máquina Virtual de Java \(JVM\) o el intérprete de Ruby. Puedes escribir aplicaciones ASP.NET Core en un número de lenguajes \(C\#, Visual Basic y F\#\). C\# es la elección más popular, y es lo que usaremos en este libro. Puedes construir y ejecutar aplicaciones ASP.NET Core en Windows, Mac y Linux.
 
-## Why do we need another web framework?
-There are a lot of great web frameworks to choose from already: Node/Express, Spring, Ruby on Rails, Django, Laravel, and many more. What advantages does ASP.NET Core have?
+## ¿Porqué necesitamos otro marco de trabajo para el desarollo web?
 
-* **Speed.** ASP.NET Core is fast. Because .NET code is compiled, it executes much faster than code in interpreted languages like JavaScript or Ruby. ASP.NET Core is also optimized for multithreading and asynchronous tasks. It's common to see a 5-10x speed improvement over code written in Node.js.
+Al día de hoy,existen gran cantidad de marcos de trabajo web para elegir : Node/Express, Spring, Ruby on Rails, Django,Laravel y muchos más. ¿Cuáles son las ventajas que ASP.NET Core tiene?
 
-* **Ecosystem.** ASP.NET Core may be new, but .NET has been around for a long time. There are thousands of packages available on NuGet (the .NET package manager; think npm, Ruby gems, or Maven). There are already packages available for JSON deserialization, database connectors, PDF generation, or almost anything else you can think of.
+* **Rapidez.** ASP.NET Core es rápido. Debido a que el código .NET es compilado , este se ejecuta mucho más rápido que el código de lenguajes interpretados como Javascript o Ruby. ASP.NET Core también esta optimizada para multihilos y tareas asíncronas. Es común ver una mejora en la rapidez de 5-10x sobre el código escrito en Node.js.
 
-* **Security.** The team at Microsoft takes security seriously, and ASP.NET Core is built to be secure from the ground up. It handles things like sanitizing input data and preventing cross-site request forgery (CSRF) attacks, so you don't have to. You also get the benefit of static typing with the .NET compiler, which is like having a very paranoid linter turned on at all times. This makes it harder to do something you didn't intend with a variable or chunk of data.
+* **Ecosistema.** ASP.NET Core puede ser nuevo, pero .NET ha estado alrededor por un largo tiempo. Hay miles de paquetes disponibles en Nuget \(el administrador de paquetes para .NET; Similar a npm, Ruby gems o Maven\). Actualmente hay paquetes disponibles para deserializar JSON, conectores de base de datos, generadores de PDF o casi cualquier otra cosa que se te ocurra.
+* **Seguridad.** El equipo de Microsoft se toman muy enserio la seguridad y ASP.NET Core esta construido para ser seguro desde sus fundamentos. Este maneja la limpieza de la entrada de datos y previene ataques de falsificación de petición en sitios cruzados\(CSFR\), así no tienes que hacerlo tú. También tienes el beneficio de tipado estático con el compilador .NET, el cuál es como tener un linter muy paranoico encendido todo el tiempo. Algunas veces esto hace más difícil hacer cosas no intencionado una variable o pedazos de datos.
 
-## .NET Core and .NET Standard
-Throughout this book, you'll be learning about ASP.NET Core (the web framework). I'll occasionally mention the .NET runtime, the supporting library that runs .NET code. If this already sounds like Greek to you, just skip to the next chapter!
+## .NET Core y Estandar .NET
+A lo largo de este libro, Estarás aprendiendo acerca de ASP.NET Core \(el marco de trabajo web\). Ocasionalmente mencionare el entorno de ejecución .NET, la librería de soporte que ejecuta el código .NET. Si esto actualmente suena como Griego para ti, !solo pasa al siguiente capítulo!.
 
-You may also hear about .NET Core and .NET Standard. The naming gets confusing, so here's a simple explanation:
+Es posible que también hayas escuchado acerca del .NET Core y Estándar .NET. Estas son términos que se confunden así aquí esta una simple explicación:
 
-**.NET Standard** is a platform-agnostic interface that defines features and APIs. It's important to note that .NET Standard doesn't represent any actual code or functionality, just the API definition. There are different "versions" or levels of .NET Standard that reflect how many APIs are available (or how wide the API surface area is). For example, .NET Standard 2.0 has more APIs available than .NET Standard 1.5, which has more APIs than .NET Standard 1.0.
+**Estándar .NET** es una interfaz independiente de plataformas que define las características y APis. Es importante recalcar que el estándar .NET no representa ninguna código o funcionalidad, solo refleja cuántas APIs están disponibles \(o que tan amplia es la superficie de la API\). Por ejemplo, el estándar .NET 2.0 tiene más APIs disponibles que el estándar .NET 1.5, el cuál tiene más APIs que el estándar .NET.
 
-**.NET Core** is the .NET runtime that can be installed on Windows, Mac, or Linux. It implements the APIs defined in the .NET Standard interface with the appropriate platform-specific code on each operating system. This is what you'll install on your own machine to build and run ASP.NET Core applications.
+**.NET Core** es el motor de tiempo de ejecución de .NET que puede ser instalado en Windows, Mac o Linux. Este implementa las APIs definidas en el estándar .NET con el código especifico para cada sistema operativo. Esto es lo que instalas en tu propia máquina para construir y ejecutar aplicaciones ASP.NET Core.
 
-And just for good measure, **.NET Framework** is a different implementation of .NET Standard that is Windows-only. This was the only .NET runtime until .NET Core came along and brought .NET to Mac and Linux. ASP.NET Core can also run on Windows-only .NET Framework, but I won't touch on this too much.
+Y solo como una buena medida, **.NET Framework** es una implementación diferente del estándar .NET que es específica para Windows. Este era el único entorno de ejecución .NET hasta que .NET Core llego y proporciono .NET para Mac y Linux. ASP.NET Core puede correr sobre el .NET Framework solo Windows, pero no tratare sobre esto demasiado.
 
-If you're confused by all this naming, no worries! We'll get to some real code in a bit.
+Si estas confundido con todos estos nombres, !no te preocupes! Estaremos escribiendo algo de código real muy pronto.
 
-## A note to ASP.NET 4 developers
-If you haven't used a previous version of ASP.NET, skip ahead to the next chapter.
+## Nota para los desarrolladores de ASP.NET 4
+Si no has utilizado las versiones previas de ASP.NET, puedes para directo al siguiente capítulo.
 
-ASP.NET Core is a complete ground-up rewrite of ASP.NET, with a focus on modernizing the framework and finally decoupling it from System.Web, IIS, and Windows. If you remember all the OWIN/Katana stuff from ASP.NET 4, you're already halfway there: the Katana project became ASP.NET 5 which was ultimately renamed to ASP.NET Core.
+ASP.NET Core es una re-escritura completa desde los fundamentos de ASP.NET con el objetivo de modernizar el marco de trabajo y finalmente desacoplarlo de System.Web, ISS y Windows. Si recuerdas todo las cosas sobre OWIN/Kataba de ASP.NET 4, estas casi la mitad ahí: el proyecto Katana se convirtió en ASP.NET 5 el cual finalmente fue renombrado como ASP.NET Core.
 
-Because of the Katana legacy, the `Startup` class is front and center, and there's no more `Application_Start` or `Global.asax`. The entire pipeline is driven by middleware, and there's no longer a split between MVC and Web API: controllers can simply return views, status codes, or data. Dependency injection comes baked in, so you don't need to install and configure a container like StructureMap or Ninject if you don't want to. And the entire framework has been optimized for speed and runtime efficiency.
+Debido al legado de Katana, la clase `Startup` es el frente y centro, y no hay más `Application_Start` o `Global.asax`. La canalización entera esta manejada por middleware, y no hay una separación entre MVC y Web API: los controladores pueden simplemente retornar vistas, códigos de estado o datos. La inyección de dependencias viene integrada, así que no tienes que instalar y configurar un contenedor como StructureMap o Ninject si no deseas hacerlo. Y el marco de trabajo .NET ha sido optimizado para la velocidad y eficiencia del motor de tiempo de ejecución.
 
-Alright, enough introduction. Let's dive in to ASP.NET Core!
+Bien, es suficiente de introducción. ¡ Profundicemos en ASP.NET Core!

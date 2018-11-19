@@ -1,12 +1,12 @@
-# How this book is versioned
+# ¿Cómo es versionado este libro?
 
-After the [first release](https://github.com/nbarbettini/little-aspnetcore-book/releases/tag/v1.0.0) (1.0.0),
+Después de la [primera liberación](https://github.com/nbarbettini/little-aspnetcore-book/releases/tag/v1.0.0) (1.0.0),
 
-* Small fixes such as typos, code errors, and re-formatting will be released as patch versions, e.g. 1.0.1
-* Larger changes or updates will be released as minor versions, e.g. 1.1.0
+* Pequeños arreglos como errores tipográficos, errores en código y cambios en formato serán liberados como versiones parche por ejemplo 1.0.1.
+* Cambios más grandes o actulizaciones serán liberados como versiones menores, por ejemplo 1.1.0
 
-The [Github release history](https://github.com/nbarbettini/little-aspnetcore-book/releases) contains the version history.
+El [historial de liberaciones de Github](https://github.com/nbarbettini/little-aspnetcore-book/releases) contiene el histórico de versiones.
 
-## Latest version
+## Última versión
 
-You can always get the latest version at [littleasp.net/book](http://littleasp.net/book).
+Siempre puedes obtener la última versión en [littleasp.net/book](http://littleasp.net/book).
