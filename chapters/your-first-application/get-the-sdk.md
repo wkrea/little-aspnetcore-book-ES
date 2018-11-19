@@ -1,15 +1,15 @@
-## Get the SDK
-Search for "download .net core" and follow the instructions on Microsoft's download page to get the .NET Core SDK. After the SDK has finished installing, open up the Terminal (or PowerShell on Windows) and use the `dotnet` command line tool (also called a **CLI**) to make sure everything is working:
+# Consigue el SDK
+Para obtener el SDK de .NET Core busca "descargar .NET Core" y sigue las instrucciones de la página de descargas de Microsoft. Después de que el SDK ha finalizado de instalarse, abre una Terminal \(o PowerShell en Windows\) y usa la herramienta de linea de comando \`dotnet \(también conocida como **CLI**\) para asegurarte que todo esta funcionando:
 
-```
+```text
 dotnet --version
 
 2.1.104
 ```
 
-You can get more information about your platform with the `--info` flag:
+Puedes obtener más información acerca de tú plataforma con la bandera `--info`:
 
-```
+```text
 dotnet --info
 
 .NET Command Line Tools (2.1.104)
@@ -22,7 +22,7 @@ Runtime Environment:
  OS Name:     Mac OS X
  OS Version:  10.13
 
-(more details...)
+(más detalles...)
 ```
 
-If you see output like the above, you're ready to go!
+Si ves una salida similar a la de anterior, estas listo para comenzar.

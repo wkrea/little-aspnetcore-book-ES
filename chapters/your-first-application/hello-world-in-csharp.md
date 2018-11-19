@@ -1,25 +1,25 @@
-## Hello World in C# #
-Before you dive into ASP.NET Core, try creating and running a simple C# application.
+# Hola Mundo en C\#
+Antes de profundizar en ASP.NET Core, prueba creando y ejecutando una aplicación de C\# simple.
 
-You can do this all from the command line. First, open up the Terminal (or PowerShell on Windows). Navigate to the location you want to store your projects, such as your Documents directory:
+Puedes hacer todo esto desde la línea de comandos. Primero, abre una Terminal \(o PowerShell en Windows\). Navega a la ubicación donde deseas guardar tus proyectos, tal cómo la carpeta de mis Documentos:
 
+```text
+cd Documentos
 ```
-cd Documents
-```
 
-Use the `dotnet` command to create a new project:
+Usa el comando `dotnet` para crear un nuevo proyecto:
 
-```
+```text
 dotnet new console -o CsharpHelloWorld
 ```
 
-The `dotnet new` command creates a new .NET project in C# by default. The `console` parameter selects a template for a console application (a program that outputs text to the screen). The `-o CsharpHelloWorld` parameter tells `dotnet new` to create a new directory called `CsharpHelloWorld` for all the project files. Move into this new directory:
+El comando `dotnet new` crea un nuevo proyecto de .NET con C\# por omisión. El parámetro `console` selecciona una plantilla para una aplicación de consola \( un programa que emite texto en la pantalla\).El parámetro `-o CsharpHelloWorld` instruye a `dotnet new` para crear una carpeta llamada `CsharpHelloWorld` para los archivos del proyecto . Cambiate a esta carpeta asi:
 
-```
+```text
 cd CsharpHelloWorld
 ```
 
-`dotnet new console` creates a basic C# program that writes the text `Hello World!` to the screen. The program is comprised of two files: a project file (with a `.csproj` extension) and a C# code file (with a `.cs` extension). If you open the former in a text or code editor, you'll see this:
+`dotnet new console` crea un programa de C\# básico que escribe el texto `Hello World!` en la pantalla. El programa esta compuesto por dos archivos: un archivo de proyecto\(con extensión `.csproj`) y un archivo de código de C# (con extensión`.cs\`\). Si abres el primer archivo en un editor de texto, veras esto :
 
 **CsharpHelloWorld.csproj**
 
@@ -34,7 +34,7 @@ cd CsharpHelloWorld
 </Project>
 ```
 
-The project file is XML-based and defines some metadata about the project. Later, when you reference other packages, those will be listed here (similar to a `package.json` file for npm). You won't have to edit this file by hand very often.
+El archivo de proyecto esta baso en XML y define algunos metadatos sobre el proyecto. Después , Cuando referencias otros paquetes, aquellos serán listados aquí \(de forma similar a un un archivo `package.json` para npm\). No necesitarás editar esté archivo de forma manual muy seguido.
 
 **Program.cs**
 
@@ -53,14 +53,14 @@ namespace CsharpHelloWorld
 }
 ```
 
-`static void Main` is the entry point method of a C# program, and by convention it's placed in a class (a type of code structure or module) called `Program`. The `using` statement at the top imports the built-in `System` classes from .NET and makes them available to the code in your class.
+El método `static void Main` es el punto de entrada de un programa de C\#, y por convención esta colocado en una clase \(un tipo de código estructura o modulo\) llamado `Program`. El enunciado `using` al inicio importa las clases incluidas en espacio de nombres `System` desde .NET y las hace disponibles en el código en tú clase.
 
-From inside the project directory, use `dotnet run` to run the program. You'll see the output written to the console after the code compiles:
+Dentro de la carpeta del proyecto, usa `dotnet run` para ejecutar el programa. Veras que la salida se escribe en la consola después que el código compila:
 
-```
+```text
 dotnet run
 
-Hello World!
+!Hola Mundo!
 ```
 
-That's all it takes to scaffold and run a .NET program! Next, you'll do the same thing for an ASP.NET Core application.
+!Esto es todo lo necesario para crear y ejecutar un programa en .NET! Enseguida, harás lo mismo para una aplicación ASP.NET Core.

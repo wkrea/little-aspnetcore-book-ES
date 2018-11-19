@@ -1,79 +1,79 @@
-## Create an ASP.NET Core project
-If you're still in the directory you created for the Hello World sample, move back up to your Documents or home directory:
+# Crear un proyecto de ASP.NET Core
+Si todavía estas en el directorio creado para la aplicación Hello World, muévete a tu directorio Documentos o directorio inicial:
 
-```
+```text
 cd ..
 ```
 
-Next, create a new directory to store your entire project, and move into it:
+A continuación, crea un nueva carpeta para almacenar el proyecto completo y navega hacia el.
 
-```
+```text
 mkdir AspNetCoreTodo
 cd AspNetCoreTodo
 ```
 
-Next, create a new project with `dotnet new`, this time with some extra options:
+A continuación, crea un nuevo proyecto con `dotnet new`, esta vez utilizaras opciones adicionales:
 
-```
+```text
 dotnet new mvc --auth Individual -o AspNetCoreTodo
 cd AspNetCoreTodo
 ```
 
-This creates a new project from the `mvc` template, and adds some additional authentication and security bits to the project. (I'll cover security in the *Security and identity* chapter.)
+Esto crea un nuevo proyecto usando la plantilla `mvc`  y agrego bits adicionales sobre autentificación y seguridad al proyecto \(Cubrieré la seguridad en en capítulo _Seguridad e identidad_\).
 
-> You might be wondering why you have a directory called `AspNetCoreTodo` inside another directory called `AspNetCoreTodo`. The top-level or "root" directory can contain one or more project directories. The root directory is sometimes called a **solution directory**. Later, you'll add more project directories side-by-side with the `AspNetCoreTodo` project directory, all within a single root solution directory.
+> Te preguntaras porque tener un directorio llamado `AspNetCoreTodo` dentro de otro directorio con el mismo nombre. El directorio principal o directorio raíz puede contener uno o mas directorios de proyectos . El directorio raíz es a veces llamado el directorio de la solución. Después, agregaras más directorios de proyecto lado a lado del proyecto AspNetCoreTodo. todos es una solo directorio de la solución.
 
-You'll see quite a few files show up in the new project directory. Once you `cd` into the new directory, all you have to do is run the project:
+Veras unos pocos archivos el la carpeta del nuevo proyecto, Una vez que abres el nuevo director , todo lo que tienes que hacer para ejecutar el proyecto es:
 
-```
+```text
 dotnet run
 
 Now listening on: http://localhost:5000
 Application started. Press Ctrl+C to shut down.
 ```
 
-Instead of printing to the console and exiting, this program starts a web server and waits for requests on port 5000.
+En lugar de inmprimir en la consola y salur , este programa inicia un servidor web  y espera peticiones en el puerto 5000.
 
-Open your web browser and navigate to `http://localhost:5000`. You'll see the default ASP.NET Core splash page, which means your project is working! When you're done, press Ctrl-C in the terminal window to stop the server.
+Abre tu navegador web y navega a la direccion `http://localhost:5000`. Veras la pantalla default de inicio , lo cual significa que tu proyecto esta funcionando. Cuando termines presiona Contol-C en la terminal para detener el servidor.
 
-### The parts of an ASP.NET Core project
-The `dotnet new mvc` template generates a number of files and directories for you. Here are the most important things you get out of the box:
+## Las partes de un proyecto ASP.NET Core
+La plantilla `dotnet new mvc` genera un numero de archivos  y directorio para ti. Aqui estan las cosas mas importantes  que obtines fuera de la caja:
 
-* The **Program.cs** and **Startup.cs** files set up the web server and ASP.NET Core pipeline. The `Startup` class is where you can add middleware that handles and modifies incoming requests, and serves things like static content or error pages. It's also where you add your own services to the dependency injection container (more on this later).
+* Los archivos **Program.cs** and **Startup.cs** configuraran el servidor web  y la canalizacion de ASP.NET Core.La clase `Startup` es donde agregas el middleware que manipula ymodifica los solicitudes de entreatad y brindar cosas como archivos estaticos o paginas de errores. tambien en donde agrgas tus prpios servios al contenedor de deinyeccion de dependens \(more on this later\). 
 
-* The **Models**, **Views**, and **Controllers** directories contain the components of the Model-View-Controller (MVC) architecture. You'll explore all three in the next chapter.
+* Los direcroruos **Models**, **Views**, and **Controllers** dcontiene componenetes de la architectura Modelo Vista COntrolador. Exproraras  los tres en el siguiente capiturlo.
 
-* The **wwwroot** directory contains static assets like CSS, JavaScript, and image files. Files in `wwwroot` will be served as static content, and can be bundled and minified automatically.
+* El directorio **wwwroot** cpntien assets como archivos estaticos como CSS, Javascriot e images. LOs crchivos en `wwwroot` seran despachados como contenido estatico y puden ser empaquetados y minificados  automaticamente.
 
-* The **appsettings.json** file contains configuration settings ASP.NET Core will load on startup. You can use this to store database connection strings or other things that you don't want to hard-code.
+* El archivo **appsettings.json** ficontiene los parametros de configuracion de que la aplicacion ASP.NET coRE cargar al inicio.Puedes alacenar aui tu las cadenas de coneccion o otras coas que no quieres que esten harcodeas den el codigo.
 
-### Tips for Visual Studio Code
+## Tips para Visual Studio Code
 
-If you're using Visual Studio Code for the first time, here are a couple of helpful tips to get you started:
+Si estas usando Visual Studio Code por primera vez ,aui tienes un par de tips de ayuda para iniciar:
 
-* **Open the project root folder**: In Visual Studio Code, choose File - Open or File - Open Folder. Open the `AspNetCoreTodo` folder (the root directory), not the inner project directory. If Visual Studio Code prompts you to install missing files, click Yes to add them.
+* **Abrir el directorio raiz del proyecto**: En VIsual Studio Code, seleciona Archivo > Abrir carpeta. Si Visual Studio Code te solicita instalar los archivos pendeintes , presionar clic es Si para agregarlos.
 
-* **F5 to run (and debug breakpoints)**: With your project open, press F5 to run the project in debug mode. This is the same as `dotnet run` on the command line, but you have the benefit of setting breakpoints in your code by clicking on the left margin:
+* **F5 para ejecutar \(y puntos de interrupción de depuración\)**: Con tu proyecto abierto, presiona F5 pra ejecutar el proyecto en el modo de depuración, Esto es lo mismo que ejecutar `dotnet run` en la linea de comandos, pero tienes el beneficio de configurar puntos de interrupción en tu código dando doble clic en el margen izquierdo:
 
 ![Breakpoint in Visual Studio Code](breakpoint.png)
 
-* **Lightbulb to fix problems**: If your code contains red squiggles (compiler errors), put your cursor on the code that's red and look for the lightbulb icon on the left margin. The lightbulb menu will suggest common fixes, like adding a missing `using` statement to your code:
+* **Foco para corregir problemas**: Si tu código contiene linea rojos \(errores del compilador , coloca el cursos sobre el codigo que esta en rojo y mirar el icono del foco encendido en el margen izquierdo. el foco te sugerirar reparaciones comunes, como agregar enunciados `using` faltantes en tu codigo:
 
 ![Lightbulb suggestions](lightbulb.png)
 
-* **Compile quickly**: Use the shortcut `Command-Shift-B` or `Control-Shift-B` to run the Build task, which does the same thing as `dotnet build`.
+* **Compila rápidamente**: Usa el atajao `Command-Shift-B` o `Control-Shift-B` para ejecutar  la tarea de Build run la cual realiza lo mismo que `dotnet build`.
 
-> These tips apply to Visual Studio (not Code) on Windows too. If you're using Visual Studio, you'll need to open the `.csproj` project file directly. Visual Studio will later prompt you to save the Solution file, which you should save in the root directory (the first `AspNetCoreTodo` folder). You can also create an ASP.NET Core project directly within Visual Studio using the templates in File - New Project.
+> Estos tips  tambien aplican para visual Studio \(not Code\) en Windows Si estas usandos Visual Studio, necesitaras abrie el archivo de proyecto directamente. Visual studio te solicitara guardar la el archivo de lasolucin, elcual debes guardar en el directorio raiz de la solucion\(la primera carpeta llamado `AspNetCoreTodo` \)- Tambiens puedes crear un proyecto ASP.NET Core directamenteo en  Visua Studio usando la plantitillas en Archivo - Nuevo Proyecto.
 
-### A note about Git
+### Una nota acerca de Git
 
-If you use Git or GitHub to manage your source code, now is a good time to do `git init` and initialize a Git repository in the project root directory:
+Si eres nuevo usando Git o Github para manejar el código fuente, ahora es buen momento para hacer un `git init` e inicializar el repositorio en el directorio raiz del proyecto:
 
-```
+```text
 cd ..
 git init
 ```
 
-Make sure you add a `.gitignore` file that ignores the `bin` and `obj` directories. The Visual Studio template on GitHub's gitignore template repo (https://github.com/github/gitignore) works great.
+Asegúrate que agregues un archivo  `.gitignore` que ignora las carpeta `bin` and `obj` La plantilla de Visual Studio en Github .gitignore plantilla repositorio funciona genial.
 
-There's plenty more to explore, so let's dive in and start building an application!
+Hay mucho más que explorar, así que profundicemos e iniciemos a construir una aplicación.
