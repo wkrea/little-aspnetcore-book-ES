@@ -1,6 +1,6 @@
 # El pequeño libro de ASP.NET Core
 
-*Por Nate Barbettini_
+*Por Nate Barbettini*
 
 Copyright © 2018. Todos los derechos reservados.
 
