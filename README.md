@@ -13,10 +13,10 @@ Visita [https://creativecommons.org/licenses/by/4.0/deed.es](https://creativecom
 ## Introducción
 ¡Gracias por elegir El pequeño libro de ASP.NET Core! Escribí este corto libro para ayudar a los desarrolladores y personas interesadas en aprender programación web a aprender acerca de ASP.NET Core 2.0, un marco de trabajo para construir aplicaciones web y APIs.
 
-El pequeño libro de ASP.NET Core está estructurado como un tutorial. Construirás una aplicación de inicio a fin y aprenderás:
+El pequeño libro de ASP.NET Core está estructurado como un tutorial. Construirás una aplicación de principio a fin y con ello aprenderás:
 
-* Los fundamentos del patrón MVC\(Modelo-Vista-Controlador\)
-* Cómo funciona el código del lado del cliente \(HTML, CSS y Javascript\) junto con el código del lado del servidor.
+* Los fundamentos del patrón MVC (Modelo-Vista-Controlador)
+* Cómo funciona el código del lado del cliente (HTML, CSS y Javascript) junto con el código del lado del servidor.
 * Qué es la inyección de dependencias y porque es tan útil
 * Cómo leer y escribir datos a una base de datos
 * Cómo agregar inicio de sesión, registro y seguridad
@@ -32,7 +32,7 @@ El código de la versión final de la aplicación que construirás está disponi
 
 Siéntete libre de descargarlo si quieres ver el producto final, o compararlo mientras escribes tú propio código.
 
-El libro mismo es actualizado frecuentemente con corrección de errores y adición de nuevo contenido. Si estas leyendo un archivo PDF, libro electrónico o versión impresa verifica el sitio web oficial \(littleasp.net/book\) para ver si hay disponible una versión actualizada. La última página del libro contiene información sobre la versión y el registro de cambios.
+El libro mismo es actualizado frecuentemente con corrección de errores y adición de nuevo contenido. Si estas leyendo un archivo PDF, libro electrónico o versión impresa verifica el sitio web oficial (littleasp.net/book) para ver si hay disponible una versión actualizada. La última página del libro contiene información sobre la versión y el registro de cambios.
 
 ## Leyendo en tu propio lenguaje
 
@@ -57,7 +57,6 @@ ASP.NET Core es un marco de trabajo web creado por Microsoft para construir apli
 ASP.NET Core se ejecuta sobre el entorno de ejecución .NET de Microsoft, similar a la Máquina Virtual de Java \(JVM\) o el intérprete de Ruby. Puedes escribir aplicaciones ASP.NET Core en un número de lenguajes \(C\#, Visual Basic y F\#\). C\# es la elección más popular, y es lo que usaremos en este libro. Puedes construir y ejecutar aplicaciones ASP.NET Core en Windows, Mac y Linux.
 
 ## ¿Porqué necesitamos otro marco de trabajo para el desarollo web?
-
 Al día de hoy,existen gran cantidad de marcos de trabajo web para elegir : Node/Express, Spring, Ruby on Rails, Django,Laravel y muchos más. ¿Cuáles son las ventajas que ASP.NET Core tiene?
 
 * **Rapidez.** ASP.NET Core es rápido. Debido a que el código .NET es compilado , este se ejecuta mucho más rápido que el código de lenguajes interpretados como Javascript o Ruby. ASP.NET Core también esta optimizada para multihilos y tareas asíncronas. Es común ver una mejora en la rapidez de 5-10x sobre el código escrito en Node.js.
