@@ -1,25 +1,25 @@
-## Add a service class
-You've created a model, a view, and a controller. Before you use the model and view in the controller, you also need to write code that will get the user's to-do items from a database.
+# Agregar una clase de servicio
+Haz creado un modelo, una vista y un controlador. Antes de usar el modelo y la vista en el controlador, también necesitas escribir código que obtendrá la lista de tareas de los usuarios desde la base de datos.
 
-You could write this database code directly in the controller, but it's a better practice to keep your code separate. Why? In a big, real-world application, you'll have to juggle many concerns:
+Puedes escribir este código directamente en el controlador, pero es una mejor práctica mantener tu código separado. ¿Por qué? en un real aplicación grande, tendrás que hacer malabares con muchos asuntos:
 
-* **Rendering views** and handling incoming data: this is what your controller already does.
-* **Performing business logic**, or code and logic that's related to the purpose and "business" of your application. In a to-do list application, business logic means decisions like setting a default due date on new tasks, or only displaying tasks that are incomplete. Other examples of business logic include calculating a total cost based on product prices and tax rates, or checking whether a player has enough points to level up in a game.
-* **Saving and retrieving** items from a database.
+* **Generar la Vista** y manipular datos de entrada: esto actualmente es realzado por el controlador.
+* **Ejecutar las reglas de negocio**, o código que esta relacionado con el propósito y negocio de tu aplicación, en una aplicación de lista de tareas, reglas de negocio significa decisiones como configurar la fecha por default para la entrega o solo mostrar tareas que están incompletas. Otros ejemplo de lógica de negocio incluyen calcular el costo total basandose sobre el precio de los productos razón de impuesto o verificar si algún jugador tiene puntos suficiente para subir de nivel en un juego.
+* **Obtener y guardar** artículos desde la base de datos.
 
-Again, it's possible to do all of these things in a single, massive controller, but that quickly becomes too hard to manage and test. Instead, it's common to see applications split up into two, three, or more "layers" or tiers that each handle one (and only one) concern. This helps keep the controllers as simple as possible, and makes it easier to test and change the business logic and database code later.
+Una vez más es posible hacer todas estas cosas en un solo y enorme controlador, que rápidamente se convertiría en difícil de manejar y probar. En lugar es común ver aplicaciones dividen en dos o tres o mas capas y tiers de tal forma que cada una maneja uno (y solo una) aspecto de la aplicación. Esto ayuda a mantener el controlador tan simple como sea posible, y hace mas fácil probar y cambiar la lógica de negocio y el código de acceso a base de datos después.
 
-Separating your application this way is sometimes called a **multi-tier** or **n-tier architecture**. In some cases, the tiers (layers) are isolated in completely separate projects, but other times it just refers to how the classes are organized and used. The important thing is thinking about how to split your application into manageable pieces, and avoid having controllers or bloated classes that try to do everything.
+Separado tu aplicación en esta forma es a veces llamada **mult-tier** o **n-tier architecture** arquitectura. En algunos casos los tiers o capas son proyectos completamente separados. Pero otras veces i solo se referencia a como las clases son organizadas y utilizadas. Lo mas importante es pensar a cerca de como dividir tu aplicación en piezas manejables y evitar tener controladores o clases enormes que intentan hacer todo.
 
-For this project, you'll use two application layers: a **presentation layer** made up of the controllers and views that interact with the user, and a **service layer** that contains business logic and database code. The presentation layer already exists, so the next step is to build a service that handles to-do business logic and saves to-do items to a database.
+Para este proyecto, usaras dos capa de aplicación: una **capa de presentación** compuesta de controladores y vistas que interactuan con el usuario, y una capa de servicio que combina las reglas del negocio con el código de accesos a base de datos. La capa de presentación ya existes. asi que el siguiente paso es construir un servicio que manipulo las reglas de negocio para las tareas y guarda las tareas en una base da datos. .
 
-> Most larger projects use a 3-tier architecture: a presentation layer, a service logic layer, and a data repository layer. A **repository** is a class that's only focused on database code (no business logic). In this application, you'll combine these into a single service layer for simplicity, but feel free to experiment with different ways of architecting the code.
+> La mayoría de los proyectos grandes usan una arquitectura 3-tier: una capa de presentación, una capa lógica de servicios y una capa de repositorio de datos. Un repositorio es una clase que que solo esta enfocada en código de acceso a base de datos (no lógica de negocios). En esta aplicación, por simplicidad, código combinaras estas en un sola capa de servicio  pero siéntete libre de experimentar con diferentes formas de estructurar el código.
 
-### Create an interface
+## Crear una interfaz
 
-The C# language includes the concept of **interfaces**, where the definition of an object's methods and properties is separate from the class that actually contains the code for those methods and properties. Interfaces make it easy to keep your classes decoupled and easy to test, as you'll see here (and later in the *Automated testing* chapter). You'll use an interface to represent the service that can interact with to-do items in the database.
+El lenguaje de programación C# incluye el concepto de **interfaces**, donde la definición de de los métodos y propiedades de un objeto es separada de la clase que actualmente contiene el código de aquellos métodos y propiedades. Las interfaces hace fácil mantener tus clases desacopladas y fáciles de probar,como veras aquí (y después en el capitulo _Pruebas Automáticas)Usaras una interfaces para represente el servicio que puede interactuá con los artículos en la base de datos.
 
-By convention, interfaces are prefixed with "I". Create a new file in the Services directory:
+Por convención, las el nombre de las interfaces tiene el prefijo "I".Crea un nuevo archivo en el directorio Services:
 
 **Services/ITodoItemService.cs**
 
@@ -38,23 +38,23 @@ namespace AspNetCoreTodo.Services
 }
 ```
 
-Note that the namespace of this file is `AspNetCoreTodo.Services`. Namespaces are a way to organize .NET code files, and it's customary for the namespace to follow the directory the file is stored in (`AspNetCoreTodo.Services` for files in the `Services` directory, and so on).
+Nota que el espacio de nombres de este archivo es `AspNetCoreTodo.Services`. Los espacios de nombres son una forma de organizar los archivos de código .NET. y se acostumbra nombrar el espacio de nombres siguiendo el directorio en que esta almacenado del archivo in (`AspNetCoreTodo.Services` para archivos en el directorio  `Services` y asi sucesivamente).
 
-Because this file (in the `AspNetCoreTodo.Services` namespace) references the `TodoItem` class (in the `AspNetCoreTodo.Models` namespace), it needs to include a `using` statement at the top of the file to import that namespace. Without the `using` statement, you'll see an error like:
+Because this file \(in the `AspNetCoreTodo.Services` namespace\) references the `TodoItem` class \(in the `AspNetCoreTodo.Models` namespace\), it needs to include a `using` statement at the top of the file to import that namespace. Si el enuncuado  `using` veras un error como:
 
 ```
-The type or namespace name 'TodoItem' could not be found (are you missing a using directive or an assembly reference?)
+El tipo o espacio de nombre 'TodoItem' no puede encontrases (are you missing a using directive or an assembly reference?)
 ```
 
-Since this is an interface, there isn't any actual code here, just the definition (or **method signature**) of the `GetIncompleteItemsAsync` method. This method requires no parameters and returns a `Task<TodoItem[]>`.
+Debido a que esta es una interfaces, no hay ningún código aquí , solo la definición (o la firma del métodos) del `GetIncompleteItemsAsync` método. Este método no requiere para mentros y regresas un `Task<TodoItem[]>`.
+> Si la sintaxis parece confusa, prines " un Task que contiene un arreglo de TodoItems"
 
-> If this syntax looks confusing, think: "a Task that contains an array of TodoItems".
 
-The `Task` type is similar to a future or a promise, and it's used here because this method will be **asynchronous**. In other words, the method may not be able to return the list of to-do items right away because it needs to go talk to the database first. (More on this later.)
+El tipo `Task` es similar un futuro o promesa, y es usado aquí porque este métodos sea asíncrono. En otras palabras el método puede no se capaz de regresar la lista de tare justo porque necesita interactuara con la base de datos primero.(Mas sobre esto después).
 
-### Create the service class
+## Crear la clase de servicio
 
-Now that the interface is defined, you're ready to create the actual service class. I'll cover database code in depth in the *Use a database* chapter, so for now you'll just fake it and always return two hard-coded items:
+Ahora que la interfaz esta definida, estas listo para crear la clase del servicio actual. Cubriré el código de acceso a base de datos a detalle en el capitulo _Usar una base de datos_ , así que por ahora solo usaras datos falsos y siempre regresara 2 artículos estáticos;
 
 **Services/FakeTodoItemService.cs**
 
@@ -88,4 +88,4 @@ namespace AspNetCoreTodo.Services
 }
 ```
 
-This `FakeTodoItemService` implements the `ITodoItemService` interface but always returns the same array of two `TodoItem`s. You'll use this to test the controller and view, and then add real database code in *Use a database*.
+La clase `FakeTodoItemService` implementa la interfaz`ITodoItemService` pero siempre regresa el mismo arreglo de dos `TodoItem`. Usaras esta para poblar el controlador y la vista y después agregaras código de bases de datos real in _Usando una base de datos_.

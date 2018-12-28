@@ -1,5 +1,5 @@
-## Finish the controller
-The last step is to finish the controller code. The controller now has a list of to-do items from the service layer, and it needs to put those items into a `TodoViewModel` and bind that model to the view you created earlier:
+## Finalizando el controlador
+El último paso es finalizar el código del controlador . El controlador ahora tiene un lista de tareas del la capa de servicio, y necesita poner que los items dentro de un `TodoViewModel` y enlazar este modelo a la vista creada anteriormente:
 
 **Controllers/TodoController.cs**
 
@@ -17,18 +17,18 @@ public async Task<IActionResult> Index()
 }
 ```
 
-If you haven't already, make sure these `using` statements are at the top of the file:
+Si no lo haz hecho ya, asegúrate que los siguientes enunciados `using` estén en la parte superior del archivo:
 
 ```csharp
 using AspNetCoreTodo.Services;
 using AspNetCoreTodo.Models;
 ```
 
-If you're using Visual Studio or Visual Studio Code, the editor will suggest these `using` statements when you put your cursor on a red squiggly line.
+Si estas usando Visual Studio o Visual Studio Code, el editor te sugerirá estos enunciados `using` cuando colocas el cursor en las lineas rojas.
 
-## Test it out
-To start the application, press F5 (if you're using Visual Studio or Visual Studio Code), or just type `dotnet run` in the terminal. If the code compiles without errors, the server will start up on port 5000 by default.
+## Probando
+Para iniciar la aplicación presiona F5 (si estas usando Visual Studio o Visual Studio Code), o solo teclea `dotnet run` en la terminal. Si el código compila sin errores , el servidor empezara escuchando en el puerto 5000 por default.
+Si tu navegador navegador no se abre de forma automática, ábrelo y navega a la dirección [http://localhost:5000/todo](http://localhost:5000/todo). Verás la vista que creaste, con los datos obtenidos de la base de datos false (por ahora).
 
-If your web browser didn't open automatically, open it and navigate to http://localhost:5000/todo. You'll see the view you created, with the data pulled from your fake database (for now).
+A pesar de que es posible ir directamente hacia `http://localhost:5000/todo`, será más conveniente agregar una liga llamada **My to-dos** a la barra de navegación. Para hacer esto, puedes editar el archivo de layout.
 
-Although it's possible to go directly to `http://localhost:5000/todo`, it would be nicer to add an item called **My to-dos** to the navbar. To do this, you can edit the shared layout file.

@@ -1,25 +1,25 @@
-# MVC basics
-In this chapter, you'll explore the MVC system in ASP.NET Core. **MVC** (Model-View-Controller) is a pattern for building web applications that's used in almost every web framework (Ruby on Rails and Express are popular examples), plus frontend JavaScript frameworks like Angular. Mobile apps on iOS and Android use a variation of MVC as well.
+# Fundamentos de MVC
+En este capitulo, explorarás el patrón MVC en ASP.NET Core. **MVC** (Modelo-Vista-Controlador) es un patrón para construir aplicaciones web que es usado en casi todos los marcos de desarollo web (ejemplos populares son Ruby on Rails y Express),adicionalmente marcos de trabajo del lado de cliente con Javascript como Angular. Aplicaciones móviles sobre iOS y Android también usan una variante de MVC.
 
-As the name suggests, MVC has three components: models, views, and controllers. **Controllers** handle incoming requests from a client or web browser and make decisions about what code to run. **Views** are templates (usually HTML plus a templating language like Handlebars, Pug, or Razor) that get data added to them and then are displayed to the user. **Models** hold the data that is added to views, or data that is entered by the user.
+Como el nombre sugiere MVC tiene tres componentes: modelos, vistas y controladores. Los **Controladores** gestionan las solicitudes de entrada desde un cliente o un navegador web y deciden acerca de que código ejecutar. Las **vistas** son plantillas (usualmente HTML más un lenguaje de plantillas como Handlebar,Pug o Razor) que contienen datos añadidos a el que luego son muestrados a los usuario.Los **Modelos** mantienen los datos que son agregado a las vistas, o los datos que son ingresados por los usuarios.
 
-A common pattern for MVC code is:
+Un patrón común para el código MVC es:
 
-* The controller receives a request and looks up some information in a database
-* The controller creates a model with the information and attaches it to a view
-* The view is rendered and displayed in the user's browser
-* The user clicks a button or submits a form, which sends a new request to the controller, and the cycle repeats
+* El controlador recibe una petición y busca alguna información en una base de datos
+* El controlador crea un modelo con la información y la adjunta a la vista.
+* La vista es generada y mostrada en el navegador del usuario
+* El usuario presiona un botón o envía un formulario, el cual enviá una nueva solicitud al controlador y el ciclo se repite.
 
-If you've worked with MVC in other languages, you'll feel right at home in ASP.NET Core MVC. If you're new to MVC, this chapter will teach you the basics and will help get you started.
+Si has trabajado con MVC en otros lenguajes, te sentirás como en casa en ASP.NET Core MVC. Si eres nuevo en MVC, este capitulo te enseñara lo básico y te ayudara a iniciar.
 
-## What you'll build
-The "Hello World" exercise of MVC is building a to-do list application. It's a great project since it's small and simple in scope, but it touches each part of MVC and covers many of the concepts you'd use in a larger application.
+## ¿Qué es lo que contruirás?
+El ejercicio de "Hola Mundo" de MVC es construir una aplicación de lista de tareas. Es un proyecto genial ya que es pequeño y simple en alcance, pero trata cada una de las partes de MVC y cubre muchos conceptos que usaras en un aplicación más grande.
 
-In this book, you'll build a to-do app that lets the user add items to their to-do list and check them off once complete. More specifically, you'll be creating:
+En este libro, construirás una aplicación de gestión de tareas que dejara al usuario agregar elementos a su lista de tareas y verificar una vez que la tarea se ha completado. Más específicamente estarás creando:
 
-* A web application server (sometimes called the "backend") using ASP.NET Core, C#, and the MVC pattern
-* A database to store the user's to-do items using the SQLite database engine and a system called Entity Framework Core
-* Web pages and an interface that the user will interact with via their browser, using HTML, CSS, and JavaScript (called the "frontend")
-* A login form and security checks so each user's to-do list is kept private
+* Una aplicación web de servidor (a veces llamada Back-End) usando a ASP.NET Core, C# y el patrón MVC.
+* Una base de datos para almacenar la lista de tareas del usuario usando el motor de base de datos SQLite y un sistema llamado Entity Framework Core.
+* Las paginas web y la interfaz con la que el usuario interacturá  via el navegador. Usando HTML, CSS y Javascritp (llamado el FrontEnd).
+* Un formulario de inicio de sesión y verificación de seguridad así cada usuario mantendrá su lista de tareas privada.
 
-Sound good? Let's built it! If you haven't already created a new ASP.NET Core project using `dotnet new mvc`, follow the steps in the previous chapter. You should be able to build and run the project and see the default welcome screen.
+ ¿Suena bien? ¡Vamos a construirla! si no haz creado una aplicación nueva en APS.NET Core proyecto usando `dotnet new mvc` , sigue los pasos en el capitulo anterior,debes ser capaz de construir y ejecutar el proyecto y ver la pantalla de bienvenida,

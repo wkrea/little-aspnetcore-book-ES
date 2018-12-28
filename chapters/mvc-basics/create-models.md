@@ -1,7 +1,7 @@
-## Create models
-There are two separate model classes that need to be created: a model that represents a to-do item stored in the database (sometimes called an **entity**), and the model that will be combined with a view (the **MV** in MVC) and sent back to the user's browser. Because both of them can be referred to as "models", I'll refer to the latter as a **view model**.
+# Crear modelos
+Hay dos pasos separados para crear las clases modelo que necesitan ser creadas: un modelo que representa las tares almacenadas en la base de datos (a veces llamadas **entidades**), y el modelo que será combinado con la vista (**MV** en MVC) y sera enviado al navegador del usuario. Debido a con ambos son referidos como modelos, prefiero referirme al ultimo como **View Model**.
 
-First, create a class called `TodoItem` in the Models directory:
+Primero, creamos un clase llamada `TodoItem` en la carpeta Models:
 
 **Models/TodoItem.cs**
 
@@ -14,7 +14,7 @@ namespace AspNetCoreTodo.Models
     public class TodoItem
     {
         public Guid Id { get; set; }
-        
+
         public bool IsDone { get; set; }
 
         [Required]
@@ -25,29 +25,29 @@ namespace AspNetCoreTodo.Models
 }
 ```
 
-This class defines what the database will need to store for each to-do item: an ID, a title or name, whether the item is complete, and what the due date is. Each line defines a property of the class:
+Esta clase define lo que base de datos se necesitara para almacenar cada tarea :Un ID , un titulo o nombre, si la tarea esta completada, y la fecha de finalización. Cada linea define una propiedad de la clase:
 
-* The **Id** property is a guid, or a **g**lobally **u**nique **id**entifier. Guids (or GUIDs) are long strings of letters and numbers, like `43ec09f2-7f70-4f4b-9559-65011d5781bb`. Because guids are random and are extremely unlikely to be accidentally duplicated, they are commonly used as unique IDs. You could also use a number (integer) as a database entity ID, but you'd need to configure your database to always increment the number when new rows are added to the database. Guids are generated randomly, so you don't have to worry about auto-incrementing.
+* La propiedad Id es un GUID o a Identificador Global Único. Los Guid son cadenas largas de letras y números como , "": Por esto GUIDs son aleatorios y son extremadamente improbables que sean duplicados, son utilizas con identificadores únicos , También puede usar un número (entero como un identidad de la base de datos) pero tienes que configurar tu base de datos para siempre incremente el numero cuando un nuevas filas son añadidas a la base ded ato. GIod son generado de forma aleatoria , asi no tienes que preocuparte oir auto incrementarlas.
 
-* The **IsDone** property is a boolean (true/false value). By default, it will be `false` for all new items. Later you'll use write code to switch this property to `true` when the user clicks an item's checkbox in the view.
+* La propiedad **IsDone** es un boleano ( valores true/false ), Por default, es sera falso para todos los nuevos elementos. Después escribirás código para cambiar esta propiedad a true cuando el usuario presiona una casilla de verificación en la visa.
 
-* The **Title** property is a string (text value). This will hold the name or description of the to-do item. The `[Required]` attribute tells ASP.NET Core that this string can't be null or empty.
+* La propiedad Title es una cadena ( valor texto). Esta mantendrá el nombre o descripción de la tarea. El atributo [Requires] le dice ASP.NET Core que esta cadena no puede  ser nula o vaciá.
 
-* The **DueAt** property is a `DateTimeOffset`, which is a C# type that stores a date/time stamp along with a timezone offset from UTC. Storing the date, time, and timezone offset together makes it easy to render dates accurately on systems in different timezones.
+* La propiedad **DueAt** es un Datetiemodsse , cual es un tip de C# que almacena un date/rimsta con la zone. Almarenfao la fechas , la hora y la zona horaria juntas hace fácil visualizar las fechas precisasmente en sistemas en diferentes zonas horarios.
 
-Notice the `?` question mark after the `DateTimeOffset` type? That marks the DueAt property as **nullable**, or optional. If the `?` wasn't included, every to-do item would need to have a due date. The `Id` and `IsDone` properties aren't marked as nullable, so they are required and will always have a value (or a default value).
+Mira el simbolo de interrogación ? después del tipo DatetimeOFse ? este marca que la propiedad DueAt es nullabrel o opcional. Si el ? no se incluye , todlos las tareas every eletromta de tare necesitarioa una fecha de entrega, Las propiedad ID y IsDone no son arcadso como nulabrel, asi que ellas son requeridan y siempe temndra un valor \(o valor por omisión.
 
-> Strings in C# are always nullable, so there's no need to mark the Title property as nullable. C# strings can be null, empty, or contain text.
+> La cadenas en C# son siempre nullabesll , asi no es necesario marcar el titulo como nulabrel: La cadenas de C# pueden ser nulas , vacios o contener texto.
 
-Each property is followed by `get; set;`, which is a shorthand way of saying the property is read/write (or, more technically, it has a getter and setter methods).
+Cada propiedad es seguida por get y set , las cuales es una forma cotr de deciq ue la propiedad es de lectura /escritir ( mas técnicamente que tiene métodos modificacaodtes.)
 
-At this point, it doesn't matter what the underlying database technology is. It could be SQL Server, MySQL, MongoDB, Redis, or something more exotic. This model defines what the database row or entry will look like in C# so you don't have to worry about the low-level database stuff in your code. This simple style of model is sometimes called a "plain old C# object" or POCO.
+En estepunto , no import acual es la base de datos utilizada. Podría ser SQL Server, MYSQl ,modgo Db Redsi o algo mas exotico, Este modelo define que la base de datos fila o entrarado lucir i cu tocdico c\# y no tienes que preocuparste po acerca de cosas a bajo nivel sobre la base de datos en tu cosido . Este siempre modelo es algunas veces llamado a plain ol C# onject o POCO.
 
-### The view model
+## La vista modelo
 
-Often, the model (entity) you store in the database is similar but not *exactly* the same as the model you want to use in MVC (the view model). In this case, the `TodoItem` model represents a single item in the database, but the view might need to display two, ten, or a hundred to-do items (depending on how badly the user is procrastinating).
+OFten, el modelo que almacenas en la base de datos es similar pero no exactamente el mismo que desaes usar en la MVC (la vita modelo\). En este caso , el modelo "" representa a un unico elemento de la base de deatos. preo la vista puede necesitar mostrar dos , diez o citneo de elemoemtos de tareas \( dependeiedn que tal malamente el ususri esta procrastinando\).
 
-Because of this, the view model should be a separate class that holds an array of `TodoItem`s:
+Debsi a esto , la vista model puede ser una clase separadoa que mantienen un arreglo de "TodoItem"
 
 **Models/TodoViewModel.cs**
 
@@ -61,4 +61,4 @@ namespace AspNetCoreTodo.Models
 }
 ```
 
-Now that you have some models, it's time to create a view that will take a `TodoViewModel` and render the right HTML to show the user their to-do list.
+Ahora que tienes algunos modelos , es tiempo de crear una vista que tomar aun "" y render le HTML correcto para mostrar al usuario su lista de tareas.
