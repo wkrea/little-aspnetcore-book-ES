@@ -12,7 +12,7 @@
     * [Usar inyección de dependencias](chapters/mvc-basics/use-dependency-injection.md)
     * [Terminando el controlador](chapters/mvc-basics/finish-controller.md)
     * [Actualizar la plantilla](chapters/mvc-basics/update-the-layout.md)
-* [Agregando paquetes externos](chapters/add-external-packages.md)
+* [Agregando paquetes externos](chapters/add-external-packages/README.md)
 * [Usando una base de datos](chapters/use-a-database/README.md)
     * [Conectarse a una base de datos](chapters/use-a-database/connect-to-a-database.md)
     * [Actualizando el contexto](chapters/use-a-database/update-context.md)
