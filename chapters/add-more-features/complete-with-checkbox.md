@@ -1,17 +1,17 @@
-## Complete items with a checkbox
+## Completa los elementos con una casilla de verificación
 
-Adding items to your to-do list is great, but eventually you'll need to get things done, too. In the `Views/Todo/Index.cshtml` view, a checkbox is rendered for each to-do item:
+Agregar tareas a lu lista de tareas es genial , pero eventualmente necesitaras también  completar las cosas. En la vista `Views/Todo/Index.cshtml`, una casilla de verificación es, mostrada para cada tarea:
 
 ```html
 <input type="checkbox" class="done-checkbox">
 ```
 
-Clicking the checkbox doesn't do anything (yet). Just like the last chapter, you'll add this behavior using forms and actions. In this case, you'll also need a tiny bit of JavaScript code.
+Presionando la casilla de verificación no hace nada aun. AL igual que el  capitulo anterior, agregaras este comportamiento usando formularios y acciones. En este caso necesitaras un pequeño código en Javascript.
 
 
-### Add form elements to the view
+### Agregar elementos al formulario de la vista
 
-First, update the view and wrap each checkbox with a `<form>` element. Then, add a hidden element containing the item's ID:
+Primero, actualiza la vista y encierra cada casilla de verificación con un elemento `<form>`.Después , agregar un elemento escondido que contenga el ID de la tarea:
 
 **Views/Todo/Index.cshtml**
 
@@ -24,14 +24,14 @@ First, update the view and wrap each checkbox with a `<form>` element. Then, add
 </td>
 ```
 
-When the `foreach` loop runs in the view and prints a row for each to-do item, a copy of this form will exist in each row. The hidden input containing the to-do item's ID makes it possible for your controller code to tell which box was checked. (Without it, you'd be able to tell that *some* box was checked, but not which one.)
+Cuando el bucle `foreach` se ejecuta en la vista e imprime una fila para cada elemento de tarea pendiente, existirá una copia de este formulario en cada fila. La entrada oculta que contiene el ID de la tarea a realizar permite que el código de su controlador indique qué casilla se marcó. (Sin él, podría indicar que se marcó * alguna * casilla, pero no cuál.)
 
-If you run your application right now, the checkboxes still won't do anything, because there's no submit button to tell the browser to create a POST request with the form's data. You could add a submit button under each checkbox, but that would be a silly user experience. Ideally, clicking the checkbox should automatically submit the form. You can achieve that by adding some JavaScript.
+Si ejecutas la aplicación ahora mismo, las casillas de verificación aun no hacen nada, porque no hay un botón para submit para decir al navegador para crear una solicitud POST con los datos del formulario. Puedes agregar un botón de submit bajo cada casilla de verificación  pero esto seria una mala experiencia de usuario. idealmente dando clic en una casilla de verificación debería envía el formulario. Puedes lograrlo agregando algo de código de JavaScript.
 
 
-### Add JavaScript code
+### Agregar código Javascript
 
-Find the `site.js` file in the `wwwroot/js` directory and add this code: 
+Busca el archivo `site.js` en el directorio `wwwroot/js` y agrega este código: 
 
 **wwwroot/js/site.js**
 
@@ -55,19 +55,19 @@ function markCompleted(checkbox) {
 }
 ```
 
-This code first uses jQuery (a JavaScript helper library) to attach some code to the `click` even of all the checkboxes on the page with the CSS class `done-checkbox`. When a checkbox is clicked, the `markCompleted()` function is run.
+Este código primero usa jQuery (a una librería de apoyo en JavaScript) para adjuntar algo de código al evento  `click` de todos las casillas de verificación sobre la página con el la clase CSS `done-checkbox`. Cuando una casilla de verificación es presionada , la función `markCompleted()` es ejecutada.
 
-The `markCompleted()` function does a few things:
-* Adds the `disabled` attribute to the checkbox so it can't be clicked again
-* Adds the `done` CSS class to the parent row that contains the checkbox, which changes the way the row looks based on the CSS rules in `style.css`
-* Submits the form
+La función `markCompleted()` hace algunas cosas:
+* Agrega el atributo `disabled` a las casillas de verificación así estas no pueden ser selecionadas otra vez
+* Agrega la clase CSS `done` a la fila padre que contiene la casilla de verificación, la cual cambia la forma que la final luce basada en las reglas CSS en el archivo `style.css` 
+* Envia el formulario
 
-That takes care of the view and frontend code. Now it's time to add a new action!
+Esto toma responsabilidad del la vista y el código del lado del cliente. Ahora es tiempo de agregar una nueva acción
 
 
-### Add an action to the controller
+### Agrega una accion al controlador
 
-As you've probably guessed, you need to add an action called `MarkDone` in the `TodoController`:
+Como haz probablemente adivinado, necesitas agregar una acción llamada `MarkDone` en el controlador `TodoController`:
 
 ```csharp
 [ValidateAntiForgeryToken]
@@ -88,11 +88,12 @@ public async Task<IActionResult> MarkDone(Guid id)
 }
 ```
 
-Let's step through each line of this action method. First, the method accepts a `Guid` parameter called `id` in the method signature. Unlike the `AddItem` action, which used a model and model binding/validation, the `id` parameter is very simple. If the incoming request data includes a field called `id`, ASP.NET Core will try to parse it as a guid. This works because the hidden element you added to the checkbox form is named `id`.
+Vayamos a través de cada línea de este método de acción. Primero, el método acepta un parámetro `Guid` llamado` id` en la firma del método. A diferencia de la acción `AddItem`, que utiliza un modelo y un modelo de enlace / validación, el parámetro `id` es muy simple. Si los datos de la solicitud entrante incluyen un campo llamado `id`, ASP.NET Core intentará analizarlo como una guía. Esto funciona porque el elemento oculto que agregó al formulario de casilla de verificación se llama `id`.
 
-Since you aren't using model binding, there's no `ModelState` to check for validity. Instead, you can check the guid value directly to make sure it's valid. If for some reason the `id` parameter in the request was missing or couldn't be parsed as a guid, `id` will have a value of `Guid.Empty`. If that's the case, the action tells the browser to redirect to `/Todo/Index` and refresh the page.
+Como no está utilizando el enlace de modelo, no hay un `ModelState` para verificar la validez. En su lugar, puede verificar el valor GUID directamente para asegurarse de que sea válido. Si, por algún motivo, el parámetro `id` en la solicitud faltaba o no podía analizarse como guid, `id` tendrá un valor de `Guid.Empty`. Si ese es el caso, la acción le dice al navegador que redirija a `/Todo/Index` y actualice la página.
 
-Next, the controller needs to call the service layer to update the database. This will be handled by a new method called `MarkDoneAsync` on the `ITodoItemService` interface, which will return true or false depending on whether the update succeeded:
+
+A continuación, el controlador debe llamar a la capa de servicio para actualizar la base de datos. Esto será manejado por un nuevo método llamado `MarkDoneAsync` en la interfaz `ITodoItemService`, que devolverá verdadero o falso dependiendo de si la actualización tuvo éxito:
 
 ```csharp
 var successful = await _todoItemService.MarkDoneAsync(id);
@@ -102,13 +103,13 @@ if (!successful)
 }
 ```
 
-Finally, if everything looks good, the browser is redirected to the `/Todo/Index` action and the page is refreshed.
+Finalmente, si todo se ve bien, el navegador se redirige a la acción `/Todo/Index` y la página se actualiza.
 
-With the view and controller updated, all that's left is adding the missing service method.
+Con la vista y el controlador actualizados, todo lo que queda es agregar el método de servicio faltante.
 
-### Add a service method
+### Agregar un método de servicio
 
-First, add `MarkDoneAsync` to the interface definition:
+Primero, agregar `MarkDoneAsync` a la definición de la interface:
 
 **Services/ITodoItemService.cs**
 
@@ -116,7 +117,7 @@ First, add `MarkDoneAsync` to the interface definition:
 Task<bool> MarkDoneAsync(Guid id);
 ```
 
-Then, add the concrete implementation to the `TodoItemService`:
+Después, agrega la implementación concreta al servicio `TodoItemService`: 
 
 **Services/TodoItemService.cs**
 
@@ -136,18 +137,17 @@ public async Task<bool> MarkDoneAsync(Guid id)
 }
 ```
 
-This method uses Entity Framework Core and `Where()` to find an item by ID in the database. The `SingleOrDefaultAsync()` method will either return the item or `null` if it couldn't be found.
+Este método usa Entity Framework Core y `Where()` para encontrar una tarea por ID in la base de datos. El método `SingleOrDefaultAsync()` regresara una tarea o `null` si esta no es encontrada.
 
-Once you're sure that `item` isn't null, it's a simple matter of setting the `IsDone` property:
+Una vez que estas seguro que el `item` no es nulo, es una simple cuestión de configurar la propiedad `IsDone`:
 
 ```csharp
 item.IsDone = true;
 ```
 
-Changing the property only affects the local copy of the item until `SaveChangesAsync()` is called to persist the change back to the database. `SaveChangesAsync()` returns a number that indicates how many entities were updated during the save operation. In this case, it'll either be 1 (the item was updated) or 0 (something went wrong).
+Cambiando la propiedad solo afecta a la copia local de la tarea hasta que el método `SaveChangesAsync()` es llamada  para guardar el cambio en la base de datos. `SaveChangesAsync()` regresa  un numero que indica cuántas entidades fueron actualizas durante la operación de guardar. En este caso , sera o 1 (la tarea fue actualizada) o (algo malo sucedió).
 
-### Try it out
+### Probando
 
-Run the application and try checking some items off the list. Refresh the page and they'll disappear completely, because of the `Where()` filter in the `GetIncompleteItemsAsync()` method.
-
-Right now, the application contains a single, shared to-do list. It'd be even more useful if it kept track of individual to-do lists for each user. In the next chapter, you'll add login and security features to the project.
+Ejecuta la aplicación y checa algunas tareas de la lista. Refrescar la pagina y ellas desaparecerán completamente, porque el filtro `Where()` aplicado en el método  `GetIncompleteItemsAsync()`.
+Ahora mismo, la aplicación contiene una sola , lista de tareas compartida. Seria mucho mas util si mantuviera registros  de una lista de tareas individual para cada usuario. En el siguiente capitulo, agregarás inicio de sesión y características de seguridad al proyecto.

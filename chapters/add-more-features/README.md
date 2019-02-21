@@ -1,2 +1,2 @@
-# Add more features
-Now that you've connected to a database using Entity Framework Core, you're ready to add some more features to the application. First, you'll make it possible to add new to-do items using a form.
+# Agregar más características
+Ahora que te has conectado a la base de datos usando Entity Framework Core, estás listo para agregar más características a la  aplicación. Primero, harás posible agregar nuevas tareas usando un formulario.
