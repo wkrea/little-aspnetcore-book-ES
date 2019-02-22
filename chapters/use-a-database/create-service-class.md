@@ -1,8 +1,8 @@
-## Create a new service class
+## Crear una nueva clase de servicio
 
-Back in the *MVC basics* chapter, you created a `FakeTodoItemService` that contained hard-coded to-do items. Now that you have a database context, you can create a new service class that will use Entity Framework Core to get the real items from the database.
+Anteriormente en el capítulo de **conceptos básicos de MVC**, creaste un `FakeTodoItemService` que contenía elementos de tareas pendientes codificados. Ahora que tiene un contexto de base de datos, puede crear una nueva clase de servicio que usará Entity Framework Core para obtener los elementos reales de la base de datos.
 
-Delete the `FakeTodoItemService.cs` file, and create a new file:
+Elimine el archivo `FakeTodoItemService.cs` y cree un nuevo archivo:
 
 **Services/TodoItemService.cs**
 
@@ -37,25 +37,25 @@ namespace AspNetCoreTodo.Services
 }
 ```
 
-You'll notice the same dependency injection pattern here that you saw in the *MVC basics* chapter, except this time it's the `ApplicationDbContext` that's getting injected. The `ApplicationDbContext` is already being added to the service container in the `ConfigureServices` method, so it's available for injection here.
+Notará el mismo patrón de inyección de dependencia aquí que vio en el capítulo *Fundamentos de MVC*, excepto que esta vez se está inyectando el `ApplicationDbContext`. El `ApplicationDbContext` ya se está agregando al contenedor de servicios en el método `ConfigureServices`, por lo que está disponible para inyección aquí.
 
-Let's take a closer look at the code of the `GetIncompleteItemsAsync` method. First, it uses the `Items` property of the context to access all the to-do items in the `DbSet`:
+Echemos un vistazo más de cerca al código del método `GetIncompleteItemsAsync`. Primero, usa la propiedad `Items` del contexto para acceder a todos los elementos de la tarea en el `DbSet`:
 
 ```csharp
 var items = await _context.Items
 ```
 
-Then, the `Where` method is used to filter only the items that are not complete:
+Luego, el método `Where` se usa para filtrar solo los elementos que no están completos:
 
 ```csharp
 .Where(x => x.IsDone == false)
 ```
 
-The `Where` method is a feature of C# called LINQ (**l**anguage **in**tegrated **q**uery), which takes inspiration from functional programming and makes it easy to express database queries in code. Under the hood, Entity Framework Core translates the `Where` method into a statement like `SELECT * FROM Items WHERE IsDone = 0`, or an equivalent query document in a NoSQL database.
+El método `Where` es una característica de C # llamada LINQ (**l**enguaje **in**tegrated **Q**uery), que se inspira en la programación funcional y facilita la expresión de consultas de base de datos en código. Bajo el capó, Entity Framework Core traduce el método `Where` en una declaración como `SELECT * FROM Items WHERE IsDone = 0`, o un documento de consulta equivalente en una base de datos NoSQL.
 
-Finally, the `ToArrayAsync` method tells Entity Framework Core to get all the entities that matched the filter and return them as an array. The `ToArrayAsync` method is asynchronous (it returns a `Task`), so it must be `await`ed to get its value.
+Finalmente, el método `ToArrayAsync` le dice a Entity Framework Core que obtenga todas las entidades que coincidan con el filtro y las devuelva como una matriz. El método `ToArrayAsync` es asíncrono (devuelve un` Task`), por lo que debe estar `esperando 'para obtener su valor.
 
-To make the method a little shorter, you can remove the intermediate `items` variable and just return the result of the query directly (which does the same thing):
+Para que el método sea un poco más corto, puedes eliminar la variable intermedia `items` y simplemente devolver el resultado de la consulta directamente (que hace lo mismo):
 
 ```csharp
 public async Task<TodoItem[]> GetIncompleteItemsAsync()
@@ -66,22 +66,22 @@ public async Task<TodoItem[]> GetIncompleteItemsAsync()
 }
 ```
 
-### Update the service container
+### Actualizar el contenedor de servicios
 
-Because you deleted the `FakeTodoItemService` class, you'll need to update the line in `ConfigureServices` that is wiring up the `ITodoItemService` interface:
+Debido a que eliminó la clase `FakeTodoItemService`, deberá actualizar la línea en `ConfigureServices` que está cableando la interfaz `ITodoItemService`:
 
 ```csharp
 services.AddScoped<ITodoItemService, TodoItemService>();
 ```
 
-`AddScoped` adds your service to the service container using the **scoped** lifecycle. This means that a new instance of the `TodoItemService` class will be created during each web request. This is required for service classes that interact with a database.
+`AddScoped` agrega su servicio al contenedor de servicio utilizando el ciclo de vida ** de ámbito **. Esto significa que se creará una nueva instancia de la clase `TodoItemService` durante cada solicitud web. Esto es necesario para las clases de servicio que interactúan con una base de datos.
 
-> Adding a service class that interacts with Entity Framework Core (and your database) with the singleton lifecycle (or other lifecycles) can cause problems, because of how Entity Framework Core manages database connections per request under the hood. To avoid that, always use the scoped lifecycle for services that interact with Entity Framework Core.
+> Agregar una clase de servicio que interactúa con Entity Framework Core (y su base de datos) con el ciclo de vida de singleton (u otros ciclos de vida) puede causar problemas, debido a cómo Entity Framework Core administra las conexiones de base de datos por solicitud bajo el capó. Para evitarlo, utilice siempre el ciclo de vida con ámbito para los servicios que interactúan con Entity Framework Core.
 
-The `TodoController` that depends on an injected `ITodoItemService` will be blissfully unaware of the change in services classes, but under the hood it'll be using Entity Framework Core and talking to a real database!
+¡El `TodoController` que depende de un `ITodoItemService` inyectado será maravillosamente inconsciente del cambio en las clases de servicios, pero bajo el capó estará usando Entity Framework Core y hablando con una base de datos real!
 
-### Test it out
+### Pruébalo
 
-Start up the application and navigate to `http://localhost:5000/todo`. The fake items are gone, and your application is making real queries to the database. There doesn't happen to be any saved to-do items, so it's blank for now.
+Inicie la aplicación y navegue a `http://localhost:5000/todo`. Los elementos falsos se han ido y su aplicación está realizando consultas reales a la base de datos. No sucede que haya elementos de tareas pendientes guardados, por lo que está en blanco por ahora.
 
-In the next chapter, you'll add more features to the application, starting with the ability to create new to-do items.
+En el siguiente capítulo, agregará más funciones a la aplicación, comenzando con la capacidad de crear nuevos elementos de tareas pendientes.
