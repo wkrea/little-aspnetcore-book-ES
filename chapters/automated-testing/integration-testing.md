@@ -1,22 +1,22 @@
-## Integration testing
+## Pruebas de integración
 
-Compared to unit tests, integration tests are much larger in scope. exercise the whole application stack. Instead of isolating one class or method, integration tests ensure that all of the components of your application are working together properly: routing, controllers, services, database code, and so on.
+En comparación con las pruebas unitarias, las pruebas de integración tienen un alcance mucho mayor. Prueba toda la pila de aplicaciones. En lugar de aislar una clase o método, las pruebas de integración aseguran que todos los componentes de su aplicación estén funcionando juntos correctamente: enrutamiento, controladores, servicios, código de base de datos, etc.
 
-Integration tests are slower and more involved than unit tests, so it's common for a project to have lots of small unit tests but only a handful of integration tests.
+Las pruebas de integración son más lentas y más complejas que las pruebas de unitarias, por lo que es común que un proyecto tenga muchas pruebas de unitarias pequeñas pero solo un puñado de pruebas de integración.
 
-In order to test the whole stack (including controller routing), integration tests typically make HTTP calls to your application just like a web browser would.
+Para probar toda la pila (incluido el enrutamiento del controlador), las pruebas de integración normalmente hacen llamadas HTTP a su aplicación como lo haría un navegador web.
 
-To perform an integration test, you could start your application and manually make requests to http://localhost:5000. However, ASP.NET Core provides a better alternative: the `TestServer` class. This class can host your application for the duration of the test, and then stop it automatically when the test is complete.
+Para realizar una prueba de integración, puede iniciar su aplicación y realizar solicitudes manualmente a http://localhost:5000. Sin embargo, ASP.NET Core ofrece una mejor alternativa: la clase `TestServer`. Esta clase puede alojar su aplicación durante la duración de la prueba, y luego detenerla automáticamente cuando se completa la prueba.
 
-### Create a test project
+### Crear un proyecto de prueba
 
-If you're currently in your project directory, `cd` up one level to the root `AspNetCoreTodo` directory. Use this command to scaffold a new test project:
+Si actualmente se encuentra en el directorio de su proyecto, `cd` sube un nivel al directorio raíz `AspNetCoreTodo`. Use este comando para crear un nuevo proyecto de prueba:
 
 ```
 dotnet new xunit -o AspNetCoreTodo.IntegrationTests
 ```
 
-Your directory structure should now look like this:
+Su estructura de directorio ahora debería verse así:
 
 ```
 AspNetCoreTodo/
@@ -32,25 +32,25 @@ AspNetCoreTodo/
         AspNetCoreTodo.IntegrationTests.csproj
 ```
 
-> If you prefer, you can keep your unit tests and integration tests in the same project. For large projects, it's common to split them up so it's easy to run them separately.
+> Si lo prefiere, puede mantener sus pruebas de unidad y pruebas de integración en el mismo proyecto. Para proyectos grandes, es común dividirlos para que sea fácil ejecutarlos por separado.
 
-Since the test project will use the classes defined in your main project, you'll need to add a reference to the main project:
+Dado que el proyecto de prueba utilizará las clases definidas en su proyecto principal, deberá agregar una referencia al proyecto principal:
 
 ```
 dotnet add reference ../AspNetCoreTodo/AspNetCoreTodo.csproj
 ```
 
-You'll also need to add the `Microsoft.AspNetCore.TestHost` NuGet package:
+También deberá agregar el paquete NuGet `Microsoft.AspNetCore.TestHost`:
 
 ```
 dotnet add package Microsoft.AspNetCore.TestHost
 ```
 
-Delete the `UnitTest1.cs` file that's created by `dotnet new`. You're ready to write an integration test.
+Elimine el archivo `UnitTest1.cs` creado por `dotnet new`. Estás listo para escribir una prueba de integración.
 
-### Write an integration test
+### Escribir una prueba de integración.
 
-There are a few things that need to be configured on the test server before each test. Instead of cluttering the test with this setup code, you can keep this setup in a separate class. Create a new class called `TestFixture`:
+Hay algunas cosas que deben configurarse en el servidor de prueba antes de cada prueba. En lugar de abarrotar la prueba con este código de configuración, puede mantener esta configuración en una clase separada. Crea una nueva clase llamada `TestFixture`:
 
 **AspNetCoreTodo.IntegrationTests/TestFixture.cs**
 
@@ -99,9 +99,9 @@ namespace AspNetCoreTodo.IntegrationTests
 }
 ```
 
-This class takes care of setting up a `TestServer`, and will help keep the tests themselves clean and tidy.
+Esta clase se encarga de configurar un `TestServer`, y ayudará a mantener las pruebas limpias y ordenadas.
 
-Now you're (really) ready to write an integration test. Create a new class called `TodoRouteShould`:
+Ahora estás (realmente) listo para escribir una prueba de integración. Crea una nueva clase llamada `TodoRouteShould`:
 
 **AspNetCoreTodo.IntegrationTests/TodoRouteShould.cs**
 
@@ -146,13 +146,13 @@ namespace AspNetCoreTodo.IntegrationTests
 }
 ```
 
-This test makes an anonymous (not-logged-in) request to the `/todo` route and verifies that the browser is redirected to the login page.
+Esta prueba realiza una solicitud anónima (sin iniciar sesión) a la ruta `/todo` y verifica que el navegador se redirige a la página de inicio de sesión.
 
-This scenario is a good candidate for an integration test, because it involves multiple components of the application: the routing system, the controller, the fact that the controller is marked with `[Authorize]`, and so on. It's also a good test because it ensures you won't ever accidentally remove the `[Authorize]` attribute and make the to-do view accessible to everyone.
+Este escenario es un buen candidato para una prueba de integración, ya que involucra múltiples componentes de la aplicación: el sistema de enrutamiento, el controlador, el hecho de que el controlador está marcado con `[Authorize]`, y así sucesivamente. También es una buena prueba porque garantiza que nunca quitará accidentalmente el atributo `[Authorize]` y hará que la vista de tareas sea accesible para todos.
 
-## Run the test
+## Ejecutar la prueba
 
-Run the test in the terminal with `dotnet test`. If everything's working right, you'll see a success message:
+Ejecute la prueba en el terminal con `dotnet test`. Si todo funciona bien, verás un mensaje de éxito:
 
 ```
 Starting test execution, please wait...
@@ -167,8 +167,8 @@ Test execution time: 2.0588 Seconds
 ```
 
 
-## Wrap up
+## Resumiendo
 
-Testing is a broad topic, and there's much more to learn. This chapter doesn't touch on UI testing or testing frontend (JavaScript) code, which probably deserve entire books of their own. You should, however, have the skills and base knowledge you need to learn more about testing and to practice writing tests for your own applications.
+Las pruebas son un tema amplio y hay mucho más que aprender. Este capítulo no toca el código de prueba de interfaz de usuario (UI) ni el código de prueba (JavaScript), que probablemente merecen libros completos por su cuenta. Sin embargo, debe tener las habilidades y el conocimiento básico que necesita para aprender más sobre las pruebas y practicar la escritura de pruebas para sus propias aplicaciones.
 
-The ASP.NET Core documentation (https://docs.asp.net) and Stack Overflow are great resources for learning more and finding answers when you get stuck.
+La documentación de ASP.NET Core (https://docs.asp.net) y Stack Overflow son excelentes recursos para aprender más y encontrar respuestas cuando te quedas atascado.

@@ -1,4 +1,4 @@
-# Automated testing
-Writing tests is an important part of building any application. Testing your code helps you find and avoid bugs, and makes it easier to refactor your code later without breaking functionality or introducing new problems.
+# Pruebas automatizadas
+Escribir pruebas es una parte importante del desarrollo de cualquier aplicación. Probar su código lo ayuda a encontrar y evitar errores, y posteriormente facilita la refactorización de su código sin descomponer la funcionalidad o introducir nuevos problemas.
 
-In this chapter you'll learn how to write both **unit tests** and **integration tests** that exercise your ASP.NET Core application. Unit tests are small tests that make sure a single method or chunk of logic works properly. Integration tests (sometimes called **functional** tests) are larger tests that simulate real-world scenarios and test multiple layers or parts of your application.
+En este capítulo, aprenderá cómo escribir dos tipos de pruebas **pruebas de unitarias** y **pruebas de integración** que utilizan su aplicación de ASP.NET Core. Las pruebas unitarias son pruebas pequeñas que prueban que un solo método o parte de la lógica funcione correctamente. Las pruebas de integración (a veces llamadas pruebas **funcionales**) son pruebas más grandes que simulan escenarios reales y prueban múltiples capas o partes de su aplicación.
