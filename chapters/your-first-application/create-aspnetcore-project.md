@@ -34,12 +34,12 @@ Application started. Press Ctrl+C to shut down.
 
 En lugar de imprimir en la consola y salir, este programa inicia un servidor web  y espera peticiones en el puerto 5000.
 
-Abre tu navegador web y navega a la direccion `http://localhost:5000`. Veras la pantalla default de inicio , lo cual significa que tu proyecto esta funcionando. Cuando termines presiona Contol-C en la terminal para detener el servidor.
+Abre tu navegador web y navega a la dirección `http://localhost:5000`. Veras la pantalla default de inicio , lo cual significa que tu proyecto esta funcionando. Cuando termines presiona Contol-C en la terminal para detener el servidor.
 
 ## Las partes de un proyecto ASP.NET Core
-La plantilla `dotnet new mvc` genera un numero de archivos  y directorio para ti. Aqui estan las cosas mas importantes  que obtines fuera de la caja:
+La plantilla `dotnet new mvc` genera un numero de archivos  y directorio para ti. Aqui están las cosas mas importantes  que obtienes fuera de la caja:
 
-* Los archivos **Program.cs** and **Startup.cs** configuraran el servidor web  y la canalizacion de ASP.NET Core.La clase `Startup` es donde agregas el middleware que manipula ymodifica los solicitudes de entreatad y brindar cosas como archivos estaticos o paginas de errores. tambien en donde agrgas tus prpios servios al contenedor de deinyeccion de dependens \(more on this later\). 
+* Los archivos **Program.cs** and **Startup.cs** configuraran el servidor web  y la canalización de ASP.NET Core.La clase `Startup` es donde agregas el middleware que manipula y modifica los solicitudes de entrada y brindar cosas como archivos estáticos o paginas de errores. también en donde agregas tus propios servios al contenedor de de inyección de dependencias \(posteriormente habrá más sobre esto\). 
 
 * Los directorios **Models**, **Views**, y **Controllers** contiene componentes de la arquitectura Modelo Vista Controlador. Exploraras  los tres en el siguiente capitulo.
 
@@ -51,17 +51,17 @@ La plantilla `dotnet new mvc` genera un numero de archivos  y directorio para ti
 
 Si estas usando Visual Studio Code por primera vez ,aui tienes un par de tips de ayuda para iniciar:
 
-* **Abrir el directorio raíz del proyecto**: En VIsual Studio Code, selecciona Archivo > Abrir carpeta. Si Visual Studio Code te solicita instalar los archivos pendientes , presionar clic es Si para agregarlos.
+* **Abrir el directorio raíz del proyecto**: En Visual Studio Code, selecciona Archivo > Abrir carpeta. Si Visual Studio Code te solicita instalar los archivos pendientes , presionar clic es Si para agregarlos.
 
 * **F5 para ejecutar \(y puntos de interrupción de depuración\)**: Con tu proyecto abierto, presiona F5 pra ejecutar el proyecto en el modo de depuración, Esto es lo mismo que ejecutar `dotnet run` en la linea de comandos, pero tienes el beneficio de configurar puntos de interrupción en tu código dando doble clic en el margen izquierdo:
 
-![Breakpoint in Visual Studio Code](breakpoint.png)
+![Punto de interrupción en Visual Studio Code](breakpoint.png)
 
-* **Foco para corregir problemas**: Si tu código contiene linea rojos \(errores del compilador , coloca el cursos sobre el código que esta en rojo y mirar el icono del foco encendido en el margen izquierdo. el foco te sugerira reparaciones comunes, como agregar enunciados `using` faltantes en tu código:
+* **Foco para corregir problemas**: Si tu código contiene linea rojos \(errores del compilador , coloca el cursos sobre el código que esta en rojo y mirar el icono del foco encendido en el margen izquierdo. el foco te sugerirá reparaciones comunes, como agregar enunciados `using` faltantes en tu código:
 
-![Lightbulb suggestions](lightbulb.png)
+![Foco de Sugerencias ](lightbulb.png)
 
-* **Compila rápidamente**: Usa el atajao `Command-Shift-B` o `Control-Shift-B` para ejecutar  la tarea de Build run la cual realiza lo mismo que `dotnet build`.
+* **Compila rápidamente**: Usa el atajo `Command-Shift-B` o `Control-Shift-B` para ejecutar  la tarea de Build run la cual realiza lo mismo que `dotnet build`.
 
 > Estos tips también aplican para visual Studio \(not Code\) en Windows Si estas usando Visual Studio, necesitaras abrir el archivo de proyecto directamente. Visual studio te solicitara guardar la el archivo de la solución, el cual debes guardar en el directorio raíz de la solución\(la primera carpeta llamado `AspNetCoreTodo`)- También puedes crear un proyecto ASP.NET Core directamente o en  Visual Studio usando la plantillas en Archivo - Nuevo Proyecto.
 
