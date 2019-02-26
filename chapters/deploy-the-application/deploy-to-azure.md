@@ -1,6 +1,6 @@
 ## Implementar en Azure
 
-La implementación de la aplicación Core de ASP.NET en Azure solo lleva unos pocos pasos. Puede hacerlo a través del portal web de Azure o en la línea de comandos utilizando la CLI de Azure. Voy a cubrir este último.
+La implementación de la aplicación  de ASP.NET Core en Azure solo lleva unos pocos pasos. Puede hacerlo a través del portal web de Azure o en la línea de comandos utilizando la CLI de Azure. Voy a cubrir este último.
 
 ### Lo que necesitarás
 
@@ -22,7 +22,7 @@ project = AspNetCoreTodo/AspNetCoreTodo.csproj
 
 Asegúrese de guardar el archivo como `.deployment` sin otras partes en el nombre. (En Windows, puede que tenga que poner comillas alrededor del nombre del archivo, como `".deployment"`, para evitar que se agregue una extensión `.txt`.)
 
-Si `ls` o `dir` en su directorio de nivel superior, debería ver estos elementos:
+Si ejecuta el comando `ls` o `dir` en su directorio principal del proyecto, debería ver estos elementos:
 
 ```
 .deployment
@@ -101,6 +101,5 @@ git push azure master
 ```
 
 Ver una secuencia de mensajes de registro a medida que la aplicación se implementa en Azure.
-
 
 Cuando esté completo, vaya a http://yourappname.azurewebsites.net para ver la aplicación.

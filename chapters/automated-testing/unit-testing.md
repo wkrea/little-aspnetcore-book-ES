@@ -1,12 +1,12 @@
 ## Pruebas unitarias
 
-Las pruebas unitarias son pruebas pequeñas y cortas que verifican el comportamiento de un solo método o clase. Cuando el código que está probando se basa en otros métodos o clases, las pruebas unitarias se basan en **burlarse** de esas otras clases para que la prueba solo se enfoque en una cosa a la vez.
+Las pruebas unitarias son pruebas pequeñas y cortas que verifican el comportamiento de un solo método o clase. Cuando el código que está probando se basa en otros métodos o clases, las pruebas unitarias se basan en **simulardores** de esas otras clases para que la prueba solo se enfoque en una cosa a la vez.
 
-Por ejemplo, la clase `TodoController` tiene dos dependencias: un `ITodoItemService` y el `UserManager`. El `TodoItemService`, a su vez, depende del` ApplicationDbContext`. (La idea de que puede dibujar una línea desde `TodoController`>`TodoItemService`>`ApplicationDbContext` se llama **gráfico de dependencia**).
+Por ejemplo, la clase `TodoController` tiene dos dependencias: un `ITodoItemService` y el `UserManager`. El `TodoItemService`, a su vez, depende del `ApplicationDbContext`. (La idea de que puede dibujar una línea desde `TodoController`>`TodoItemService`>`ApplicationDbContext` se llama **gráfico de dependencia**).
 
 Cuando la aplicación se ejecuta normalmente, el sistema de inyección de dependencias y el contenedor de servicios de ASP.NET Core inyecta cada uno de esos objetos en el gráfico de dependencia cuando se crea el `TodoController` o el `TodoItemService`.
 
-Cuando escribe una prueba de unidad, por otro lado, tiene que manejar usted mismo el gráfico de dependencia. Es típico proporcionar versiones solo de prueba o "burladas" de esas dependencias. Esto significa que puede aislar solo la lógica en la clase o el método que está probando. (¡Esto es importante! Si está probando un servicio, no quiere **también** estar escribiendo accidentalmente en su base de datos).
+Cuando escribe una prueba de unitaria, por otro lado, tiene que manejar usted mismo el gráfico de dependencia. Es típico proporcionar versiones solo de prueba o "simuladas" de esas dependencias. Esto significa que puede aislar solo la lógica en la clase o el método que está probando. (¡Esto es importante! Si está probando un servicio, no quiere **también** estar escribiendo accidentalmente en su base de datos).
 
 ### Crear un proyecto de prueba
 
@@ -18,7 +18,7 @@ Si actualmente se encuentra en el directorio de su proyecto, `cd` sube un nivel.
 dotnet new xunit -o AspNetCoreTodo.UnitTests
 ```
 
-xUnit.NET es un marco de prueba popular para el código .NET que se puede usar para escribir pruebas de unidad e integración. Como todo lo demás, es un conjunto de paquetes NuGet que se pueden instalar en cualquier proyecto. La plantilla `dotnet new xunit` ya incluye todo lo que necesitas.
+xUnit.NET es un marco de prueba popular para el código .NET que se puede usar para escribir pruebas de unitarias y de integración. Como todo lo demás, es un conjunto de paquetes NuGet que se pueden instalar en cualquier proyecto. La plantilla `dotnet new xunit` ya incluye todo lo que necesitas.
 
 Su estructura de directorio ahora debería verse así:
 
