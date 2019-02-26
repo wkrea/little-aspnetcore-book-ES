@@ -41,7 +41,7 @@ Mira el simbolo de interrogación ? después del tipo DatetimeOFse ? este marca 
 
 Cada propiedad es seguida por get y set , las cuales es una forma cotr de deciq ue la propiedad es de lectura /escritir ( mas técnicamente que tiene métodos modificacaodtes.)
 
-En estepunto , no import acual es la base de datos utilizada. Podría ser SQL Server, MYSQl ,modgo Db Redsi o algo mas exotico, Este modelo define que la base de datos fila o entrarado lucir i cu tocdico c\# y no tienes que preocuparste po acerca de cosas a bajo nivel sobre la base de datos en tu cosido . Este siempre modelo es algunas veces llamado a plain ol C# onject o POCO.
+En este punto , no importa a cual es la base de datos utilizada. Podría ser SQL Server, MYSQl ,Mongo Db Redis o algo mas exótico, Este modelo define que la base de datos fila o entrarado lucir i cu tocdico c\# y no tienes que preocuparste po acerca de cosas a bajo nivel sobre la base de datos en tu cosido . Este siempre modelo es algunas veces llamado a plain ol C# onject o POCO.
 
 ## La vista modelo
 

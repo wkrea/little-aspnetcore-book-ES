@@ -2,9 +2,9 @@
 
 Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C\#. Si haz escrito paginas usaon Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf enJava , ya tienes la idea básico)
 
-La mayoría del código de las vistas es solo HTML , con ocacionales enuciados de C# agregosp para extraer data del vista modelo que ambias a testo o HTML. Los enucniado C# es prefijados con el simbolo `@`
+La mayoría del código de las vistas es solo HTML , con ocasionales enunciados de C# agregados para extraer data del vista modelo que cambias a texto o HTML. Los enunciados C# es prefijados con el símbolo `@`
 
-Las vista renderb por la acción indes del "" necesita obtener datos en el vier mode , \( una seciende de todo itemns u mostroanso en un bonita tabla para el usuario, Por convención , las vistas a con co licasl en la capreta vVIes en un subcarperta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acción a con un una extensión`.cshtml`,
+Las vista renderb por la acción indes del "" necesita obtener datos en el vier mode , \( una sección de de todo itemns u mostrandoo en un bonita tabla para el usuario, Por convención , las vistas a con co licasl en la carpeta Views en un subcarperta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acción a con un una extensión`.cshtml`,
 
 Crea una carpeta llamada `Todo` dentro la carpeta `Views`, y agrega este archivo:
 **Views/Todo/Index.cshtml**
@@ -46,18 +46,18 @@ Crea una carpeta llamada `Todo` dentro la carpeta `Views`, y agrega este archivo
 </div>
 ```
 
-At the very top of the file, the `@model` directive tells Razor which model to expect this view to be bound to. The model is accessed through the `Model` property.
+En la parte superior del archivo, la directiva `@ model` le dice a Razor a qué modelo espera que se vincule esta vista. Se accede al modelo a través de la propiedad `Model`.
 
-Assuming there are any to-do items in `Model.Items`, the `foreach` statement will loop over each to-do item and render a table row \(`<tr>` element\) containing the item's name and due date. A checkbox is also rendered that will let the user mark the item as complete.
+Suponiendo que hay elementos de tareas pendientes en `Model.Items`, la instrucción` foreach` se desplazará sobre cada tarea pendiente y mostrará una fila de la tabla \ (`<tr>` elemento \) que contiene el nombre y la fecha de vencimiento del elemento . También se representa una casilla de verificación que permitirá al usuario marcar el elemento como completo.
 
-## The layout file
-You might be wondering where the rest of the HTML is: what about the `<body>` tag, or the header and footer of the page? ASP.NET Core uses a layout view that defines the base structure that every other view is rendered inside of. It's stored in `Views/Shared/_Layout.cshtml`.
+## El archivo de diseño
+Quizás se pregunte dónde está el resto del HTML: ¿qué pasa con la etiqueta `<body>` o el encabezado y pie de página de la página? ASP.NET Core utiliza una vista de diseño que define la estructura base en la que se procesan todas las demás vistas. Esta almacenado en `Views/Shared/_Layout.cshtml`.
 
-La plantilla defailt de ASP.NET Core incluete Bootstarp y JQuery e su archovi de llayput Puedes crar rapidamente una apliacion cion web , Por supuesto que puedes usar tus propias libreasi CSS y Javascrio u asi lo deseas.
+La plantilla default de ASP.NET Core incluye Bootstarp y JQuery e su archvo de Layout Puedes crear rápidamente una aplicación  web , Por supuesto que puedes usar tus propias librerías CSS y Javascript u asi lo deseas.
 
 ## Personalizando la hoja de estilos
 
-La plantillla defialt tamben incluye un hoja de estolos con alginas reglas CSS basicoas-La hoja de esticos es almacenad en el directorio ,Agrefa unas cuiante nievas reglas CSS al finla e, archivo `site.css`:
+La plantilla defialt también incluye un hoja de estilos con algunas reglas CSS básicas. La hoja de estilos es almacenada en el directorio ,Agrega unas cuanta nuevas reglas CSS al final del, archivo `site.css`:
 
 **wwwroot/css/site.css**
 
@@ -72,6 +72,6 @@ table tr.done {
 }
 ```
 
-Puedes usar reglas CSS como estas para personalizar como se visualizam y lucen tus paginas.
+Puedes usar reglas CSS como estas para personalizar como se visualizan y lucen tus paginas.
 
-ASP.NET Core y Razor pueden hacer mucho mas, como vistas parciales y vistas server-rendered componetes, pero un simple latou y na vista es todo lo que necesiaras por ahora. La documentacion oficial\(at [https://docs.asp.net](https://docs.asp.net)\) de ASP.NET coRE contiene muchos ejemplos si deseas aprender mas.
+ASP.NET Core y Razor pueden hacer mucho mas, como vistas parciales y vistas server-rendered componentes, pero un simple Layout y na vista es todo lo que necesitaras por ahora. La documentación oficial\(at [https://docs.asp.net](https://docs.asp.net)\) de ASP.NET coRE contiene muchos ejemplos si deseas aprender mas.
