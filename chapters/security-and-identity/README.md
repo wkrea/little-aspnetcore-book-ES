@@ -1,23 +1,23 @@
-# Security and identity
+# Seguridad e identidad
 
-Security is a major concern of any modern web application or API. It's important to keep your user or customer data safe and out of the hands of attackers. This is a very broad topic, involving things like:
+La seguridad es una de las principales preocupaciones de cualquier aplicación web moderna o API. Es importante mantener seguros los datos de sus usuarios o usuarios y fuera del alcance de los atacantes. Este es un tema muy amplio, que involucra cosas como:
 
-* Sanitizing data input to prevent SQL injection attacks
-* Preventing cross-domain (CSRF) attacks in forms
-* Using HTTPS (connection encryption) so data can't be intercepted as it travels over the Internet
-* Giving users a way to securely sign in with a password or other credentials
-* Designing password reset, account recovery, and multi-factor authentication flows
+* Desinfección de entrada de datos para evitar ataques de inyección de SQL.
+* Prevención de ataques de dominio cruzado (CSRF) en formularios
+* Utilizando HTTPS (cifrado de conexión) para que los datos no puedan ser interceptados mientras viaja a través de Internet
+* Proporcionar a los usuarios una forma segura de iniciar sesión con una contraseña u otras credenciales
+* Diseño de restablecimiento de contraseñas, recuperación de cuentas y flujos de autenticación multifactor
 
-ASP.NET Core can help make all of this easier to implement. The first two (protection against SQL injection and cross-domain attacks) are already built-in, and you can add a few lines of code to enable HTTPS support. This chapter will mainly focus on the **identity** aspects of security: handling user accounts, authenticating (logging in) your users securely, and making authorization decisions once they are authenticated.
+ASP.NET Core puede ayudar a que todo esto sea más fácil de implementar. Los dos primeros (protección contra inyección de SQL y ataques de dominio cruzado) ya están incorporados, y puede agregar algunas líneas de código para habilitar el soporte de HTTPS. Este capítulo se centrará principalmente en los aspectos de identidad** de seguridad: manejo de cuentas de usuario, autenticación (inicio de sesión) de sus usuarios de forma segura y toma de decisiones de autorización una vez que se autentiquen.
 
-> Authentication and authorization are distinct ideas that are often confused. **Authentication** deals with whether a user is logged in, while **authorization** deals with what they are allowed to do *after* they log in. You can think of authentication as asking the question, "Do I know who this user is?" While authorization asks, "Does this user have permission to do *X*?"
+> La autenticación y la autorización son ideas distintas que a menudo se confunden. **La autenticación** se ocupa de si un usuario está conectado, mientras que **la autorización** se ocupa de lo que está autorizado a hacer *después de* que inicie sesión. Se puede pensar en la autenticación como una pregunta: "¿Sé quién? este usuario es? " Mientras que la autorización pregunta: "¿Tiene este usuario permiso para hacer *X*?"
 
-The MVC + Individual Authentication template you used to scaffold the project includes a number of classes built on top of ASP.NET Core Identity, an authentication and identity system that's part of ASP.NET Core. Out of the box, this adds the ability to log in with an email and password.
+La plantilla de autenticación individual de MVC + que usó para organizar el proyecto incluye varias clases creadas sobre ASP.NET Core Identity, un sistema de autenticación e identidad que forma parte de ASP.NET Core. Fuera de la caja, esto agrega la capacidad de iniciar sesión con un correo electrónico y una contraseña.
 
-## What is ASP.NET Core Identity?
+## ¿Qué es ASP.NET Core Identity?
 
-ASP.NET Core Identity is the identity system that ships with ASP.NET Core. Like everything else in the ASP.NET Core ecosystem, it's a set of NuGet packages that can be installed in any project (and are already included if you use the default template).
+ASP.NET Core Identity es el sistema de identidad que se incluye con ASP.NET Core. Como todo lo demás en el ecosistema de ASP.NET Core, es un conjunto de paquetes de NuGet que se pueden instalar en cualquier proyecto (y ya están incluidos si usa la plantilla predeterminada).
 
-ASP.NET Core Identity takes care of storing user accounts, hashing and storing passwords, and managing roles for users. It supports email/password login, multi-factor authentication, social login with providers like Google and Facebook, as well as connecting to other services using protocols like OAuth 2.0 and OpenID Connect.
+ASP.NET Core Identity se encarga de almacenar las cuentas de usuario, el hash y el almacenamiento de las contraseñas y la administración de roles para los usuarios. Es compatible con el inicio de sesión de correo electrónico / contraseña, autenticación multifactorial, inicio de sesión social con proveedores como Google y Facebook, así como la conexión a otros servicios mediante protocolos como OAuth 2.0 y OpenID Connect.
 
-The Register and Login views that ship with the MVC + Individual Authentication template already take advantage of ASP.NET Core Identity, and they already work! Try registering for an account and logging in.
+Las vistas de registro e inicio de sesión que se suministran con la plantilla de  de MVC + autenticación individual ya aprovechan la identidad central de ASP.NET, ¡y ya funcionan! Intenta registrarte para obtener una cuenta e iniciar sesión.

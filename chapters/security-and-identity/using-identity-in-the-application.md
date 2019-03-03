@@ -1,8 +1,8 @@
-## Using identity in the application
+## Usando la identidad en la aplicación
 
-The to-do list items themselves are still shared between all users, because the stored to-do entities aren't tied to a particular user. Now that the `[Authorize]` attribute ensures that you must be logged in to see the to-do view, you can filter the database query based on who is logged in.
+Los elementos de la lista de tareas pendientes todavía se comparten entre todos los usuarios, porque las entidades de tareas pendientes almacenadas no están vinculadas a un usuario en particular. Ahora que el atributo `[Authorize]` asegura que debe iniciar sesión para ver la vista de tareas, puede filtrar la consulta de la base de datos según quién haya iniciado sesión.
 
-First, inject a `UserManager<ApplicationUser>` into the `TodoController`:
+Primero, inyecte un `UserManager<ApplicationUser>` en el `TodoController`:
 
 **Controllers/TodoController.cs**
 
@@ -24,13 +24,13 @@ public class TodoController : Controller
 }
 ```
 
-You'll need to add a new `using` statement at the top:
+Deberá agregar una nueva declaración `using` en la parte superior:
 
 ```csharp
 using Microsoft.AspNetCore.Identity;
 ```
 
-The `UserManager` class is part of ASP.NET Core Identity. You can use it to get the current user in the `Index` action:
+La clase `UserManager` es parte de ASP.NET Core Identity. Puedes usarlo para obtener al usuario actual en la acción `Index`:
 
 ```csharp
 public async Task<IActionResult> Index()
@@ -50,21 +50,21 @@ public async Task<IActionResult> Index()
 }
 ```
 
-The new code at the top of the action method uses the `UserManager` to look up the current user from the `User` property available in the action:
+El nuevo código en la parte superior del método de acción utiliza el `UserManager` para buscar al usuario actual en la propiedad` Usuario` disponible en la acción:
 
 ```csharp
 var currentUser = await _userManager.GetUserAsync(User);
 ```
 
-If there is a logged-in user, the `User` property contains a lightweight object with some (but not all) of the user's information. The `UserManager` uses this to look up the full user details in the database via the `GetUserAsync()` method.
+Si hay un usuario que ha iniciado sesión, la propiedad `User` contiene un objeto ligero con algo (pero no toda) la información del usuario. El `UserManager` usa esto para buscar los detalles completos del usuario en la base de datos a través del método `GetUserAsync() `.
 
-The value of `currentUser` should never be null, because the `[Authorize]` attribute is present on the controller. However, it's a good idea to do a sanity check, just in case. You can use the `Challenge()` method to force the user to log in again if their information is missing:
+El valor de `currentUser` nunca debe ser nulo, porque el atributo `[Authorize]` está presente en el controlador. Sin embargo, es una buena idea hacer un control de cordura, por si acaso. Puede usar el método `Challenge()` para forzar al usuario a iniciar sesión nuevamente si falta su información:
 
 ```csharp
 if (currentUser == null) return Challenge();
 ```
 
-Since you're now passing an `ApplicationUser` parameter to `GetIncompleteItemsAsync()`, you'll need to update the `ITodoItemService` interface:
+Como ahora estás pasando un parámetro `ApplicationUser` a` GetIncompleteItemsAsync() `, deberás actualizar la interfaz `ITodoItemService`:
 
 **Services/ITodoItemService.cs**
 
@@ -78,7 +78,7 @@ public interface ITodoItemService
 }
 ```
 
-Since you changed the `ITodoItemService` interface, you also need to update the signature of the `GetIncompleteItemsAsync()` method in the `TodoItemService`:
+Ya que cambió la interfaz `ITodoItemService`, también necesita actualizar la firma del método `GetIncompleteItemsAsync()` en el `TodoItemService`:
 
 **Services/TodoItemService**
 
@@ -87,11 +87,11 @@ public async Task<TodoItem[]> GetIncompleteItemsAsync(
     ApplicationUser user)
 ```
 
-The next step is to update the database query and add a filter to show only the items created by the current user. Before you can do that, you need to add a new property to the database.
+El siguiente paso es actualizar la consulta de la base de datos y agregar un filtro para mostrar solo los elementos creados por el usuario actual. Antes de que pueda hacer eso, debe agregar una nueva propiedad a la base de datos.
 
-### Update the database
+### Actualizar la base de datos
 
-You'll need to add a new property to the `TodoItem` entity model so each item can "remember" the user that owns it:
+Deberá agregar una nueva propiedad al modelo de entidad `TodoItem` para que cada elemento pueda" recordar "al usuario que lo posee:
 
 **Models/TodoItem.cs**
 
@@ -99,23 +99,23 @@ You'll need to add a new property to the `TodoItem` entity model so each item ca
 public string UserId { get; set; }
 ```
 
-Since you updated the entity model used by the database context, you also need to migrate the database. Create a new migration using `dotnet ef` in the terminal:
+Dado que ha actualizado el modelo de entidad utilizado por el contexto de la base de datos, también debe migrar la base de datos. Crea una nueva migración usando `dotnet ef` en el terminal:
 
 ```
 dotnet ef migrations add AddItemUserId
 ```
 
-This creates a new migration called `AddItemUserId` which will add a new column to the `Items` table, mirroring the change you made to the `TodoItem` model.
+Esto crea una nueva migración llamada `AddItemUserId` que agregará una nueva columna a la tabla `Items`, reflejando el cambio realizado en el modelo `TodoItem`.
 
-Use `dotnet ef` again to apply it to the database:
+Utilice `dotnet ef` de nuevo para aplicarlo a la base de datos:
 
 ```
 dotnet ef database update
 ```
 
-### Update the service class
+### Actualizar la clase de servicio
 
-With the database and the database context updated, you can now update the `GetIncompleteItemsAsync()` method in the `TodoItemService` and add another clause to the `Where` statement:
+Con la base de datos y el contexto de la base de datos actualizados, ahora puede actualizar el método `GetIncompleteItemsAsync()` en el `TodoItemService` y agregar otra cláusula a la declaración `Where`:
 
 **Services/TodoItemService.cs**
 
@@ -129,13 +129,13 @@ public async Task<TodoItem[]> GetIncompleteItemsAsync(
 }
 ```
 
-If you run the application and register or log in, you'll see an empty to-do list once again. Unfortunately, any items you try to add disappear into the ether, because you haven't updated the `AddItem` action to be user-aware yet.
+Si ejecuta la aplicación y se registra o inicia sesión, verá una lista de tareas vacía una vez más. Desafortunadamente, cualquier elemento que intentes agregar desaparece en el éter, porque aún no has actualizado la acción `AddItem` para que el usuario la tenga en cuenta.
 
-### Update the AddItem and MarkDone actions
+### Actualizar las acciones AddItem y MarkDone
 
-You'll need to use the `UserManager` to get the current user in the `AddItem` and `MarkDone` action methods, just like you did in `Index`.
+Deberá usar el `UserManager` para obtener el usuario actual en los métodos de acción `AddItem` y `MarkDone`, tal como lo hizo en `Index`.
 
-Here are both updated methods:
+Aquí están los dos métodos actualizados:
 
 **Controllers/TodoController.cs**
 
@@ -185,7 +185,7 @@ public async Task<IActionResult> MarkDone(Guid id)
 }
 ```
 
-Both service methods must now accept an `ApplicationUser` parameter. Update the interface definition in `ITodoItemService`:
+Ambos métodos de servicio ahora deben aceptar un parámetro `ApplicationUser`. Actualice la definición de la interfaz en `ITodoItemService`:
 
 ```csharp
 Task<bool> AddItemAsync(TodoItem newItem, ApplicationUser user);
@@ -193,7 +193,7 @@ Task<bool> AddItemAsync(TodoItem newItem, ApplicationUser user);
 Task<bool> MarkDoneAsync(Guid id, ApplicationUser user);
 ```
 
-And finally, update the service method implementations in the `TodoItemService`. In `AddItemAsync` method, set the `UserId` property when you construct a `new TodoItem`:
+Y, por último, actualice las implementaciones del método de servicio en `TodoItemService`. En el método `AddItemAsync`, establece la propiedad` UserId` cuando construyas un `nuevo TodoItem`:
 
 ```csharp
 public async Task<bool> AddItemAsync(
@@ -208,7 +208,7 @@ public async Task<bool> AddItemAsync(
 }
 ```
 
-The `Where` clause in the `MarkDoneAsync` method also needs to check for the user's ID, so a rogue user can't complete someone else's items by guessing their IDs:
+La cláusula `Where` en el método `MarkDoneAsync` también debe verificar la ID del usuario, por lo que un usuario deshonesto no puede completar los elementos de otra persona adivinando sus ID:
 
 ```csharp
 public async Task<bool> MarkDoneAsync(
@@ -222,4 +222,4 @@ public async Task<bool> MarkDoneAsync(
 }
 ```
 
-All done! Try using the application with two different user accounts. The to-do items stay private for each account.
+¡Todo listo! Intenta usar la aplicación con dos cuentas de usuario diferentes. Las tareas pendientes se mantienen privadas para cada cuenta.

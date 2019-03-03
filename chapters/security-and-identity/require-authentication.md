@@ -1,8 +1,8 @@
-## Require authentication
+## Requerir autenticación
 
-Often you'll want to require the user to log in before they can access certain parts of your application. For example, it makes sense to show the home page to everyone (whether you're logged in or not), but only show your to-do list after you've logged in.
+A menudo, deseará que el usuario inicie sesión antes de poder acceder a ciertas partes de su aplicación. Por ejemplo, tiene sentido mostrar la página de inicio a todos (ya sea que haya iniciado sesión o no), pero solo mostrar su lista de tareas después de haber iniciado sesión.
 
-You can use the `[Authorize]` attribute in ASP.NET Core to require a logged-in user for a particular action, or an entire controller. To require authentication for all actions of the `TodoController`, add the attribute above the first line of the controller:
+Puede usar el atributo `[Authorize]` en ASP.NET Core para requerir que un usuario que haya iniciado sesión para una acción particular, o un controlador completo. Para requerir autenticación para todas las acciones del `TodoController`, agregue el atributo encima de la primera línea del controlador:
 
 **Controllers/TodoController.cs**
 
@@ -13,13 +13,12 @@ public class TodoController : Controller
     // ...
 }
 ```
-
-Add this `using` statement at the top of the file:
+Agregue esta declaración `using` en la parte superior del archivo:
 
 ```csharp
 using Microsoft.AspNetCore.Authorization;
 ```
 
-Try running the application and accessing `/todo` without being logged in. You'll be redirected to the login page automatically.
+Intenta ejecutar la aplicación y acceder a `/todo` sin iniciar sesión. Serás redirigido a la página de inicio de sesión automáticamente.
 
-> The `[Authorize]` attribute is actually doing an authentication check here, not an authorization check (despite the name of the attribute). Later, you'll use the attribute to check **both** authentication and authorization.
+> El atributo `[Authorize]` en realidad está haciendo una verificación de autenticación aquí, no una verificación de autorización (a pesar del nombre del atributo). Más adelante, utilizará el atributo para verificar **tanto** la autenticación como la autorización.
