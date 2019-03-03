@@ -51,9 +51,9 @@ Luego, el método `Where` se usa para filtrar solo los elementos que no están c
 .Where(x => x.IsDone == false)
 ```
 
-El método `Where` es una característica de C # llamada LINQ (**l**enguaje **in**tegrated **Q**uery), que se inspira en la programación funcional y facilita la expresión de consultas de base de datos en código. Bajo el capó, Entity Framework Core traduce el método `Where` en una declaración como `SELECT * FROM Items WHERE IsDone = 0`, o un documento de consulta equivalente en una base de datos NoSQL.
+El método `Where` es una característica de C # llamada LINQ (**L**enguaje **IN**tegrated **Q**uery), que se inspira en la programación funcional y facilita la expresión de consultas de base de datos en código. Bajo el capó, Entity Framework Core traduce el método `Where` en una declaración como `SELECT * FROM Items WHERE IsDone = 0`, o un documento de consulta equivalente en una base de datos NoSQL.
 
-Finalmente, el método `ToArrayAsync` le dice a Entity Framework Core que obtenga todas las entidades que coincidan con el filtro y las devuelva como una matriz. El método `ToArrayAsync` es asíncrono (devuelve un` Task`), por lo que debe estar `esperando 'para obtener su valor.
+Finalmente, el método `ToArrayAsync` le dice a Entity Framework Core que obtenga todas las entidades que coincidan con el filtro y las devuelva como una matriz. El método `ToArrayAsync` es asíncrono (devuelve un `Task`), por lo que debe estar `esperando 'para obtener su valor.
 
 Para que el método sea un poco más corto, puedes eliminar la variable intermedia `items` y simplemente devolver el resultado de la consulta directamente (que hace lo mismo):
 
@@ -74,7 +74,7 @@ Debido a que eliminó la clase `FakeTodoItemService`, deberá actualizar la lín
 services.AddScoped<ITodoItemService, TodoItemService>();
 ```
 
-`AddScoped` agrega su servicio al contenedor de servicio utilizando el ciclo de vida ** de ámbito **. Esto significa que se creará una nueva instancia de la clase `TodoItemService` durante cada solicitud web. Esto es necesario para las clases de servicio que interactúan con una base de datos.
+`AddScoped` agrega su servicio al contenedor de servicio utilizando el ciclo de vida **de ámbito**. Esto significa que se creará una nueva instancia de la clase `TodoItemService` durante cada solicitud web. Esto es necesario para las clases de servicio que interactúan con una base de datos.
 
 > Agregar una clase de servicio que interactúa con Entity Framework Core (y su base de datos) con el ciclo de vida de singleton (u otros ciclos de vida) puede causar problemas, debido a cómo Entity Framework Core administra las conexiones de base de datos por solicitud bajo el capó. Para evitarlo, utilice siempre el ciclo de vida con ámbito para los servicios que interactúan con Entity Framework Core.
 

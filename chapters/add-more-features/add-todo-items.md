@@ -36,13 +36,13 @@ Crea una vista llamada `AddItemPartial.cshtml`:
 </form>
 ```
 
-El tag helper `asp-action` puede generar una URL para el formulario, de forma similar cuando la usas en un elemento `<a>`. En este caso, el `asp-action` es remplazado con una ruta real hacia l `AddItem` ruta que crearas:
+El tag helper `asp-action` puede generar una URL para el formulario, de forma similar cuando la usas en un elemento `<a>`. En este caso, el `asp-action` es remplazado con una ruta real hacia la acción `AddItem` que crearas:
 
 ```html
 <form action="/Todo/AddItem" method="POST">
 ```
 
-Agregar un tag-helper `asp-` al elemento `<form>` también agrega un campo oculto al formulario que contiene un token de verificación. Este token de verificación puede se usuario para prevenir ataques solicitud de sitio cruzada. Verificarás el token cuando escribas la acción.
+Agregar un tag-helper `asp-` al elemento `<form>` también agrega un campo oculto al formulario que contiene un código de verificación. Este código de verificación puede se usado para prevenir ataques solicitud de sitio cruzada. Verificarás el código cuando escribas la acción.
 
 Esto toma responsabilidad de crear la vista parcial. Ahora, haz una referencia a esta desde la vista principal Todo:
 
@@ -83,7 +83,7 @@ public async Task<IActionResult> AddItem(TodoItem newItem)
 
 Model binding busca en los datos de la solicitud e intente inteligentemente coincidir los datos con las propiedad del modelo. En otras palabras, cuando el usuario envía el formulario y su navegador POST hacia esta acción, ASP.NET Core obtendrá esta información desde el formulario y la colocara en la variable `newItem`.
 
-El atributo `[ValidateAntiForgeryToken]` antes de la acción le dice a ASP.NET Core que est debe buscar (y verificar) el token oculto de verificación qu fue agregado al formulario por el tag helper `asp-action`. Este es una importante medida de seguridad para prevenir ataques de solicitudes de sitio cruzados. donde tus usuario no puedes ser engañados enviando los datos del formulario a sitios maliciosos. El token de verificación se asegura que la aplicación es actualmente la única que muestra el formulario y recibe los datos del formulario.
+El atributo `[ValidateAntiForgeryToken]` antes de la acción le dice a ASP.NET Core que est debe buscar (y verificar) el código oculto de verificación qu fue agregado al formulario por el tag helper `asp-action`. Este es una importante medida de seguridad para prevenir ataques de solicitudes de sitio cruzados. donde tus usuario no puedes ser engañados enviando los datos del formulario a sitios maliciosos. El código de verificación se asegura que la aplicación es actualmente la única que muestra el formulario y recibe los datos del formulario.
 
 Echa un vistazo `AddItemPartial.cshtml` a la vista una vez más. La linea `@model TodoItem` al principio del archivo le dice a ASP.NET Core que la vista debe esperar ser pareada con el modelo `TodoItem`. Esto hace posible  usar `asp-for="Title"` en la etiqueta `<input>` para dejar ASP.NET Core conozca que esta elemento input es para la propiedad `Title`.
 

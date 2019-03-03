@@ -1,8 +1,8 @@
 ## Autorización con roles
 
-Los roles son un enfoque común para el manejo de autorizaciones y permisos en una aplicación web. Por ejemplo, es común crear una función de administrador que otorgue a los usuarios administradores más permisos o poder que los usuarios normales.
+Los roles son un enfoque común para el manejo de permisos y autorizaciones en una aplicación web. Por ejemplo, es común crear una rol de administrador que otorgue a los usuarios administradores más permisos o poder que los usuarios normales.
 
-En este proyecto, agregará una página Administrar usuarios que solo los administradores pueden ver. Si los usuarios normales intentan acceder a él, verán un error.
+En este proyecto, agregará una página para Administrar usuarios que solo los administradores pueden ver. Si los usuarios normales intentan acceder a él, verán un error.
 
 ### Agregar una página Administrar usuarios
 
@@ -57,7 +57,7 @@ namespace AspNetCoreTodo.Controllers
 
 La configuración de la propiedad `Roles` en el atributo `[Authorize]`garantizará que el usuario tenga que iniciar sesión **y** se le asigne el rol de Administrador para poder ver la página.
 
-A continuación, crea un modelo de vista:
+A continuación, crea un modelo para la vista:
 
 **Models/ManageUsersViewModel.cs**
 

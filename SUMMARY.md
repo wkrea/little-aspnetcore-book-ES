@@ -2,7 +2,7 @@
 
 * [Tú primera aplicación](chapters/your-first-application/README.md)
     * [Consigue el SDK](chapters/your-first-application/get-the-sdk.md)
-    * [Hola Mundo en C\#](chapters/your-first-application/hello-world-in-csharp.md)
+    * [Hola Mundo en C#](chapters/your-first-application/hello-world-in-csharp.md)
     * [Crear un proyecto de ASP.NET Core](chapters/your-first-application/create-aspnetcore-project.md)
 * [Fundamentos de MVC](chapters/mvc-basics/README.md)
     * [Crear un controlador](chapters/mvc-basics/create-controller.md)

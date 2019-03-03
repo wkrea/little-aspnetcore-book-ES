@@ -38,9 +38,9 @@ El libro mismo es actualizado frecuentemente con corrección de errores y adici�
 
 Gracias a algunos fantásticos contribuidores multilingües. El pequeño libro de ASP.NET Core ha sido traducido a otros lenguajes:
 
-* [**ASP.NET Core El Kitabı**](https://sahinyanlik.gitbooks.io/kisa-asp-net-core-kitabi/) \(Turco\)
+* [**ASP.NET Core El Kitabı**](https://sahinyanlik.gitbooks.io/kisa-asp-net-core-kitabi/)(Turco)
 
-* [**简明 ASP.NET Core 手册**](https://windsting.github.io/little-aspnetcore-book/book/) \(Chino\)
+* [**简明 ASP.NET Core 手册**](https://windsting.github.io/little-aspnetcore-book/book/)(Chino)
 
 
 ## ¿A quién está dirigido este libro?
@@ -84,4 +84,4 @@ ASP.NET Core es una re-escritura completa desde los fundamentos de ASP.NET con e
 
 Debido al legado de Katana, la clase `Startup` es el frente y centro, y no hay más `Application_Start` o `Global.asax`. La canalización entera esta manejada por middleware, y no hay una separación entre MVC y Web API: los controladores pueden simplemente retornar vistas, códigos de estado o datos. La inyección de dependencias viene integrada, así que no tienes que instalar y configurar un contenedor como StructureMap o Ninject si no deseas hacerlo. Y el marco de trabajo .NET ha sido optimizado para la velocidad y eficiencia del motor de tiempo de ejecución.
 
-Bien, es suficiente de introducción. ¡ Profundicemos en ASP.NET Core!
+Bien, es suficiente de introducción. ¡Profundicemos en ASP.NET Core!

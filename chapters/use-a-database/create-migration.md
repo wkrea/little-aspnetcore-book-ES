@@ -57,9 +57,9 @@ protected override void Down(MigrationBuilder migrationBuilder)
 }
 ```
 
-El método `Up` se ejecuta cuando aplica la migración a la base de datos. Dado que agregó un `DbSet <TodoItem>` al contexto de la base de datos, Entity Framework Core creará una tabla `Items` (con columnas que coinciden con un` TodoItem`) cuando aplique la migración.
+El método `Up` se ejecuta cuando aplica la migración a la base de datos. Dado que agregó un `DbSet<TodoItem>` al contexto de la base de datos, Entity Framework Core creará una tabla `Items` (con columnas que coinciden con un `TodoItem`) cuando aplique la migración.
 
-El método `Abajo 'hace lo contrario: si necesita deshacer (roll back) la migración, la tabla` Elementos` se eliminará.
+El método `Down` hace lo contrario: si necesita deshacer (roll back) la migración, la tabla `Elementos` se eliminará.
 
 ### Solución para las limitaciones de SQLite
 
@@ -81,7 +81,7 @@ dotnet ef database update
 Este comando hará que Entity Framework Core cree la tabla `Items` en la base de datos.
 
 > Si desea revertir la base de datos, puede proporcionar el nombre de la migración *anterior*:
-> `dotnet ef actualización de la base de datos CreateIdentitySchema`
+> `dotnet ef update database CreateIdentitySchema`
 > Esto ejecutará los métodos `Abajo 'de cualquier migración más reciente que la migración que especifique.
 
 > Si necesita borrar por completo la base de datos y comenzar de nuevo, ejecute `dotnet ef database database` seguido de `dotnet ef database update` para volver a armar la base de datos y llevarla a la migración actual.
