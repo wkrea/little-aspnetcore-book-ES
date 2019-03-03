@@ -1,7 +1,7 @@
 # Fundamentos de MVC
 En este capitulo, explorarás el patrón MVC en ASP.NET Core. **MVC** (Modelo-Vista-Controlador) es un patrón para construir aplicaciones web que es usado en casi todos los marcos de desarollo web (ejemplos populares son Ruby on Rails y Express),adicionalmente marcos de trabajo del lado de cliente con Javascript como Angular. Aplicaciones móviles sobre iOS y Android también usan una variante de MVC.
 
-Como el nombre sugiere MVC tiene tres componentes: modelos, vistas y controladores. Los **Controladores** gestionan las solicitudes de entrada desde un cliente o un navegador web y deciden acerca de que código ejecutar. Las **vistas** son plantillas (usualmente HTML más un lenguaje de plantillas como Handlebar,Pug o Razor) que contienen datos añadidos a el que luego son muestrados a los usuario.Los **Modelos** mantienen los datos que son agregado a las vistas, o los datos que son ingresados por los usuarios.
+Como el nombre sugiere MVC tiene tres componentes: modelos, vistas y controladores. Los **Controladores** gestionan las solicitudes de entrada desde un cliente o un navegador web y deciden acerca de que código ejecutar. Las **vistas** son plantillas (usualmente HTML más un lenguaje de plantillas como Handlebar, Pug o Razor) que contienen datos añadidos a el que luego son mostrados a los usuario.Los **Modelos** mantienen los datos que son agregado a las vistas, o los datos que son ingresados por los usuarios.
 
 Un patrón común para el código MVC es:
 
@@ -19,7 +19,7 @@ En este libro, construirás una aplicación de gestión de tareas que dejara al 
 
 * Una aplicación web de servidor (a veces llamada Back-End) usando a ASP.NET Core, C# y el patrón MVC.
 * Una base de datos para almacenar la lista de tareas del usuario usando el motor de base de datos SQLite y un sistema llamado Entity Framework Core.
-* Las paginas web y la interfaz con la que el usuario interacturá  via el navegador. Usando HTML, CSS y Javascritp (llamado el FrontEnd).
+* Las paginas web y la interfaz con la que el usuario interacturá via el navegador. Usando HTML, CSS y Javascript (llamado el FrontEnd).
 * Un formulario de inicio de sesión y verificación de seguridad así cada usuario mantendrá su lista de tareas privada.
 
  ¿Suena bien? ¡Vamos a construirla! si no haz creado una aplicación nueva en APS.NET Core proyecto usando `dotnet new mvc` , sigue los pasos en el capitulo anterior,debes ser capaz de construir y ejecutar el proyecto y ver la pantalla de bienvenida,

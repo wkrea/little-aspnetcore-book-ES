@@ -22,7 +22,7 @@
     * [Agregar nuevas tareas](chapters/add-more-features/add-todo-items.md)
     * [Actividades completadas con listas de verificación](chapters/add-more-features/complete-with-checkbox.md)
 * [Seguridad e Identidad](chapters/security-and-identity/README.md)
-    * [Requerir autentificación](chapters/security-and-identity/require-authentication.md)
+    * [Requerir autenticación](chapters/security-and-identity/require-authentication.md)
     * [Usando identidad en la aplicación](chapters/security-and-identity/using-identity-in-the-application.md)
     * [Autorización con roles](chapters/security-and-identity/authorization-with-roles.md)
     * [Más recursos](chapters/security-and-identity/more-resources.md)

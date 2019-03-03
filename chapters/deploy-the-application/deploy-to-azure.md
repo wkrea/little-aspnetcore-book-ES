@@ -1,6 +1,6 @@
 ## Implementar en Azure
 
-La implementación de la aplicación  de ASP.NET Core en Azure solo lleva unos pocos pasos. Puede hacerlo a través del portal web de Azure o en la línea de comandos utilizando la CLI de Azure. Voy a cubrir este último.
+La implementación de la aplicación de ASP.NET Core en Azure solo lleva unos pocos pasos. Puede hacerlo a través del portal web de Azure o en la línea de comandos utilizando la CLI de Azure. Voy a cubrir este último.
 
 ### Lo que necesitarás
 

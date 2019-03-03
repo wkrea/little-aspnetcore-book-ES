@@ -1,10 +1,10 @@
 # Crear una vista
 
-Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C\#. Si haz escrito paginas usaon Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf enJava , ya tienes la idea básico)
+Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C#. Si haz escrito páginas usan Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf enJava , ya tienes la idea básico)
 
 La mayoría del código de las vistas es solo HTML , con ocasionales enunciados de C# agregados para extraer data del vista modelo que cambias a texto o HTML. Los enunciados C# es prefijados con el símbolo `@`
 
-Las vista renderb por la acción indes del "" necesita obtener datos en el vier mode , \( una sección de de todo itemns u mostrandoo en un bonita tabla para el usuario, Por convención , las vistas a con co licasl en la carpeta Views en un subcarperta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acción a con un una extensión`.cshtml`,
+Las vista renderb por la acción Index del "" necesita obtener datos en el vier mode , (una sección de de todo items u mostrando en un bonita tabla para el usuario, Por convención , las vistas a con co licasl en la carpeta _Views_ en un subcarperta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acción a con un una extensión`.cshtml`,
 
 Crea una carpeta llamada `Todo` dentro la carpeta `Views`, y agrega este archivo:
 **Views/Todo/Index.cshtml**
@@ -53,7 +53,7 @@ Suponiendo que hay elementos de tareas pendientes en `Model.Items`, la instrucci
 ## El archivo de diseño
 Quizás se pregunte dónde está el resto del HTML: ¿qué pasa con la etiqueta `<body>` o el encabezado y pie de página de la página? ASP.NET Core utiliza una vista de diseño que define la estructura base en la que se procesan todas las demás vistas. Esta almacenado en `Views/Shared/_Layout.cshtml`.
 
-La plantilla default de ASP.NET Core incluye Bootstarp y JQuery e su archvo de Layout Puedes crear rápidamente una aplicación  web , Por supuesto que puedes usar tus propias librerías CSS y Javascript u asi lo deseas.
+La plantilla default de ASP.NET Core incluye Bootstarp y JQuery e su archivo de Layout Puedes crear rápidamente una aplicación  web , Por supuesto que puedes usar tus propias librerías CSS y Javascript u asi lo deseas.
 
 ## Personalizando la hoja de estilos
 

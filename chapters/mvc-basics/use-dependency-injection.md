@@ -30,11 +30,11 @@ using AspNetCoreTodo.Services;
 
 La primera linea de la clase declara un campo privado para tener una referencia al `IDtoSitenService`. Esta variable te deja usar el servicio desde el método de acción Index después (verás como hacerlo en un minuto).
 
-La linea `public TodoController(ITodoItemService todoItemService)` define un constructor para la clase . El constructor es un método especial que es invocado cada que deseas crear una nueva instancia de la clase (la clase `TodoController` en este caso). Por agregar un parámetro al constructor, haz declaro que para crear controlador Todo necesitar proveer un obec que implementa la intezrfas "".
+La línea `public TodoController(ITodoItemService todoItemService)` define un constructor para la clase . El constructor es un método especial que es invocado cada que deseas crear una nueva instancia de la clase (en este caso la clase `TodoController`). Por haber agregado un parámetro `ITodoItemService` al constructor, haz declarado que para crear `TodoController` necesitar proveer un objeto que implementa la interfaz `ITodoItemService`.
 
-> Las interfaces son increíbles ya que ayudan a desacoplar (separar) la lógica de tu aplicación. Debido a que el controlador depende de la interface `ITodoItemService`, y no de una clase especifica este no conoce o le importa cual clase es actualmente dada. Esto hará realmente fácil probar parte de la aplicación separadamente, Cubriré la pruebas en detalle en el capitulo _Pruebas automáticas_.
+> Las interfaces son increíbles ya que ayudan a desacoplar (separar) la lógica de tu aplicación. Debido a que el controlador depende de la interfaz `ITodoItemService`, y no de una clase especifica este no conoce o le importa cual clase es actualmente dada. Esto hará realmente fácil probar parte de la aplicación separadamente, Cubriré la pruebas en detalle en el capitulo _Pruebas automáticas_.
 
-Finalmente ahora puedes usar el `ITodoItemService` (a través de la variable privad que declaraste) en tu métodos de acción para obtener los elemento desde la capa de servicio:
+Finalmente ahora puedes usar el `ITodoItemService` (a través de la variable privada que declaraste) en tu métodos de acción para obtener los elemento desde la capa de servicio:
 
 ```csharp
 public IActionResult Index()
@@ -49,11 +49,12 @@ public IActionResult Index()
 
 El patrón de Task es común cuando tu código realiza llamada a la base de datos o una API de servicio, porque no sara capaz de regresar un resultado real hasta que la base de datos (o red) responda.Si haz usado promesas o callbacks en Javascript o otro lenguaje, `Task`es la misma idea: la promesa que habrá un resultado  - en algún tiempo futuro.
 
-> Si haz tenido que tratar con el "infierno callback" in codigo legado de Javascript, estas de suerte.
+> Si haz tenido que tratar con el "infierno callback" en el código heredado de Javascript, estas de suerte.
 > Si has tenido que lidiar con el "infierno de devolución de llamada" en un código JavaScript más antiguo, estás de suerte. Tratar con el código asíncrono en .NET es mucho más fácil gracias a la magia de la palabra clave "esperar". `await` permite que su código se detenga en una operación asíncrona, y luego retome lo que dejó cuando la base de datos subyacente o la solicitud de red finaliza. Mientras tanto, su aplicación no está bloqueada, ya que puede procesar otras solicitudes según sea necesario. Este patrón es simple pero requiere un poco de tiempo para acostumbrarse, así que no se preocupe si esto no tiene sentido de inmediato. ¡Sigue siguiéndolo!
 
 El único problema es que necesitas actualizar la firma del método `Index` para devolver un `Task<IActionResult>`en lugar de `IActionResult`, y marcarlo como `async`:
-El unico no tiene que actualizar la firma del método `Index` para regresar a `Task<IActionResult>`en place of sol un` IActionResult`, and marcrcarlo con `async`:
+El único no tiene que actualizar la firma del método `Index` para regresar a `Task<IActionResult>` en place of sol un` IActionResult`, and marcarlo con `async`:
+
 ```csharp
 public async Task<IActionResult> Index()
 {
@@ -80,16 +81,16 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-El trabajo del método `ConfigureServices` es agregar cosos al contenedor de servicios, o a la colección de servicios que ASP.NET Core conocerá. La linea `services.AddMvc` agregue el servicio que el sistema interno de ASP.NET Core, necesita (como un experimento, intenta comentario esta linea). Cualquier otro servicio que desees usar en tu aplicación debe ser agregao al conetnerdo de servicios en el `ConfigureServices`.
+El trabajo del método `ConfigureServices` es agregar cosos al contenedor de servicios, o a la colección de servicios que ASP.NET Core conocerá. La linea `services.AddMvc` agregue el servicio que el sistema interno de ASP.NET Core, necesita (como un experimento, intenta comentario esta linea). Cualquier otro servicio que desees usar en tu aplicación debe ser agregado al conetnerdo de servicios en el `ConfigureServices`.
 
-Agrega la siguiente linea en cualquier lugar dentro del metodo `ConfigureServices`,
+Agrega la siguiente linea en cualquier lugar dentro del método `ConfigureServices`,
 
 ```csharp
 services.AddSingleton<ITodoItemService, FakeTodoItemService>();
 ```
 
-Esta linea le dice a ASPNET Core para usar el `FakeTodoITemservice` cuando el  `ITodoItemService` es solicitado en un constructor o en donde quiera que sea.
+Esta linea le especifica a ASP.NET Core que cada que se solicite `ITodoItemService` en un constructor deberá usar la clase `FakeTodoItemService`.
 
-`AddSingleton` agrega un servicio al contenedor de servicios como un **singleton**. Esto significa que una sola copia del `FakeTodoItemService` sera creara u es reutiliza dondequeir que el servicios es solicitado, Después , cuando escribáis una clase diferente que hable con la dase de datos usaras una aproximación diferentr llamada (**scoped**) en su lufas, Te explicaré porque en el capítulo _Usando una base de datos_.
+`AddSingleton` agrega un servicio al contenedor de servicios como un **singleton**. Esto significa que se creará una sola instancia del `FakeTodoItemService` y se reutilizara dondequiera que el servicio es solicitado. Después, cuando escribas una clase de servicio diferente, una que interactuá con la base de datos usaras una aproximación diferente llamada (**scoped**), Te explicaré porque en el capítulo _Usando una base de datos_.
 
-!Esto es todo! Cuando un petición llega y es dirigida al `TodoController`,ASP.NET Core buscará en los servicios disponibles y automáticamente proveerá el `FakeTodoItemService` cuando el controlador requiere por un `ITodoItemService`. Debido a que los servicios son "inyectado" desde el contenedor de servicios, ete patrón es llamado **inyección de dependencias**.
+!Esto es todo! Cuando una petición llega y es dirigida al `TodoController`, ASP.NET Core buscará en los servicios disponibles y automáticamente regresara el `FakeTodoItemService` cuando el controlador requiere por un `ITodoItemService`. Debido a que los servicios son "inyectados" desde el contenedor de servicios, este patrón es llamado **inyección de dependencias**.
