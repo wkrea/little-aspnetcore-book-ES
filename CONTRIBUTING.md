@@ -1,13 +1,13 @@
-# How to contribute
+# ¿Cómo contribuir?
 
-First things first: the Little ASP.NET Core Book is licensed under the [Creative Commons Attribution](https://creativecommons.org/licenses/by/4.0/) license, which means you are welcome to copy, redistribute, fork, or remix the material in the book as much as you want. All I ask is that you give credit to the original author (Nate Barbettini).
+Lo primero es lo primero: El pequeño libro de ASP.NET Core está licenciado bajo la [Atribución de Creative Commons](https://creativecommons.org/licenses/by/4.0/), lo que significa que puede copiar, redistribuir, bifurcar, O remezcla el material del libro tanto como quieras. Todo lo que pido es que le des crédito al autor original (Nate Barbettini).
 
-## Notice a problem?
+## ¿Observa un problema?
 
-If you see a typo or a code error, feel free to fix it. Pull requests are gladly accepted!
+Si ve un error tipográfico o de código, no dude en arreglarlo. Las solicitudes de cambios son aceptadas con mucho gusto!
 
-If you're not familiar or comfortable with Git, that's fine. [File an issue](https://github.com/nbarbettini/little-aspnetcore-book/issues) to point out the error. Please be as detailed as possible.
+Si no estás familiarizado o cómodo con Git, está bien. [Crea un incidencia](https://github.com/nbarbettini/little-aspnetcore-book/issues) para señalar el error. Por favor sea lo más detallado posible.
 
-## Suggestions are welcome
+## Las sugerencias son bienvenidas
 
-If you have a suggestion, feel free to file an [issue](https://github.com/nbarbettini/little-aspnetcore-book/issues) or email me at nate@barbettini.com. I can't promise I will be able to respond to every suggestion, but I'll read as many as I can.
+Si tiene una sugerencia, no dude en abrir un [issue de Github](https://github.com/nbarbettini/little-aspnetcore-book/issues) o envíame un correo electrónico a nate@barbettini.com. No puedo prometer que podré responder a cada sugerencia, pero leeré tantas como pueda.
