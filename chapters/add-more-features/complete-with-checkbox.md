@@ -1,17 +1,17 @@
 ## Completa los elementos con una casilla de verificación
 
-Agregar tareas a lu lista de tareas es genial , pero eventualmente necesitaras también  completar las cosas. En la vista `Views/Todo/Index.cshtml`, una casilla de verificación es, mostrada para cada tarea:
+Agregar tareas a lu lista de tareas es genial, pero eventualmente necesitaras también completar las cosas. En la vista `Views/Todo/Index.cshtml`, una casilla de verificación es, mostrada para cada tarea:
 
 ```html
 <input type="checkbox" class="done-checkbox">
 ```
 
-Presionando la casilla de verificación no hace nada aun. AL igual que el  capitulo anterior, agregaras este comportamiento usando formularios y acciones. En este caso necesitaras un pequeño código en Javascript.
+Presionando la casilla de verificación no hace nada aun. Al igual que en el capitulo anterior, agregaras este comportamiento usando formularios y acciones. En este caso necesitaras un pequeño código en Javascript.
 
 
 ### Agregar elementos al formulario de la vista
 
-Primero, actualiza la vista y encierra cada casilla de verificación con un elemento `<form>`.Después , agregar un elemento escondido que contenga el ID de la tarea:
+Primero, actualiza la vista y encierra cada casilla de verificación con un elemento `<form>`. Después, agregar un elemento oculto que contenga el ID de la tarea:
 
 **Views/Todo/Index.cshtml**
 
@@ -26,7 +26,7 @@ Primero, actualiza la vista y encierra cada casilla de verificación con un elem
 
 Cuando el bucle `foreach` se ejecuta en la vista e imprime una fila para cada elemento de tarea pendiente, existirá una copia de este formulario en cada fila. La entrada oculta que contiene el ID de la tarea a realizar permite que el código de su controlador indique qué casilla se marcó. (Sin él, podría indicar que se marcó * alguna * casilla, pero no cuál.)
 
-Si ejecutas la aplicación ahora mismo, las casillas de verificación aun no hacen nada, porque no hay un botón para submit para decir al navegador para crear una solicitud POST con los datos del formulario. Puedes agregar un botón de submit bajo cada casilla de verificación  pero esto seria una mala experiencia de usuario. idealmente dando clic en una casilla de verificación debería envía el formulario. Puedes lograrlo agregando algo de código de JavaScript.
+Si ejecutas la aplicación ahora mismo, las casillas de verificación aun no hacen nada, porque no hay un botón para submit para decir al navegador para crear una solicitud POST con los datos del formulario. Puedes agregar un botón de submit bajo cada casilla de verificación pero esto seria una mala experiencia de usuario. Idealmente dando clic en una casilla de verificación debería envía el formulario. Puedes lograrlo agregando algo de código de JavaScript.
 
 
 ### Agregar código Javascript
@@ -55,7 +55,7 @@ function markCompleted(checkbox) {
 }
 ```
 
-Este código primero usa jQuery (a una librería de apoyo en JavaScript) para adjuntar algo de código al evento  `click` de todos las casillas de verificación sobre la página con el la clase CSS `done-checkbox`. Cuando una casilla de verificación es presionada , la función `markCompleted()` es ejecutada.
+Este código primero usa jQuery (a una librería de apoyo en JavaScript) para adjuntar algo de código al evento `click` de todos las casillas de verificación sobre la página con la clase CSS `done-checkbox`. Cuando una casilla de verificación es presionada, la función `markCompleted()` es ejecutada.
 
 La función `markCompleted()` hace algunas cosas:
 * Agrega el atributo `disabled` a las casillas de verificación así estas no pueden ser selecionadas otra vez
@@ -63,7 +63,6 @@ La función `markCompleted()` hace algunas cosas:
 * Envia el formulario
 
 Esto toma responsabilidad del la vista y el código del lado del cliente. Ahora es tiempo de agregar una nueva acción
-
 
 ### Agrega una accion al controlador
 
@@ -150,4 +149,4 @@ Cambiando la propiedad solo afecta a la copia local de la tarea hasta que el mé
 ### Probando
 
 Ejecuta la aplicación y checa algunas tareas de la lista. Refrescar la pagina y ellas desaparecerán completamente, porque el filtro `Where()` aplicado en el método  `GetIncompleteItemsAsync()`.
-Ahora mismo, la aplicación contiene una sola , lista de tareas compartida. Seria mucho mas util si mantuviera registros  de una lista de tareas individual para cada usuario. En el siguiente capitulo, agregarás inicio de sesión y características de seguridad al proyecto.
+Ahora mismo, la aplicación contiene una sola, lista de tareas compartida. Seria mucho más util si mantuviera registros  de una lista de tareas individual para cada usuario. En el siguiente capitulo, agregarás inicio de sesión y características de seguridad al proyecto.

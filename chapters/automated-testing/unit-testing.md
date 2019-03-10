@@ -68,7 +68,7 @@ Este método toma una serie de decisiones o suposiciones sobre el nuevo elemento
 * La propiedad `UserId` debe establecerse a la ID del usuario
 * Los nuevos elementos siempre deben estar incompletos (`IsDone = false`)
 * El título del nuevo elemento debe copiarse de `newItem.Title`
-* Los nuevos artículos siempre deben vencer dentro de 3 días
+* Las nuevos tareas siempre deben vencer dentro de 3 días
 
 Imagínese si usted o alguien más reformuló el método `AddItemAsync()` y se olvidó de parte de esta lógica de negocios. ¡El comportamiento de su aplicación podría cambiar sin que usted se dé cuenta! Puede evitar esto escribiendo una prueba que verifique que esta lógica de negocios no haya cambiado (incluso si la implementación interna del método cambia).
 
@@ -130,7 +130,7 @@ using (var context = new ApplicationDbContext(options))
 }
 ```
 
-La última línea crea un nuevo elemento de tarea llamado "¿Pruebas?", Y le dice al servicio que lo guarde en la base de datos (en memoria).
+La última línea crea un tarea llamado "¿Pruebas?", Y le dice al servicio que lo guarde en la base de datos (en memoria).
 
 Para verificar que la lógica de negocio funcionó correctamente, escriba un código más debajo del bloque `using` existente:
 
@@ -166,7 +166,7 @@ En la terminal, ejecute este comando (asegúrese de que todavía esté en el dir
 dotnet test
 ```
 
-El comando `test` escanea el proyecto actual en busca de pruebas (en este caso marcadas con los atributos [`[Fact]` ), y ejecuta todas las pruebas que encuentra. Verás una salida similar a:
+El comando `test` escanea el proyecto actual en busca de pruebas (en este caso marcadas con los atributos `[Fact]`), y ejecuta todas las pruebas que encuentra. Verás una salida similar a:
 
 ```
 Starting test execution, please wait...

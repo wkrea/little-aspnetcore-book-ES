@@ -1,7 +1,7 @@
 # Agregar paquetes externos
 Una de las grandes ventajas de usar un ecosistema maduro como .NET es que el número de paquetes y plugins de terceros es enorme. Al igual que otros sistemas de paquetes, puedes descargar e instalar paquetes .NET que te ayudaran con casi cualquier tarea o problema que puedas imaginar.
 
-NuGet es ambos, gestor de paquetes y el repositorio de paquetes oficial (en https://www.nuget.org). Puedes buscar paquetes en la web, e instalarlos desde tu máquina local a través de la terminal (o Interfaz gráfica, si estas usando visual Studio).
+NuGet es ambos, gestor de paquetes y el repositorio de paquetes oficial (en https://www.nuget.org). Puedes buscar paquetes en la web, e instalarlos desde tu máquina local a través de la terminal (o Interfaz gráfica, si estas usando Visual Studio).
 
 ## Instalar el paquete Humanizer
 El final del último capítulo, la aplicación de tareas mostraba las tareas de la siguiente manera:
@@ -12,7 +12,7 @@ La columna fecha está mostrando fechas en un formato que es bueno para las máq
 
 Puedes escribir código por ti mismo para convertir una fecha en formato ISO 8601 en una cadena amigable para humanos, pero afortunadamente, hay una manera mucho más rápida.
 
-El paquete Humanizer en NuGet soluciona este problema proporcionado métodos que pueden "humanizar o reescribir casi cualquier cosa: fechas, horas, duraciones, números  y así sucesivamente. Es un proyecto open source fantástico y útil que es publicado bajo la licencia permisiva MIT.
+El paquete Humanizer en NuGet soluciona este problema proporcionado métodos que pueden "humanizar" o reescribir casi cualquier cosa: fechas, horas, duraciones, números  y así sucesivamente. Es un proyecto open source fantástico y útil que es publicado bajo la licencia permisiva MIT.
 
 Para agregarlo a tu proyecto, ejecuta este comando en la terminal;
 
@@ -47,8 +47,8 @@ Ahora las fechas son mucho más legibles.
 
 ![Fechas legibles para humanos](friendly-dates.png)
 
-Hay paquetes disponibles en NuGet para todo desde parsear un XML to aprendizaje automático para postear en Twitter. ASP.NET Core mismo, bajo el capo, no es más que una colección de paquetes de NuGet que son agregados a tu proyecto.
+Hay paquetes disponibles en NuGet para todo desde parsear un XML hasta aprendizaje automático para postear en Twitter. ASP.NET Core mismo, bajo el capo, no es más que una colección de paquetes de NuGet que son agregados a tu proyecto.
 
-> El archivo de proyecto creado por `dotnet new mvc` incluye una sola referencia al paquete `Microsoft.AspNetCore.All` que es un "metapaquete"  conveniente que hace referencia a todos los otros paquetes de ASP.NET Core que necesitas para un proyecto típico. De esta forma no tienes que tener cientos de referencias a paquetes en tu archivo de proyecto.  
+> El archivo de proyecto creado por `dotnet new mvc` incluye una sola referencia al paquete `Microsoft.AspNetCore.All` que es un "metapaquete" conveniente que hace referencia a todos los otros paquetes de ASP.NET Core que necesitas para un proyecto típico. De esta forma no tienes que tener cientos de referencias a paquetes en tu archivo de proyecto.  
 
 En el siguiente capítulo, usaras otro conjunto de paquetes de NuGet (un sistema llamado Entity Framework Core) para escribir código que interactúa con una base de datos.
