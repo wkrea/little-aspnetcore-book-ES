@@ -1,7 +1,7 @@
 # Agregar una clase de servicio
 Haz creado un modelo, una vista y un controlador. Antes de usar el modelo y la vista en el controlador, también necesitas escribir código que obtendrá la lista de tareas de los usuarios desde la base de datos.
 
-Puedes escribir este código directamente en el controlador, pero es una mejor práctica mantener tu código separado. ¿Por qué? en un real aplicación grande, tendrás que hacer malabares con muchos asuntos:
+Puedes escribir este código directamente en el controlador, pero es una mejor práctica mantener tu código separado. ¿Por qué? en una aplicación real grande, tendrás que hacer malabares con muchos asuntos:
 
 * **Generar la Vista** y manipular datos de entrada: esto actualmente es realzado por el controlador.
 * **Ejecutar las reglas de negocio**, o código que esta relacionado con el propósito y negocio de tu aplicación, en una aplicación de lista de tareas, reglas de negocio significa decisiones como configurar la fecha por default para la entrega o solo mostrar tareas que están incompletas. Otros ejemplo de lógica de negocio incluyen calcular el costo total basandose sobre el precio de los productos razón de impuesto o verificar si algún jugador tiene puntos suficiente para subir de nivel en un juego.
@@ -9,7 +9,7 @@ Puedes escribir este código directamente en el controlador, pero es una mejor p
 
 Una vez más es posible hacer todas estas cosas en un solo y enorme controlador, que rápidamente se convertiría en difícil de manejar y probar. En lugar es común ver aplicaciones dividen en dos o tres o mas capas y tiers de tal forma que cada una maneja uno (y solo una) aspecto de la aplicación. Esto ayuda a mantener el controlador tan simple como sea posible, y hace mas fácil probar y cambiar la lógica de negocio y el código de acceso a base de datos después.
 
-Separado tu aplicación en esta forma es a veces llamada **mult-tier** o **n-tier architecture** arquitectura. En algunos casos los tiers o capas son proyectos completamente separados. Pero otras veces i solo se referencia a como las clases son organizadas y utilizadas. Lo mas importante es pensar a cerca de como dividir tu aplicación en piezas manejables y evitar tener controladores o clases enormes que intentan hacer todo.
+Separado tu aplicación en esta forma es a veces llamada **mult-tier** o **n-tier architecture**. En algunos casos los tiers o capas son proyectos completamente separados. Pero otras veces i solo se referencia a como las clases son organizadas y utilizadas. Lo mas importante es pensar a cerca de como dividir tu aplicación en piezas manejables y evitar tener controladores o clases enormes que intentan hacer todo.
 
 Para este proyecto, usaras dos capa de aplicación: una **capa de presentación** compuesta de controladores y vistas que interactúan con el usuario, y una capa de servicio que combina las reglas del negocio con el código de accesos a base de datos. La capa de presentación ya existes. asi que el siguiente paso es construir un servicio que manipulo las reglas de negocio para las tareas y guarda las tareas en una base da datos. .
 
@@ -19,7 +19,7 @@ Para este proyecto, usaras dos capa de aplicación: una **capa de presentación*
 
 El lenguaje de programación C# incluye el concepto de **interfaces**, donde la definición de de los métodos y propiedades de un objeto es separada de la clase que actualmente contiene el código de aquellos métodos y propiedades. Las interfaces hace fácil mantener tus clases desacopladas y fáciles de probar,como veras aquí (y después en el capitulo _Pruebas Automáticas)Usaras una interfaces para represente el servicio que puede interactuá con los artículos en la base de datos.
 
-Por convención, las el nombre de las interfaces tiene el prefijo "I".Crea un nuevo archivo en el directorio Services:
+Por convención, las el nombre de las interfaces tiene el prefijo "I". Crea un nuevo archivo en el directorio Services:
 
 **Services/ITodoItemService.cs**
 
@@ -38,19 +38,20 @@ namespace AspNetCoreTodo.Services
 }
 ```
 
-Nota que el espacio de nombres de este archivo es `AspNetCoreTodo.Services`. Los espacios de nombres son una forma de organizar los archivos de código .NET. y se acostumbra nombrar el espacio de nombres siguiendo el directorio en que esta almacenado del archivo in (`AspNetCoreTodo.Services` para archivos en el directorio  `Services` y asi sucesivamente).
+Nota que el espacio de nombres de este archivo es `AspNetCoreTodo.Services`. Los espacios de nombres son una forma de organizar los archivos de código .NET. y se acostumbra nombrar el espacio de nombres siguiendo el directorio en que esta almacenado del archivo (`AspNetCoreTodo.Services` para archivos en el directorio  `Services` y asi sucesivamente).
 
-Because this file \(in the `AspNetCoreTodo.Services` namespace\) references the `TodoItem` class \(in the `AspNetCoreTodo.Models` namespace\), it needs to include a `using` statement at the top of the file to import that namespace. Si el enuncuado  `using` veras un error como:
+Because this file (in the `AspNetCoreTodo.Services` namespace) references the `TodoItem` class
+(in the `AspNetCoreTodo.Models` namespace\), it needs to include a `using` statement at the top of the file to import that namespace. Si el enuncuado  `using` veras un error como:
 
 ```
 El tipo o espacio de nombre 'TodoItem' no puede encontrases (are you missing a using directive or an assembly reference?)
 ```
 
-Debido a que esta es una interfaces, no hay ningún código aquí , solo la definición (o la firma del métodos) del `GetIncompleteItemsAsync` método. Este método no requiere para mentros y regresas un `Task<TodoItem[]>`.
+Debido a que esta es una interfaces, no hay ningún código aquí, solo la definición (o la firma del método) `GetIncompleteItemsAsync`. Este método no requiere parametros y regresa un objeto del tipo  `Task<TodoItem[]>`.
 > Si la sintaxis parece confusa, prines " un Task que contiene un arreglo de TodoItems"
 
 
-El tipo `Task` es similar un futuro o promesa, y es usado aquí porque este métodos sea asíncrono. En otras palabras el método puede no se capaz de regresar la lista de tare justo porque necesita interactuara con la base de datos primero.(Mas sobre esto después).
+El tipo `Task` es similar un futuro o promesa, y es usado aquí porque este métodos sea asíncrono. En otras palabras el método puede no se capaz de regresar la lista de tareas justo porque necesita primero interactuar con la base de datos primero. (Más sobre esto después).
 
 ## Crear la clase de servicio
 
@@ -88,4 +89,4 @@ namespace AspNetCoreTodo.Services
 }
 ```
 
-La clase `FakeTodoItemService` implementa la interfaz`ITodoItemService` pero siempre regresa el mismo arreglo de dos `TodoItem`. Usaras esta para poblar el controlador y la vista y después agregaras código de bases de datos real in _Usando una base de datos_.
+La clase `FakeTodoItemService` implementa la interfaz `ITodoItemService` pero siempre regresa el mismo arreglo de dos `TodoItem`. Usaras esta para poblar el controlador y la vista y después agregaras código de bases de datos real in _Usando una base de datos_.

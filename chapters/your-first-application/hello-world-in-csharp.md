@@ -13,13 +13,13 @@ Usa el comando `dotnet` para crear un nuevo proyecto:
 dotnet new console -o CsharpHelloWorld
 ```
 
-El comando `dotnet new` crea un nuevo proyecto de .NET con C# por omisión. El parámetro `console` selecciona una plantilla para una aplicación de consola ( un programa que emite texto en la pantalla).El parámetro `-o CsharpHelloWorld` instruye a `dotnet new` para crear una carpeta llamada `CsharpHelloWorld` para los archivos del proyecto . Cambiate a esta carpeta asi:
+El comando `dotnet new` crea un nuevo proyecto de .NET con C# como lenguaje predeterminado. El parámetro `console` selecciona una plantilla para una aplicación de consola ( un programa que emite texto en la pantalla).El parámetro `-o CsharpHelloWorld` instruye a `dotnet new` para crear una carpeta llamada `CsharpHelloWorld` para los archivos del proyecto . Cambiate a esta carpeta asi:
 
 ```
 cd CsharpHelloWorld
 ```
 
-`dotnet new console` crea un programa de C# básico que escribe el texto `Hello World!` en la pantalla. El programa esta compuesto por dos archivos: un archivo de proyecto(con extensión `.csproj`) y un archivo de código de C# (con extensión`.cs`). Si abres el primer archivo en un editor de texto, veras esto :
+`dotnet new console` crea un programa de C# básico que escribe el texto `Hello World!` en la pantalla. El programa esta compuesto por dos archivos: un archivo de proyecto (con extensión `.csproj`) y un archivo de código de C# (con extensión`.cs`). Si abres el primer archivo en un editor de texto, veras esto :
 
 **CsharpHelloWorld.csproj**
 
@@ -34,7 +34,7 @@ cd CsharpHelloWorld
 </Project>
 ```
 
-El archivo de proyecto esta baso en XML y define algunos metadatos sobre el proyecto. Después, cuando referencias otros paquetes, aquellos serán listados aquí (de forma similar a un un archivo `package.json` para npm). No necesitarás editar esté archivo de forma manual muy seguido.
+El archivo de proyecto esta basado en XML y define algunos metadatos sobre el proyecto. Después, cuando agregues otros paquetes, estos serán listados aquí (de forma similar a un un archivo `package.json` para npm). No necesitarás editar esté archivo de forma manual muy seguido.
 
 **Program.cs**
 
@@ -53,14 +53,14 @@ namespace CsharpHelloWorld
 }
 ```
 
-El método `static void Main` es el punto de entrada de un programa de C#, y por convención esta colocado en una clase (un tipo de código estructura o modulo) llamado `Program`. El enunciado `using` al inicio importa las clases incluidas en espacio de nombres `System` desde .NET y las hace disponibles en el código en tú clase.
+El método `static void Main` es el punto de entrada de un programa de C#, y por convención esta colocado dentro de una clase (un tipo de estructura de código o modulo) llamado `Program`. El enunciado `using` al inicio importa las clases incluidas en espacio de nombres `System` desde .NET y las hace disponibles en el código en tú clase.
 
 Dentro de la carpeta del proyecto, usa `dotnet run` para ejecutar el programa. Veras que la salida se escribe en la consola después que el código compila:
 
 ```text
 dotnet run
 
-!Hola Mundo!
+Hello World!
 ```
 
-!Esto es todo lo necesario para crear y ejecutar un programa en .NET! Enseguida, harás lo mismo para una aplicación ASP.NET Core.
+!Esto es todo lo necesario para crear y ejecutar un programa en .NET! Enseguida, harás lo mismo para una aplicación de ASP.NET Core.
