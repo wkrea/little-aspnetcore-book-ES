@@ -23,7 +23,7 @@ Esto crea un nuevo proyecto usando la plantilla `mvc` y agrega al proyecto códi
 
 > Te preguntaras porque tener un directorio llamado `AspNetCoreTodo` dentro de otro directorio con el mismo nombre. El directorio principal o directorio raíz puede contener uno o más directorios de proyecto. El directorio raíz es a veces llamado el directorio de la solución. Después, agregaras más directorios de proyecto junto al directorio de proyecto AspNetCoreTodo. Todos en una solo directorio de la solución.
 
-Verás unos pocos archivos en la carpeta del nuevo proyecto, Una vez que abres el nuevo directorio , todo lo que tienes que hacer para ejecutar el proyecto es:
+Verás unos pocos archivos en la carpeta del nuevo proyecto, Una vez que abres el nuevo directorio, todo lo que tienes que hacer para ejecutar el proyecto es:
 
 ```text
 dotnet run
@@ -39,7 +39,7 @@ Abre tu navegador web y navega a la dirección `http://localhost:5000`. Verás l
 ## Las partes de un proyecto ASP.NET Core
 La plantilla `dotnet new mvc` genera un gran número de archivos y directorio por ti. Aquí están las cosas más importantes que obtienes fuera de la caja:
 
-* Los archivos **Program.cs** and **Startup.cs** configuraran el servidor web y la canalización de ASP.NET Core. La clase `Startup` es donde agregas el middleware que manipula y modifica los solicitudes de entrada y brindar cosas como archivos estáticos o paginas de errores. también en donde agregas tus propios servios al contenedor de de inyección de dependencias \(posteriormente habrá más sobre esto\). 
+* Los archivos **Program.cs** and **Startup.cs** configuraran el servidor web y la canalización de ASP.NET Core. La clase `Startup` es donde agregas el middleware que manipula y modifica los solicitudes de entrada y brindar cosas como archivos estáticos o paginas de errores. también en donde agregas tus propios servios al contenedor de inyección de dependencias \(posteriormente habrá más sobre esto\). 
 
 * Los directorios **Models**, **Views**, y **Controllers** contiene componentes de la arquitectura Modelo Vista Controlador. Explorarás los tres en el siguiente capitulo.
 
@@ -63,17 +63,17 @@ Si estas usando Visual Studio Code por primera vez ,aqui tienes un par de tips d
 
 * **Compila rápidamente**: Usa el atajo `Command-Shift-B` o `Control-Shift-B` para ejecutar la tarea de Build run la cual realiza lo mismo que `dotnet build`.
 
-> Estos tips también aplican para Visual Studio ( Code) en Windows. Si estas usando Visual Studio, necesitaras abrir el archivo de proyecto directamente. Visual Studio te solicitara guardar el archivo de la solución, el cuál debes guardar en el directorio raíz de la solución (la primera carpeta llamado `AspNetCoreTodo`). También puedes crear un proyecto ASP.NET Core directamente o en Visual Studio usando la plantillas dispnibles en  Archivo - Nuevo Proyecto.
+> Estos tips también aplican para Visual Studio ( Code) en Windows. Si estas usando Visual Studio, necesitaras abrir el archivo de proyecto directamente. Visual Studio te solicitara guardar el archivo de la solución, el cuál debes guardar en el directorio raíz de la solución (la primera carpeta llamado `AspNetCoreTodo`). También puedes crear un proyecto ASP.NET Core directamente o en Visual Studio usando la plantillas disponibles en Archivo - Nuevo Proyecto.
 
 ### Una nota acerca de Git
 
-Si usar Git o Github para manejar el control de código fuente, ahora es buen momento para hacer un `git init` e iniciar el repositorio en el directorio raiz del proyecto:
+Si usar Git o Github para manejar el control de código fuente, ahora es buen momento para hacer un `git init` e iniciar el repositorio en el directorio raíz del proyecto:
 
 ```text
 cd ..
 git init
 ```
 
-Asegúrate que agregues un archivo `.gitignore` que ignora las carpeta `bin` and `obj`. La plantilla de .gitignotre para Visual Studio en el repositorio de Github funciona genial.
+Asegúrate que agregues un archivo `.gitignore` que ignora las carpeta `bin` and `obj`. La plantilla de .gitignore para Visual Studio en el repositorio de Github funciona genial.
 
 Hay mucho más que explorar, así que profundicemos e iniciemos a construir una aplicación.

@@ -7,9 +7,9 @@ Debido a que las aplicaciones ASP.NET Core pueden ejecutarse en Windows, Mac o L
 
 Las aplicaciones de ASP.NET Core se implementan normalmente en uno de estos entornos:
 
-* **Un host Docker**. Cualquier máquina capaz de albergar contenedores Docker puede usarse para alojar una aplicación  ASP.NET Core. Crear una imagen de Docker es una forma muy rápida de implementar su aplicación, especialmente si está familiarizado con Docker. (Si no lo eres, ¡no te preocupes! Cubriré los pasos más adelante).
+* **Un host Docker**. Cualquier máquina capaz de albergar contenedores Docker puede usarse para alojar una aplicación ASP.NET Core. Crear una imagen de Docker es una forma muy rápida de implementar su aplicación, especialmente si está familiarizado con Docker. (Si no lo eres, ¡no te preocupes! Cubriré los pasos más adelante).
 
-* **Azure**. Microsoft Azure tiene soporte nativo para las aplicaciones  de ASP.NET Core. Si tiene una suscripción a Azure, solo necesita crear una aplicación web y cargar los archivos de su proyecto. Cubriré cómo hacer esto con el CLI de Azure en la siguiente sección.
+* **Azure**. Microsoft Azure tiene soporte nativo para las aplicaciones de ASP.NET Core. Si tiene una suscripción a Azure, solo necesita crear una aplicación web y cargar los archivos de su proyecto. Cubriré cómo hacer esto con el CLI de Azure en la siguiente sección.
 
 * **Linux (con Nginx)**. Si no desea ir a la ruta Docker, aún puede alojar su aplicación en cualquier servidor Linux (esto incluye las máquinas virtuales Amazon EC2 y DigitalOcean). Es típico emparejar ASP.NET Core con el proxy inverso Nginx. (Más sobre Nginx a continuación.)
 

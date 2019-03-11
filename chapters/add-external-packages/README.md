@@ -12,7 +12,7 @@ La columna fecha está mostrando fechas en un formato que es bueno para las máq
 
 Puedes escribir código por ti mismo para convertir una fecha en formato ISO 8601 en una cadena amigable para humanos, pero afortunadamente, hay una manera mucho más rápida.
 
-El paquete Humanizer en NuGet soluciona este problema proporcionado métodos que pueden "humanizar" o reescribir casi cualquier cosa: fechas, horas, duraciones, números  y así sucesivamente. Es un proyecto open source fantástico y útil que es publicado bajo la licencia permisiva MIT.
+El paquete Humanizer en NuGet soluciona este problema proporcionado métodos que pueden "humanizar" o reescribir casi cualquier cosa: fechas, horas, duraciones, números y así sucesivamente. Es un proyecto open source fantástico y útil que es publicado bajo la licencia permisiva MIT.
 
 Para agregarlo a tu proyecto, ejecuta este comando en la terminal;
 
@@ -37,7 +37,7 @@ Debido a que Humanizar será usado para reescribir las fechas mostradas en la vi
 // ...
 ```
 
-Después actualiza la línea que escribe la propiedad `DueAt`para usar  el método `Humanize` del paquete Humanizer:
+Después actualiza la línea que escribe la propiedad `DueAt`para usar el método `Humanize` del paquete Humanizer:
 
 ```html
 <td>@item.DueAt.Humanize()</td>
@@ -49,6 +49,6 @@ Ahora las fechas son mucho más legibles.
 
 Hay paquetes disponibles en NuGet para todo desde parsear un XML hasta aprendizaje automático para postear en Twitter. ASP.NET Core mismo, bajo el capo, no es más que una colección de paquetes de NuGet que son agregados a tu proyecto.
 
-> El archivo de proyecto creado por `dotnet new mvc` incluye una sola referencia al paquete `Microsoft.AspNetCore.All` que es un "metapaquete" conveniente que hace referencia a todos los otros paquetes de ASP.NET Core que necesitas para un proyecto típico. De esta forma no tienes que tener cientos de referencias a paquetes en tu archivo de proyecto.  
+> El archivo de proyecto creado por `dotnet new mvc` incluye una sola referencia al paquete `Microsoft.AspNetCore.All` que es un "metapaquete" conveniente que hace referencia a todos los otros paquetes de ASP.NET Core que necesitas para un proyecto típico. De esta forma no tienes que tener cientos de referencias a paquetes en tu archivo de proyecto.
 
 En el siguiente capítulo, usaras otro conjunto de paquetes de NuGet (un sistema llamado Entity Framework Core) para escribir código que interactúa con una base de datos.

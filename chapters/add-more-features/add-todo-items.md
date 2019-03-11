@@ -85,17 +85,17 @@ Model binding busca en los datos de la solicitud e intente inteligentemente coin
 
 El atributo `[ValidateAntiForgeryToken]` antes de la acción le dice a ASP.NET Core que est debe buscar (y verificar) el código oculto de verificación qu fue agregado al formulario por el tag helper `asp-action`. Este es una importante medida de seguridad para prevenir ataques de solicitudes de sitio cruzados. donde tus usuario no puedes ser engañados enviando los datos del formulario a sitios maliciosos. El código de verificación se asegura que la aplicación es actualmente la única que muestra el formulario y recibe los datos del formulario.
 
-Echa un vistazo `AddItemPartial.cshtml` a la vista una vez más. La linea `@model TodoItem` al principio del archivo le dice a ASP.NET Core que la vista debe esperar ser pareada con el modelo `TodoItem`. Esto hace posible  usar `asp-for="Title"` en la etiqueta `<input>` para dejar ASP.NET Core conozca que esta elemento input es para la propiedad `Title`.
+Echa un vistazo `AddItemPartial.cshtml` a la vista una vez más. La linea `@model TodoItem` al principio del archivo le dice a ASP.NET Core que la vista debe esperar ser pareada con el modelo `TodoItem`. Esto hace posible usar `asp-for="Title"` en la etiqueta `<input>` para dejar ASP.NET Core conozca que esta elemento input es para la propiedad `Title`.
 
-Porque la línea `@model`, la vista parcial espeta recibir un objecto `TodoItem` cuando es generada. Pasando a esta un `new TodoItem` a través  `Html.PartialAsync` inicializa el formulario con una tarea en blanco.(Intenta añadir `{ Title = "hello" }`  y ve que pasa!)
+Porque la línea `@model`, la vista parcial espeta recibir un objecto `TodoItem` cuando es generada. Pasando a esta un `new TodoItem` a través `Html.PartialAsync` inicializa el formulario con una tarea en blanco.(Intenta añadir `{ Title = "hello" }` y ve que pasa!)
 
-Durante el model binding, cualquier propiedad del model que no pueden se coincidente con los campos en la solicitud. Desde que el formulario solo incluye un elemento input `Title`, puede espera que las otras propiedades en `TodoItem` (la bandera `IsDone`, la fecha de `DueAt`  ) serán vacías o contienes valores default.
+Durante el model binding, cualquier propiedad del model que no pueden se coincidente con los campos en la solicitud. Desde que el formulario solo incluye un elemento input `Title`, puede espera que las otras propiedades en `TodoItem` (la bandera `IsDone`, la fecha de `DueAt`) serán vacías o contienes valores predefinidos.
 
 > En lugar de reutilizar el modelo `TodoItem`, otra aproximación seria crear un modelo separado (como `NewTodoItem` ) que solo es usado para esta acción y solo tiene las propiedades específicas (Titulo) que necesitas para agregar una nueva tarea. Enlazamiento de modelo es aun usar, pero de esta forma haz separado el modelo que es usado para guardar una tarea en la base de datos desde el modelo que es usado para enlazar la solicitud de entrada. Es a veces llamado un **binding model** or a **data transfer object**
 
 Después de enlazar los dato de la solicitud al modelo, ASP.NET Core también ejecuta **validación del modelo**. La validación verifica si los datos en el modelo desde la solicitud de entrada hacen sentidos o es validad. Tu puedes agregar atributos a el modelo para decirle ASP.NET Core como debe ser validado.
 
-El atributo `[Required]` en el titulo le dice al validador del modelo de ASP.NET Core considera el titulo invalido si no esta o esta en blanco. Dale un vistazo al código de la acción `AddItem`: el primer bloque checa si el `ModelState`es valido.(el resultado de la validación del modelo). Es opcional hacer esta verificación de validación justo en el principio de la acción:  
+El atributo `[Required]` en el titulo le dice al validador del modelo de ASP.NET Core considera el titulo invalido si no esta o esta en blanco. Dale un vistazo al código de la acción `AddItem`: el primer bloque checa si el `ModelState`es valido.(el resultado de la validación del modelo). Es opcional hacer esta verificación de validación justo en el principio de la acción:
 
 ```csharp
 if (!ModelState.IsValid)
@@ -151,7 +151,7 @@ public async Task<bool> AddItemAsync(TodoItem newItem)
 }
 ```
 
-La propiedad `newItem.Title` ya ha sido configurada por el enlazador de modelos de ASP.NET Core, asi este método solo necesita asignar un Id y confiar el valor por default  para las otras propiedades. Entonces, al nueva tarea es agregadas al contacto de base de datos. Esta no guardad hasta que llamas al métodos `SaveChangesAsync()`. Si el operación de guardar fue satisfactorio `SaveChangesAsync()` regresará 1.
+La propiedad `newItem.Title` ya ha sido configurada por el enlazador de modelos de ASP.NET Core, asi este método solo necesita asignar un Id y confiar el valor por omisión para las otras propiedades. Entonces, la nueva tarea es agregadas al contacto de base de datos. Esta no se guarda hasta que llamas al método `SaveChangesAsync()`. Si el operación de guardar fue satisfactorio `SaveChangesAsync()` regresará 1.
 
 ### Pruebaló
 

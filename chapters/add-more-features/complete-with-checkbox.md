@@ -1,6 +1,6 @@
 ## Completa los elementos con una casilla de verificación
 
-Agregar tareas a lu lista de tareas es genial, pero eventualmente necesitaras también completar las cosas. En la vista `Views/Todo/Index.cshtml`, una casilla de verificación es, mostrada para cada tarea:
+Agregar tareas a tú lista de tareas es genial, pero eventualmente necesitaras también completar las cosas. En la vista `Views/Todo/Index.cshtml`, una casilla de verificación es, mostrada para cada tarea:
 
 ```html
 <input type="checkbox" class="done-checkbox">
@@ -59,8 +59,8 @@ Este código primero usa jQuery (a una librería de apoyo en JavaScript) para ad
 
 La función `markCompleted()` hace algunas cosas:
 * Agrega el atributo `disabled` a las casillas de verificación así estas no pueden ser selecionadas otra vez
-* Agrega la clase CSS `done` a la fila padre que contiene la casilla de verificación, la cual cambia la forma que la final luce basada en las reglas CSS en el archivo `style.css` 
-* Envia el formulario
+* Agrega la clase CSS `done` a la fila padre que contiene la casilla de verificación, la cual cambia la forma que la final luce basada en las reglas CSS en el archivo `style.css`
+* Enviar el formulario
 
 Esto toma responsabilidad del la vista y el código del lado del cliente. Ahora es tiempo de agregar una nueva acción
 
@@ -144,9 +144,9 @@ Una vez que estas seguro que el `item` no es nulo, es una simple cuestión de co
 item.IsDone = true;
 ```
 
-Cambiando la propiedad solo afecta a la copia local de la tarea hasta que el método `SaveChangesAsync()` es llamada  para guardar el cambio en la base de datos. `SaveChangesAsync()` regresa  un numero que indica cuántas entidades fueron actualizas durante la operación de guardar. En este caso , sera o 1 (la tarea fue actualizada) o (algo malo sucedió).
+Cambiando la propiedad solo afecta a la copia local de la tarea hasta que el método `SaveChangesAsync()` es llamada para guardar el cambio en la base de datos. `SaveChangesAsync()` regresa un numero que indica cuántas entidades fueron actualizas durante la operación de guardar. En este caso, sera o 1 (la tarea fue actualizada) o (algo malo sucedió).
 
 ### Probando
 
-Ejecuta la aplicación y checa algunas tareas de la lista. Refrescar la pagina y ellas desaparecerán completamente, porque el filtro `Where()` aplicado en el método  `GetIncompleteItemsAsync()`.
-Ahora mismo, la aplicación contiene una sola, lista de tareas compartida. Seria mucho más util si mantuviera registros  de una lista de tareas individual para cada usuario. En el siguiente capitulo, agregarás inicio de sesión y características de seguridad al proyecto.
+Ejecuta la aplicación y checa algunas tareas de la lista. Refrescar la pagina y ellas desaparecerán completamente, porque el filtro `Where()` aplicado en el método `GetIncompleteItemsAsync()`.
+Ahora mismo, la aplicación contiene una sola, lista de tareas compartida. Seria mucho más util si mantuviera registros de una lista de tareas individual para cada usuario. En el siguiente capitulo, agregarás inicio de sesión y características de seguridad al proyecto.

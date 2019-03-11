@@ -1,10 +1,10 @@
 # Crear una vista
 
-Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C#. Si haz escrito páginas usan Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf enJava , ya tienes la idea básico)
+Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C#. Si haz escrito páginas usan Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf en Java, ya tienes la idea básico)
 
-La mayoría del código de las vistas es solo HTML , con ocasionales enunciados de C# agregados para extraer datoa de la vista modelo que cambias a texto o HTML. Los enunciados C# es prefijados con el símbolo `@`
+La mayoría del código de las vistas es solo HTML, con ocasionales enunciados de C# agregados para extraer datos de la vista modelo que cambias a texto o HTML. Los enunciados C# es prefijados con el símbolo `@`
 
-Las vista renderb por la acción Index del "" necesita obtener datos en el vier mode , (una sección de de todo items u mostrando en un bonita tabla para el usuario, Por convención , las vistas a con co licasl en la carpeta _Views_ en un subcarperta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acción a con un una extensión`.cshtml`,
+Las vista generada por la acción Index del "" necesita obtener datos en el View Model, (una sección de todo items u mostrando en un bonita tabla para el usuario, Por convención, las vistas va colocadas en la carpeta _Views_ en un subcarperta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acción a con un una extensión`.cshtml`,
 
 Crea una carpeta llamada `Todo` dentro la carpeta `Views`, y agrega este archivo:
 **Views/Todo/Index.cshtml**
@@ -53,11 +53,11 @@ Suponiendo que hay elementos de tareas pendientes en `Model.Items`, la instrucci
 ## El archivo de diseño
 Quizás se pregunte dónde está el resto del HTML: ¿qué pasa con la etiqueta `<body>` o el encabezado y pie de página de la página? ASP.NET Core utiliza una vista de diseño que define la estructura base en la que se procesan todas las demás vistas. Esta almacenado en `Views/Shared/_Layout.cshtml`.
 
-La plantilla default de ASP.NET Core incluye Bootstarp y JQuery e su archivo de Layout Puedes crear rápidamente una aplicación  web , Por supuesto que puedes usar tus propias librerías CSS y Javascript u asi lo deseas.
+La plantilla predeterminada de ASP.NET Core incluye Bootstarp y JQuery e su archivo de Layout Puedes crear rápidamente una aplicación web, Por supuesto que puedes usar tus propias librerías CSS y Javascript u asi lo deseas.
 
 ## Personalizando la hoja de estilos
 
-La plantilla defialt también incluye un hoja de estilos con algunas reglas CSS básicas. La hoja de estilos es almacenada en el directorio ,Agrega unas cuanta nuevas reglas CSS al final del, archivo `site.css`:
+La plantilla predefinida también incluye un hoja de estilos con algunas reglas CSS básicas. La hoja de estilos es almacenada en el directorio `wwwroot/css`,Agrega unas cuantas nuevas reglas CSS al final del, archivo `site.css`:
 
 **wwwroot/css/site.css**
 
@@ -74,4 +74,4 @@ table tr.done {
 
 Puedes usar reglas CSS como estas para personalizar como se visualizan y lucen tus paginas.
 
-ASP.NET Core y Razor pueden hacer mucho mas, como vistas parciales y vistas server-rendered componentes, pero un simple Layout y na vista es todo lo que necesitaras por ahora. La documentación oficial\(at [https://docs.asp.net](https://docs.asp.net)\) de ASP.NET coRE contiene muchos ejemplos si deseas aprender mas.
+ASP.NET Core y Razor pueden hacer mucho más, como vistas parciales y vistas generadas en el servidor componentes, pero un simple Layout y una vista es todo lo que necesitaras por ahora. La documentación oficial(en [https://docs.asp.net](https://docs.asp.net) de ASP.NET Core contiene muchos ejemplos si deseas aprender más.

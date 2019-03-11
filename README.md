@@ -50,7 +50,7 @@ Si ya haz codifica en un lenguaje de lado del servidor como Node, Python, Ruby, 
 
 No importa tú experiencia previa con la programación web, este libro te enseñará todo lo necesario para crear una aplicación web ASP.NET Core simple y útil. Aprenderás como construir las funcionalidades usando el código del lado del servidor y del cliente. Cómo interactuar con una base de datos y cómo desplegar la aplicación en un servidor real.
 
-## ¿Qué es  ASP.NET Core?
+## ¿Qué es ASP.NET Core?
 
 ASP.NET Core es un marco de trabajo web creado por Microsoft para construir aplicaciones web, APis y microservicios. Usa patrones comunes como MVC (Modelo-Vista-Controlador), inyección de dependencias y una canalización de solicitudes formada por middleware. Es open source bajo la licencia Apache 2.0, lo que significa que está disponible de forma gratuita y la comunidad es animada para contribuir con corrección de errores y adición nuevas características.
 
@@ -59,7 +59,7 @@ ASP.NET Core se ejecuta sobre el entorno de ejecución .NET de Microsoft, simila
 ## ¿Porqué necesitamos otro marco de trabajo para el desarollo web?
 Al día de hoy,existen gran cantidad de marcos de trabajo web para elegir : Node/Express, Spring, Ruby on Rails, Django,Laravel y muchos más. ¿Cuáles son las ventajas que ASP.NET Core tiene?
 
-* **Rapidez.** ASP.NET Core es rápido. Debido a que el código .NET es compilado , este se ejecuta mucho más rápido que el código de lenguajes interpretados como Javascript o Ruby. ASP.NET Core también esta optimizada para multihilos y tareas asíncronas. Es común ver una mejora en la rapidez de 5-10x sobre el código escrito en Node.js.
+* **Rapidez.** ASP.NET Core es rápido. Debido a que el código .NET es compilado, este se ejecuta mucho más rápido que el código de lenguajes interpretados como Javascript o Ruby. ASP.NET Core también esta optimizada para multihilos y tareas asíncronas. Es común ver una mejora en la rapidez de 5-10x sobre el código escrito en Node.js.
 
 * **Ecosistema.** ASP.NET Core puede ser nuevo, pero .NET ha estado alrededor por un largo tiempo. Hay miles de paquetes disponibles en Nuget (el administrador de paquetes para .NET; Similar a npm, Ruby gems o Maven). Actualmente hay paquetes disponibles para deserializar JSON, conectores de base de datos, generadores de PDF o casi cualquier otra cosa que se te ocurra.
 * **Seguridad.** El equipo de Microsoft se toman muy enserio la seguridad y ASP.NET Core esta construido para ser seguro desde sus fundamentos. Este maneja la limpieza de la entrada de datos y previene ataques de falsificación de solicitudes en sitios cruzados (CSRF), así no tienes que hacerlo tú. También tienes el beneficio de tipado estático con el compilador .NET, el cuál es como tener un linter muy paranoico encendido todo el tiempo. Algunas veces esto hace más difícil hacer cosas no intencionado una variable o pedazos de datos.

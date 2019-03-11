@@ -20,4 +20,4 @@ ASP.NET Core Identity es el sistema de identidad que se incluye con ASP.NET Core
 
 ASP.NET Core Identity se encarga de almacenar las cuentas de usuario, el hash y el almacenamiento de las contraseñas y la administración de roles para los usuarios. Es compatible con el inicio de sesión de correo electrónico / contraseña, autenticación multifactorial, inicio de sesión social con proveedores como Google y Facebook, así como la conexión a otros servicios mediante protocolos como OAuth 2.0 y OpenID Connect.
 
-Las vistas de registro e inicio de sesión que se suministran con la plantilla de  de MVC + autenticación individual ya aprovechan la identidad central de ASP.NET, ¡y ya funcionan! Intenta registrarte para obtener una cuenta e iniciar sesión.
+Las vistas de registro e inicio de sesión que se suministran con la plantilla de MVC + autenticación individual ya aprovechan la identidad central de ASP.NET, ¡y ya funcionan! Intenta registrarte para obtener una cuenta e iniciar sesión.

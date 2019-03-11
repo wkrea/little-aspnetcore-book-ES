@@ -22,7 +22,7 @@ namespace AspNetCoreTodo.Controllers
 }
 ```
 
-Las rutas que son manejadas por el controlador son llamadas **acciones**, y son representadas por métodos en la clase controlador. Por ejemplo, el `HomeController` incluye tres métodos de accion  (`Index`, `About`, y `Contact`) las cuales son mapeadas por ASP.NET Core a estas rutas URLs:
+Las rutas que son manejadas por el controlador son llamadas **acciones**, y son representadas por métodos en la clase controlador. Por ejemplo, el `HomeController` incluye tres métodos de acción (`Index`, `About`, y `Contact`) las cuales son mapeadas por ASP.NET Core a estas rutas URLs:
 
 ```
 localhost:5000/Home         -> Index()
@@ -43,7 +43,7 @@ public class TodoController : Controller
 
         // Colocar los tareas en un modelo
 
-        // Render la vista usando el modelo
+        // Genera la vista usando el modelo
     }
 }
 ```

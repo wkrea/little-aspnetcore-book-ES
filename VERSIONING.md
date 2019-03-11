@@ -7,6 +7,6 @@ Después de la [primera liberación](https://github.com/nbarbettini/little-aspne
 
 El [historial de liberaciones de Github](https://github.com/nbarbettini/little-aspnetcore-book/releases) contiene el histórico de versiones.
 
-## Última versión
+## Versión más reciente
 
-Siempre puedes obtener la última versión en [littleasp.net/book](http://littleasp.net/book).
+Siempre puedes obtener la versión más reciente en [littleasp.net/book](http://littleasp.net/book).

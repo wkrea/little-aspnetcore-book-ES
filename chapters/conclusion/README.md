@@ -18,7 +18,7 @@ Hay un numero de formas en las que puedes aprender más:
 
 * **ASP.NET Core in Action.** Este libro por Andrew Lock es un zambullida profunda y completa en ASP.NET Core. Puedes comprarlo en Amazon o en un librería.
 
-* **Cursos de  LinkedIn Learning y Pluralsight.** Si aprendes mejor en video , hay cursos fantásticos disponibles en Pluralsight y LinkedIn Learning ( incluyendo algunos míos). Si no tienes una cuenta disponible y necesitas un cupón, enviame un correo electrónico a nate@barbettini.com.
+* **Cursos de LinkedIn Learning y Pluralsight.** Si aprendes mejor en video, hay cursos fantásticos disponibles en Pluralsight y LinkedIn Learning ( incluyendo algunos míos). Si no tienes una cuenta disponible y necesitas un cupón, enviame un correo electrónico a nate@barbettini.com.
 
 * **Blog de Nate.** También escribo acerca de ASP.NET Core y más en mi blog en [https://www.recaffeinate.co](https://www.recaffeinate.co).
 
@@ -28,7 +28,7 @@ Happy coding!
 
 Hey, Soy Nate! escribí El pequeño libro en un largo y lleno de cafeína fin de semana porque amo a la comunidad de .NET Y desea regresar un poc de alguna forma. Espero te haya ayudada a prender algo nuevo.
 
-Puedes esta en contacto conmigo en Twitter ([@nbarbettini](https://twitter.com/nbarbettini)) o en mi  blog ([https://www.recaffeinate.co](https://www.recaffeinate.co)). También puedes contactarme via correo electrónico en nate@barbettini.com.
+Puedes esta en contacto conmigo en Twitter ([@nbarbettini](https://twitter.com/nbarbettini)) o en mi blog ([https://www.recaffeinate.co](https://www.recaffeinate.co)). También puedes contactarme via correo electrónico en nate@barbettini.com.
 
 ## Agradecimiento especiales
 
@@ -53,7 +53,7 @@ El registro completo y detallado esta siempre disponible aquí:
 
 **1.1.1** (2018-06-11): Corrección de errores tipográficos encontrados por los lectores.
 
-**1.1.0** (2018-05-03): Se reelaboró ​​significativamente el capítulo _Agregar más características_ para usar MVC en toda la pila y eliminar el patrón AJAX. Se eliminó el inicio de sesión de Facebook para simplificar el capítulo de seguridad y agilizar las pruebas y la implementación. Se actualizaron las instrucciones de Docker para reflejar las últimas prácticas recomendadas. Se corrigieron errores tipográficos y se agregaron sugerencias de los lectores. ¡El libro también luce un nuevo diseño mejorado de portada !
+**1.1.0** (2018-05-03): Se reelaboró ​​significativamente el capítulo _Agregar más características_ para usar MVC en toda la pila y eliminar el patrón AJAX. Se eliminó el inicio de sesión de Facebook para simplificar el capítulo de seguridad y agilizar las pruebas y la implementación. Se actualizaron las instrucciones de Docker para reflejar las últimas prácticas recomendadas. Se corrigieron errores tipográficos y se agregaron sugerencias de los lectores. ¡El libro también luce un nuevo diseño mejorado de portada!
 
 **1.0.4** (2018-01-15): Se agregó una explicación de los ciclos de vida del contenedor de servicios, se aclararon los puertos del servidor y el indicador -o, y se eliminaron los puntos y coma después de las directivas Razor. Crédito de autor corregido de la traducción china. Corrección de otros errores tipográficos y fallas encontrados por los lectores.
 

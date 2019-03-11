@@ -2,21 +2,21 @@
 
 Las migraciones hacen un seguimiento de los cambios en la estructura de la base de datos a lo largo del tiempo. Permiten deshacer (revertir) un conjunto de cambios o crear una segunda base de datos con la misma estructura que la primera. Con las migraciones, tiene un historial completo de modificaciones, como agregar o eliminar columnas (y tablas completas).
 
-En el capítulo anterior, agregaste un conjunto de 'Artículos' al contexto. Dado que el contexto ahora incluye un conjunto (o tabla) que no existe en la base de datos, debe crear una migración para actualizar la base de datos:
+En el capítulo anterior, agregaste un conjunto de 'Tareas' al contexto. Dado que el contexto ahora incluye un conjunto (o tabla) que no existe en la base de datos, debe crear una migración para actualizar la base de datos:
 
 ```
-dotnet ef migraciones agregar AddItems
+dotnet ef migrations add AddItems
 ```
 
 Esto crea una nueva migración llamada `AddItems` al examinar cualquier cambio que hayas realizado en el contexto.
 
 > Si recibe un error como `No se ha encontrado el ejecutable que coincida con el comando" dotnet-ef "`, asegúrese de estar en el directorio correcto. Estos comandos deben ejecutarse desde el directorio raíz del proyecto (donde se encuentra el archivo `Program.cs`).
 
-Si abres el directorio `Data / Migrations`, verás algunos archivos:
+Si abres el directorio `Data/Migrations`, verás algunos archivos:
 
 ![Migraciones múltiples](migrations.png)
 
-El primer archivo de migración (con un nombre como `00_CreateIdentitySchema.cs`) se creó y se aplicó hace mucho cuando ejecutó` dotnet new`. La nueva migración de `AddItem` tiene el prefijo de una marca de tiempo cuando la creas.
+El primer archivo de migración (con un nombre como `00_CreateIdentitySchema.cs`) se creó y se aplicó hace mucho cuando ejecutó `dotnet new`. La nueva migración de `AddItem` tiene el prefijo de una marca de tiempo cuando la creas.
 
 > Puede ver una lista de migraciones con `dotnet ef migrations list`.
 
@@ -81,7 +81,7 @@ dotnet ef database update
 Este comando hará que Entity Framework Core cree la tabla `Items` en la base de datos.
 
 > Si desea revertir la base de datos, puede proporcionar el nombre de la migración *anterior*:
-> `dotnet ef update database CreateIdentitySchema`
+> `dotnet ef database update CreateIdentitySchema`
 > Esto ejecutará los métodos `Abajo 'de cualquier migración más reciente que la migración que especifique.
 
 > Si necesita borrar por completo la base de datos y comenzar de nuevo, ejecute `dotnet ef database database` seguido de `dotnet ef database update` para volver a armar la base de datos y llevarla a la migración actual.

@@ -13,7 +13,7 @@ public class TodoController : Controller
 
     public IActionResult Index()
     {
-        // Obtenet los articulos de la base de datos
+        // Obtener las tareas desde la base de datos
 
         // Coloca los elemento dentro de un modelo
 
@@ -22,7 +22,7 @@ public class TodoController : Controller
 }
 ```
 
-Debido a que `ITodoItemService` esta el el espacio de nombres "Services" , necesitaras agregar la instrucción using al principio del archivo:
+Debido a que `ITodoItemService` esta el el espacio de nombres "Services", necesitaras agregar la instrucción using al principio del archivo:
 
 ```csharp
 using AspNetCoreTodo.Services;
@@ -45,9 +45,9 @@ public IActionResult Index()
 }
 ```
 
-¿ Recuerdas que el método `GetIncompleteItemsAsync` regresa un `Task<TodoItem[]>`? Regresar un `Task` significa que el método no necesariamente tendrá un resultado , pero puedes usar la palabra clave `await` para asegurarte que tu código espera hasta que el resultado esta listo antes de continuar. 
+¿ Recuerdas que el método `GetIncompleteItemsAsync` regresa un `Task<TodoItem[]>`? Regresar un `Task` significa que el método no necesariamente tendrá un resultado, pero puedes usar la palabra clave `await` para asegurarte que tu código espera hasta que el resultado esta listo antes de continuar. 
 
-El patrón de Task es común cuando tu código realiza llamada a la base de datos o una API de servicio, porque no sara capaz de regresar un resultado real hasta que la base de datos (o red) responda.Si haz usado promesas o callbacks en Javascript o otro lenguaje, `Task`es la misma idea: la promesa que habrá un resultado  - en algún tiempo futuro.
+El patrón de Task es común cuando tu código realiza llamada a la base de datos o una API de servicio, porque no sara capaz de regresar un resultado real hasta que la base de datos (o red) responda.Si haz usado promesas o callbacks en Javascript o otro lenguaje, `Task`es la misma idea: la promesa que habrá un resultado - en algún tiempo futuro.
 
 > Si haz tenido que tratar con el "infierno callback" en el código heredado de Javascript, estas de suerte.
 > Si has tenido que lidiar con el "infierno de devolución de llamada" en un código JavaScript más antiguo, estás de suerte. Tratar con el código asíncrono en .NET es mucho más fácil gracias a la magia de la palabra clave "esperar". `await` permite que su código se detenga en una operación asíncrona, y luego retome lo que dejó cuando la base de datos subyacente o la solicitud de red finaliza. Mientras tanto, su aplicación no está bloqueada, ya que puede procesar otras solicitudes según sea necesario. Este patrón es simple pero requiere un poco de tiempo para acostumbrarse, así que no se preocupe si esto no tiene sentido de inmediato. ¡Sigue siguiéndolo!
@@ -66,7 +66,7 @@ public async Task<IActionResult> Index()
 }
 ```
 
-Ya casi terminamos. Has hecho que el `TodoController` dependa de la interface `ITodoItemService`, pero aun no le has dicho a ASP.NET Core que tu deseas el `FakeTodoItemService` sea el servicio actual que use debajo del capo. Parecerá obvio ahora debido a que solo existe una clase que implementa la interfaz `ITodoItemService` , pero después tendrás múltiples clases que implementan la misma interface, asi que ser explicito es necesario.
+Ya casi terminamos. Has hecho que el `TodoController` dependa de la interface `ITodoItemService`, pero aun no le has dicho a ASP.NET Core que tu deseas el `FakeTodoItemService` sea el servicio actual que use debajo del capo. Parecerá obvio ahora debido a que solo existe una clase que implementa la interfaz `ITodoItemService`, pero después tendrás múltiples clases que implementan la misma interface, asi que ser explicito es necesario.
 
 Declarando (o conectando) cual clase concreta para usar para cada interface  se hace in el método `ConfigureServices` de la clase `Startup`. Ahora mismo algo como esto:
 

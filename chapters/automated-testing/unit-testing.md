@@ -184,4 +184,4 @@ Ahora tiene una prueba que proporciona cobertura de prueba del `TodoItemService`
 
 * El método `MarkDoneAsync()` devuelve falso si se pasa un ID que no existe
 * El método `MarkDoneAsync()` devuelve true cuando se marca una tarea como completa.
-* El método `GetIncompleteItemsAsync()` devuelve solo los artículos pertenecen a un usuario en particular
+* El método `GetIncompleteItemsAsync()` devuelve solo las tareas que pertenecen a un usuario en particular
