@@ -65,7 +65,7 @@ Al día de hoy,existen gran cantidad de marcos de trabajo web para elegir : Node
 * **Seguridad.** El equipo de Microsoft se toman muy enserio la seguridad y ASP.NET Core esta construido para ser seguro desde sus fundamentos. Este maneja la limpieza de la entrada de datos y previene ataques de falsificación de solicitudes en sitios cruzados (CSRF), así no tienes que hacerlo tú. También tienes el beneficio de tipado estático con el compilador .NET, el cuál es como tener un linter muy paranoico encendido todo el tiempo. Algunas veces esto hace más difícil hacer cosas no intencionado una variable o pedazos de datos.
 
 ## .NET Core y Estandar .NET
-A lo largo de este libro, Estarás aprendiendo acerca de ASP.NET Core (el marco de trabajo web). Ocasionalmente mencionare el entorno de ejecución .NET, la librería de soporte que ejecuta el código .NET. Si esto actualmente suena como Griego para ti, !solo pasa al siguiente capítulo!.
+A lo largo de este libro, Estarás aprendiendo acerca de ASP.NET Core (el marco de trabajo web). Ocasionalmente mencionare el entorno de ejecución .NET, la librería de soporte que ejecuta el código .NET. Si esto actualmente suena como Griego para ti, ¡solo pasa al siguiente capítulo!.
 
 Es posible que también hayas escuchado acerca del .NET Core y Estándar .NET. Estas son términos que se confunden así aquí esta una simple explicación:
 
@@ -75,7 +75,7 @@ Es posible que también hayas escuchado acerca del .NET Core y Estándar .NET. E
 
 Y solo como una buena medida, **.NET Framework** es una implementación diferente del estándar .NET que es específica para Windows. Este era el único entorno de ejecución .NET hasta que .NET Core llego y proporciono .NET para Mac y Linux. ASP.NET Core puede correr sobre el .NET Framework solo Windows, pero no tratare sobre esto demasiado.
 
-Si estas confundido con todos estos nombres, !no te preocupes! Estaremos escribiendo algo de código real muy pronto.
+Si estas confundido con todos estos nombres, ¡no te preocupes! Estaremos escribiendo algo de código real muy pronto.
 
 ## Nota para los desarrolladores de ASP.NET 4
 Si no has utilizado las versiones previas de ASP.NET, puedes pasar directo al siguiente capítulo.

@@ -39,7 +39,7 @@ Abre tu navegador web y navega a la dirección `http://localhost:5000`. Verás l
 ## Las partes de un proyecto ASP.NET Core
 La plantilla `dotnet new mvc` genera un gran número de archivos y directorio por ti. Aquí están las cosas más importantes que obtienes fuera de la caja:
 
-* Los archivos **Program.cs** and **Startup.cs** configuraran el servidor web y la canalización de ASP.NET Core. La clase `Startup` es donde agregas el middleware que manipula y modifica los solicitudes de entrada y brindar cosas como archivos estáticos o paginas de errores. también en donde agregas tus propios servios al contenedor de inyección de dependencias \(posteriormente habrá más sobre esto\). 
+* Los archivos **Program.cs** and **Startup.cs** configuraran el servidor web y la canalización de ASP.NET Core. La clase `Startup` es donde agregas el middleware que manipula y modifica los solicitudes de entrada y brindar cosas como archivos estáticos o páginas de errores. también en donde agregas tus propios servios al contenedor de inyección de dependencias \(posteriormente habrá más sobre esto\).
 
 * Los directorios **Models**, **Views**, y **Controllers** contiene componentes de la arquitectura Modelo Vista Controlador. Explorarás los tres en el siguiente capitulo.
 

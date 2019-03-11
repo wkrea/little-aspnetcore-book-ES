@@ -4,7 +4,7 @@ Primero lo primero: El pequeño libro de ASP.NET Core está licenciado bajo la [
 
 ## ¿Encontraste un problema?
 
-Si ve un error tipográfico o de código, no dude en arreglarlo. Las solicitudes de cambios son aceptadas con mucho gusto!
+Si ve un error tipográfico o de código, no dude en arreglarlo. ¡Las solicitudes de cambios son aceptadas con mucho gusto!
 
 Si no estás familiarizado o no te sientes cómodo con Git, no hay problema. [Crea un incidencia](https://github.com/jahbenjah/little-aspnetcore-book/issues) para señalar el error. Por favor sea lo más detallado posible.
 

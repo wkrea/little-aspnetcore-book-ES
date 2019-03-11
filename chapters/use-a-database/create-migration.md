@@ -2,7 +2,7 @@
 
 Las migraciones hacen un seguimiento de los cambios en la estructura de la base de datos a lo largo del tiempo. Permiten deshacer (revertir) un conjunto de cambios o crear una segunda base de datos con la misma estructura que la primera. Con las migraciones, tiene un historial completo de modificaciones, como agregar o eliminar columnas (y tablas completas).
 
-En el capítulo anterior, agregaste un conjunto de 'Tareas' al contexto. Dado que el contexto ahora incluye un conjunto (o tabla) que no existe en la base de datos, debe crear una migración para actualizar la base de datos:
+En el capítulo anterior, agregaste un conjunto de `Tareas` al contexto. Dado que el contexto ahora incluye un conjunto (o tabla) que no existe en la base de datos, debe crear una migración para actualizar la base de datos:
 
 ```
 dotnet ef migrations add AddItems
@@ -20,7 +20,7 @@ El primer archivo de migración (con un nombre como `00_CreateIdentitySchema.cs`
 
 > Puede ver una lista de migraciones con `dotnet ef migrations list`.
 
-Si abre su archivo de migración, verá dos métodos llamados 'Arriba' y `Abajo ':
+Si abre su archivo de migración, verá dos métodos llamados `Up` and `Down`:
 
 **Data/Migrations/<date>_AddItems.cs**
 
@@ -82,7 +82,7 @@ Este comando hará que Entity Framework Core cree la tabla `Items` en la base de
 
 > Si desea revertir la base de datos, puede proporcionar el nombre de la migración *anterior*:
 > `dotnet ef database update CreateIdentitySchema`
-> Esto ejecutará los métodos `Abajo 'de cualquier migración más reciente que la migración que especifique.
+> Esto ejecutará los métodos `Down` de cualquier migración más reciente que la migración que especifique.
 
 > Si necesita borrar por completo la base de datos y comenzar de nuevo, ejecute `dotnet ef database database` seguido de `dotnet ef database update` para volver a armar la base de datos y llevarla a la migración actual.
 

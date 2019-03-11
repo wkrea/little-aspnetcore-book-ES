@@ -148,5 +148,5 @@ Cambiando la propiedad solo afecta a la copia local de la tarea hasta que el mé
 
 ### Probando
 
-Ejecuta la aplicación y checa algunas tareas de la lista. Refrescar la pagina y ellas desaparecerán completamente, porque el filtro `Where()` aplicado en el método `GetIncompleteItemsAsync()`.
+Ejecuta la aplicación y checa algunas tareas de la lista. Refrescar la página y ellas desaparecerán completamente, porque el filtro `Where()` aplicado en el método `GetIncompleteItemsAsync()`.
 Ahora mismo, la aplicación contiene una sola, lista de tareas compartida. Seria mucho más util si mantuviera registros de una lista de tareas individual para cada usuario. En el siguiente capitulo, agregarás inicio de sesión y características de seguridad al proyecto.

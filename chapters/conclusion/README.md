@@ -7,7 +7,7 @@ Gracias por llegar hasta el final de El pequeño libro de ASP.NET Core!. Si este
 Hay muchos más que ASP.NET Core puede hacer que no pude incluir en este corto libro, incluyendo
 
 * Construir APIs RESTful y microservicios
-* Usar ASP.NET Core con aplicaciones de una sola paginas SPA) como angular y React
+* Usar ASP.NET Core con aplicaciones de una sola páginas SPA) como angular y React
 * Páginas Razor
 * Construir y minificar recursos estáticos
 * WebSockets y SignalR

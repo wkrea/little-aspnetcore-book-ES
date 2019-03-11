@@ -72,6 +72,6 @@ table tr.done {
 }
 ```
 
-Puedes usar reglas CSS como estas para personalizar como se visualizan y lucen tus paginas.
+Puedes usar reglas CSS como estas para personalizar como se visualizan y lucen tus páginas.
 
 ASP.NET Core y Razor pueden hacer mucho más, como vistas parciales y vistas generadas en el servidor componentes, pero un simple Layout y una vista es todo lo que necesitaras por ahora. La documentación oficial(en [https://docs.asp.net](https://docs.asp.net) de ASP.NET Core contiene muchos ejemplos si deseas aprender más.
