@@ -24,7 +24,7 @@ Primero, actualiza la vista y encierra cada casilla de verificación con un elem
 </td>
 ```
 
-Cuando el bucle `foreach` se ejecuta en la vista e imprime una fila para cada elemento de tarea pendiente, existirá una copia de este formulario en cada fila. La entrada oculta que contiene el ID de la tarea a realizar permite que el código de su controlador indique qué casilla se marcó. (Sin él, podría indicar que se marcó * alguna * casilla, pero no cuál.)
+Cuando el bucle `foreach` se ejecuta en la vista e imprime una fila para cada tarea pendiente, existirá una copia de este formulario en cada fila. La entrada oculta que contiene el ID de la tarea a realizar permite que el código de su controlador indique qué casilla se marcó. (Sin él, podría indicar que se marcó * alguna * casilla, pero no cuál.)
 
 Si ejecutas la aplicación ahora mismo, las casillas de verificación aun no hacen nada, porque no hay un botón para submit para decir al navegador para crear una solicitud POST con los datos del formulario. Puedes agregar un botón de submit bajo cada casilla de verificación pero esto seria una mala experiencia de usuario. Idealmente dando clic en una casilla de verificación debería envía el formulario. Puedes lograrlo agregando algo de código de JavaScript.
 
@@ -136,7 +136,7 @@ public async Task<bool> MarkDoneAsync(Guid id)
 }
 ```
 
-Este método usa Entity Framework Core y `Where()` para encontrar una tarea por ID in la base de datos. El método `SingleOrDefaultAsync()` regresara una tarea o `null` si esta no es encontrada.
+Este método usa Entity Framework Core y `Where()` para encontrar una tarea por ID en la base de datos. El método `SingleOrDefaultAsync()` regresara una tarea o `null` si esta no es encontrada.
 
 Una vez que estas seguro que el `item` no es nulo, es una simple cuestión de configurar la propiedad `IsDone`:
 

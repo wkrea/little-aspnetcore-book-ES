@@ -48,12 +48,12 @@ Crea una carpeta llamada `Todo` dentro la carpeta `Views`, y agrega este archivo
 
 En la parte superior del archivo, la directiva `@ model` le dice a Razor a qué modelo espera que se vincule esta vista. Se accede al modelo a través de la propiedad `Model`.
 
-Suponiendo que hay elementos de tareas pendientes en `Model.Items`, la instrucción` foreach` se desplazará sobre cada tarea pendiente y mostrará una fila de la tabla \ (`<tr>` elemento \) que contiene el nombre y la fecha de vencimiento del elemento . También se representa una casilla de verificación que permitirá al usuario marcar el elemento como completo.
+Suponiendo que hay elementos de tareas pendientes en `Model.Items`, la instrucción` foreach` se desplazará sobre cada tarea pendiente y mostrará una fila de la tabla (elemento `<tr>` ) que contiene el nombre y la fecha de vencimiento de la tarea . También se representa una casilla de verificación que permitirá al usuario marcar la tarea como completa.
 
 ## El archivo de diseño
 Quizás se pregunte dónde está el resto del HTML: ¿qué pasa con la etiqueta `<body>` o el encabezado y pie de página de la página? ASP.NET Core utiliza una vista de diseño que define la estructura base en la que se procesan todas las demás vistas. Esta almacenado en `Views/Shared/_Layout.cshtml`.
 
-La plantilla predeterminada de ASP.NET Core incluye Bootstarp y JQuery e su archivo de Layout Puedes crear rápidamente una aplicación web, Por supuesto que puedes usar tus propias librerías CSS y Javascript u asi lo deseas.
+La plantilla predeterminada de ASP.NET Core incluye Bootstarp y JQuery en su archivo de Layout. Puedes crear rápidamente una aplicación web, Por supuesto que puedes usar tus propias librerías CSS y Javascript si asi lo deseas.
 
 ## Personalizando la hoja de estilos
 

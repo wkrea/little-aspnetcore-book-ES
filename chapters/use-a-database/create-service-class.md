@@ -1,6 +1,6 @@
 ## Crear una nueva clase de servicio
 
-Anteriormente en el capítulo de **conceptos básicos de MVC**, creaste un `FakeTodoItemService` que contenía elementos de tareas pendientes codificados. Ahora que tiene un contexto de base de datos, puede crear una nueva clase de servicio que usará Entity Framework Core para obtener los elementos reales de la base de datos.
+Anteriormente en el capítulo de **conceptos básicos de MVC**, creaste un `FakeTodoItemService` que contenía elementos de tareas pendientes codificados. Ahora que tiene un contexto de base de datos, puede crear una nueva clase de servicio que usará Entity Framework Core para obtener los tareas reales de la base de datos.
 
 Elimine el archivo `FakeTodoItemService.cs` y cree un nuevo archivo:
 
@@ -45,7 +45,7 @@ Echemos un vistazo más de cerca al código del método `GetIncompleteItemsAsync
 var items = await _context.Items
 ```
 
-Luego, el método `Where` se usa para filtrar solo los elementos que no están completos:
+Luego, el método `Where` se usa para filtrar solo las tareas que no están completas:
 
 ```csharp
 .Where(x => x.IsDone == false)
@@ -82,6 +82,6 @@ services.AddScoped<ITodoItemService, TodoItemService>();
 
 ### Pruébalo
 
-Inicie la aplicación y navegue a `http://localhost:5000/todo`. Los elementos falsos se han ido y su aplicación está realizando consultas reales a la base de datos. No sucede que haya elementos de tareas pendientes guardados, por lo que está en blanco por ahora.
+Inicie la aplicación y navegue a `http://localhost:5000/todo`. Los tareas falsos se han ido y su aplicación está realizando consultas reales a la base de datos. No sucede que haya tareas pendientes guardados, por lo que está en blanco por ahora.
 
-En el siguiente capítulo, agregará más funciones a la aplicación, comenzando con la capacidad de crear nuevos elementos de tareas pendientes.
+En el siguiente capítulo, agregará más funciones a la aplicación, comenzando con la capacidad de crear nuevos tareas pendientes.

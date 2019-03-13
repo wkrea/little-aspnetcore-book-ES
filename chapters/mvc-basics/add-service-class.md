@@ -11,7 +11,7 @@ Una vez más es posible hacer todas estas cosas en un solo y enorme controlador,
 
 Separado tu aplicación en esta forma es a veces llamada **mult-tier** o **n-tier architecture**. En algunos casos los tiers o capas son proyectos completamente separados. Pero otras veces i solo se referencia a como las clases son organizadas y utilizadas. Lo más importante es pensar a cerca de como dividir tu aplicación en piezas manejables y evitar tener controladores o clases enormes que intentan hacer todo.
 
-Para este proyecto, usaras dos capa de aplicación: una **capa de presentación** compuesta de controladores y vistas que interactúan con el usuario, y una capa de servicio que combina las reglas del negocio con el código de accesos a base de datos. La capa de presentación ya existes. asi que el siguiente paso es construir un servicio que manipulo las reglas de negocio para las tareas y guarda las tareas en una base da datos. .
+Para este proyecto, usaras dos capa de aplicación: una **capa de presentación** compuesta de controladores y vistas que interactúan con el usuario, y una capa de servicio que combina las reglas del negocio con el código de accesos a base de datos. La capa de presentación ya existe asi que el siguiente paso es construir un servicio que maneja las reglas de negocio para las tareas y las guarda en una base da datos.
 
 > La mayoría de los proyectos grandes usan una arquitectura 3-tier: una capa de presentación, una capa lógica de servicios y una capa de repositorio de datos. Un repositorio es una clase que que solo esta enfocada en código de acceso a base de datos (no lógica de negocios). En esta aplicación, por simplicidad, código combinaras estas en un sola capa de servicio pero siéntete libre de experimentar con diferentes formas de estructurar el código.
 
@@ -47,8 +47,8 @@ The type or namespace name 'TodoItem' could not be found (are you missing a usin
 ```
 
 Debido a que esta es una interfaces, no hay ningún código aquí, solo la definición (o la firma del método) `GetIncompleteItemsAsync`. Este método no requiere parámetros y regresa un objeto del tipo  `Task<TodoItem[]>`.
-> Si la sintaxis parece confusa, prines " un Task que contiene un arreglo de TodoItems"
 
+> Si la sintaxis parece confusa, recuerda "una Tarea(Task) que contiene un arreglo de TodoItems"
 
 El tipo `Task` es similar un futuro o promesa, y es usado aquí porque este métodos sea asíncrono. En otras palabras el método puede no se capaz de regresar la lista de tareas justo porque necesita primero interactuar con la base de datos primero. (Más sobre esto después).
 
@@ -88,4 +88,4 @@ namespace AspNetCoreTodo.Services
 }
 ```
 
-La clase `FakeTodoItemService` implementa la interfaz `ITodoItemService` pero siempre regresa el mismo arreglo de dos `TodoItem`. Usaras esta para poblar el controlador y la vista y después agregaras código de bases de datos real in _Usando una base de datos_.
+La clase `FakeTodoItemService` implementa la interfaz `ITodoItemService` pero siempre regresa el mismo arreglo de dos `TodoItem`. Usaras esta para poblar el controlador y la vista y después agregaras código de bases de datos real en _Usando una base de datos_.

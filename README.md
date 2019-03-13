@@ -22,7 +22,7 @@ El pequeño libro de ASP.NET Core está estructurado como un tutorial. Construir
 * Cómo agregar inicio de sesión, registro y seguridad
 * Cómo desplegar la aplicación en la web
 
-No te preocupes, no necesitas conocer nada sobre ASP.NET Core (o algo de lo anterior) para iniciar.
+No te preocupes, para iniciar no necesitas conocer nada sobre ASP.NET Core (o algo de lo anterior).
 
 ## Antes de empezar
 
@@ -46,7 +46,7 @@ Gracias a algunos fantásticos contribuidores multilingües. El pequeño libro d
 ## ¿A quién está dirigido este libro?
 Si eres nuevo en la programación, esté libro te introducirá los patrones y conceptos utilizados para construir aplicaciones web modernas. Aprenderás como construir una aplicación web (y cómo las piezas se acomodan juntas) ¡construyendo algo desde el inicio! A pesar de que este pequeño libro no es capaz de cubrir absolutamente todo lo que necesitas conocer acerca de la programación te dará un punto de inicio de tal forma que puedas aprender tópicos más avanzados.
 
-Si ya haz codifica en un lenguaje de lado del servidor como Node, Python, Ruby, Go o Java encontrarás muchas ideas familiares como MVC, plantillas vistas e inyección de dependencias. El código estará en C#, pero no lucirá tan diferente de lo que ya conoces. Si eres un desarollador ASP.NET MVC, ¡te sentirás como en casa! ASP.NET Core añade algunas nuevas herramientas y reutiliza (y simplifica) las cosas que ya conoces. Apuntaré sobre algunas diferencias a continuación.
+Si ya haz programado en un lenguaje de lado del servidor como Node, Python, Ruby, Go o Java encontrarás muchas ideas familiares como MVC, plantillas vistas e inyección de dependencias. El código estará en C#, pero no lucirá tan diferente de lo que ya conoces. Si eres un desarollador ASP.NET MVC, ¡te sentirás como en casa! ASP.NET Core añade algunas nuevas herramientas y reutiliza (y simplifica) las cosas que ya conoces. Apuntaré sobre algunas diferencias a continuación.
 
 No importa tú experiencia previa con la programación web, este libro te enseñará todo lo necesario para crear una aplicación web ASP.NET Core simple y útil. Aprenderás como construir las funcionalidades usando el código del lado del servidor y del cliente. Cómo interactuar con una base de datos y cómo desplegar la aplicación en un servidor real.
 
@@ -62,14 +62,14 @@ Al día de hoy,existen gran cantidad de marcos de trabajo web para elegir : Node
 * **Rapidez.** ASP.NET Core es rápido. Debido a que el código .NET es compilado, este se ejecuta mucho más rápido que el código de lenguajes interpretados como Javascript o Ruby. ASP.NET Core también esta optimizada para multihilos y tareas asíncronas. Es común ver una mejora en la rapidez de 5-10x sobre el código escrito en Node.js.
 
 * **Ecosistema.** ASP.NET Core puede ser nuevo, pero .NET ha estado alrededor por un largo tiempo. Hay miles de paquetes disponibles en Nuget (el administrador de paquetes para .NET; Similar a npm, Ruby gems o Maven). Actualmente hay paquetes disponibles para deserializar JSON, conectores de base de datos, generadores de PDF o casi cualquier otra cosa que se te ocurra.
-* **Seguridad.** El equipo de Microsoft se toman muy enserio la seguridad y ASP.NET Core esta construido para ser seguro desde sus fundamentos. Este maneja la limpieza de la entrada de datos y previene ataques de falsificación de solicitudes en sitios cruzados (CSRF), así no tienes que hacerlo tú. También tienes el beneficio de tipado estático con el compilador .NET, el cuál es como tener un linter muy paranoico encendido todo el tiempo. Algunas veces esto hace más difícil hacer cosas no intencionado una variable o pedazos de datos.
+* **Seguridad.** El equipo de Microsoft se toman muy enserio la seguridad y ASP.NET Core esta construido para ser seguro desde sus fundamentos. Este maneja la limpieza de la entrada de datos y previene ataques de falsificación de ataques de falsificación de petición en sitios cruzados(CSRF), así no tienes que hacerlo tú mismo. También tienes el beneficio de tipado estático con el compilador .NET, el cuál es como tener un linter muy paranoico encendido todo el tiempo. Algunas veces esto hace más difícil hacer cosas no intencionado una variable o pedazos de datos.
 
 ## .NET Core y Estandar .NET
 A lo largo de este libro, Estarás aprendiendo acerca de ASP.NET Core (el marco de trabajo web). Ocasionalmente mencionare el entorno de ejecución .NET, la librería de soporte que ejecuta el código .NET. Si esto actualmente suena como Griego para ti, ¡solo pasa al siguiente capítulo!.
 
 Es posible que también hayas escuchado acerca del .NET Core y Estándar .NET. Estas son términos que se confunden así aquí esta una simple explicación:
 
-**Estándar .NET** es una interfaz independiente de plataformas que define las características y APis. Es importante recalcar que el estándar .NET no representa ninguna código o funcionalidad, solo refleja cuántas APIs están disponibles (o que tan amplia es la superficie de la API). Por ejemplo, el estándar .NET 2.0 tiene más APIs disponibles que el estándar .NET 1.5, el cuál tiene más APIs que el estándar .NET.
+**Estándar .NET** es una interfaz independiente de plataformas que define las características y APIs. Es importante recalcar que el estándar .NET no representa ninguna código o funcionalidad, solo refleja cuántas APIs están disponibles (o que tan amplia es la superficie de la API). Por ejemplo, el estándar .NET 2.0 tiene más APIs disponibles que el estándar .NET 1.5, el cuál tiene más APIs que el estándar .NET.
 
 **.NET Core** es el motor de tiempo de ejecución de .NET que puede ser instalado en Windows, Mac o Linux. Este implementa las APIs definidas en el estándar .NET con el código especifico para cada sistema operativo. Esto es lo que instalas en tu propia máquina para construir y ejecutar aplicaciones ASP.NET Core.
 

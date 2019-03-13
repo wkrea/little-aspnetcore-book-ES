@@ -28,9 +28,9 @@ Debido a que `ITodoItemService` esta el el espacio de nombres "Services", necesi
 using AspNetCoreTodo.Services;
 ```
 
-La primera linea de la clase declara un campo privado para tener una referencia al `IDtoSitenService`. Esta variable te deja usar el servicio desde el método de acción Index después (verás como hacerlo en un minuto).
+La primera linea de la clase declara un campo privado para tener una referencia al `ITodoItemService`. Esta variable te deja usar el servicio desde el método de acción Index después (verás como hacerlo en un minuto).
 
-La línea `public TodoController(ITodoItemService todoItemService)` define un constructor para la clase . El constructor es un método especial que es invocado cada que deseas crear una nueva instancia de la clase (en este caso la clase `TodoController`). Por haber agregado un parámetro `ITodoItemService` al constructor, haz declarado que para crear `TodoController` necesitar proveer un objeto que implementa la interfaz `ITodoItemService`.
+La línea `public TodoController(ITodoItemService todoItemService)` define un constructor para la clase. El constructor es un método especial que es invocado cada que deseas crear una nueva instancia de la clase (en este caso la clase `TodoController`). Por haber agregado un parámetro `ITodoItemService` al constructor, haz declarado que para crear `TodoController` necesitar proveer un objeto que implementa la interfaz `ITodoItemService`.
 
 > Las interfaces son increíbles ya que ayudan a desacoplar (separar) la lógica de tu aplicación. Debido a que el controlador depende de la interfaz `ITodoItemService`, y no de una clase especifica este no conoce o le importa cual clase es actualmente dada. Esto hará realmente fácil probar parte de la aplicación separadamente, Cubriré la pruebas en detalle en el capitulo _Pruebas automáticas_.
 
@@ -53,22 +53,22 @@ El patrón de Task es común cuando tu código realiza llamada a la base de dato
 > Si has tenido que lidiar con el "infierno de devolución de llamada" en un código JavaScript más antiguo, estás de suerte. Tratar con el código asíncrono en .NET es mucho más fácil gracias a la magia de la palabra clave "esperar". `await` permite que su código se detenga en una operación asíncrona, y luego retome lo que dejó cuando la base de datos subyacente o la solicitud de red finaliza. Mientras tanto, su aplicación no está bloqueada, ya que puede procesar otras solicitudes según sea necesario. Este patrón es simple pero requiere un poco de tiempo para acostumbrarse, así que no se preocupe si esto no tiene sentido de inmediato. ¡Sigue siguiéndolo!
 
 El único problema es que necesitas actualizar la firma del método `Index` para devolver un `Task<IActionResult>`en lugar de `IActionResult`, y marcarlo como `async`:
-El único no tiene que actualizar la firma del método `Index` para regresar a `Task<IActionResult>` en place of sol un` IActionResult`, and marcarlo con `async`:
+El único no tiene que actualizar la firma del método `Index` para regresar a `Task<IActionResult>` en place of sol un `IActionResult`, y marcarlo con `async`:
 
 ```csharp
 public async Task<IActionResult> Index()
 {
     var items = await _todoItemService.GetIncompleteItemsAsync();
 
-    // Put items into a model
+    // Colocal las tareas en un modelo
 
-    // Pass the view to a model and render
+    // Pasa la vista al modelo y la genera
 }
 ```
 
 Ya casi terminamos. Has hecho que el `TodoController` dependa de la interface `ITodoItemService`, pero aun no le has dicho a ASP.NET Core que tu deseas el `FakeTodoItemService` sea el servicio actual que use debajo del capo. Parecerá obvio ahora debido a que solo existe una clase que implementa la interfaz `ITodoItemService`, pero después tendrás múltiples clases que implementan la misma interface, asi que ser explicito es necesario.
 
-Declarando (o conectando) cual clase concreta para usar para cada interface  se hace in el método `ConfigureServices` de la clase `Startup`. Ahora mismo algo como esto:
+Declarando (o conectando) cual clase concreta para usar para cada interface se hace en el método `ConfigureServices` de la clase `Startup`. Ahora mismo algo como esto:
 
 **Startup.cs**
 

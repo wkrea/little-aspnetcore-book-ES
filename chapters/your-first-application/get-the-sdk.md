@@ -7,7 +7,7 @@ dotnet --version
 2.1.104
 ```
 
-Puedes obtener más información acerca de tú plataforma con la bandera `--info`:
+Puedes obtener más información acerca de tú plataforma con la opción `--info`:
 
 ```text
 dotnet --info

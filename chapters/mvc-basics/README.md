@@ -22,4 +22,4 @@ En este libro, construirás una aplicación de gestión de tareas que dejara al 
 * Las páginas web y la interfaz con la que el usuario interacturá via el navegador. Usando HTML, CSS y Javascript (llamado el FrontEnd).
 * Un formulario de inicio de sesión y verificación de seguridad así cada usuario mantendrá su lista de tareas privada.
 
- ¿Suena bien? ¡Vamos a construirla! si no haz creado una aplicación nueva en APS.NET Core proyecto usando `dotnet new mvc`, sigue los pasos en el capítulo anterior, debes ser capaz de construir y ejecutar el proyecto y ver la pantalla de bienvenida,
+ ¿Suena bien? ¡Vamos a construirla! si no haz creado una aplicación nueva en ASP.NET Core proyecto usando `dotnet new mvc`, sigue los pasos en el capítulo anterior, debes ser capaz de construir y ejecutar el proyecto y ver la pantalla de bienvenida,

@@ -39,17 +39,17 @@ Abre tu navegador web y navega a la dirección `http://localhost:5000`. Verás l
 ## Las partes de un proyecto ASP.NET Core
 La plantilla `dotnet new mvc` genera un gran número de archivos y directorio por ti. Aquí están las cosas más importantes que obtienes fuera de la caja:
 
-* Los archivos **Program.cs** and **Startup.cs** configuraran el servidor web y la canalización de ASP.NET Core. La clase `Startup` es donde agregas el middleware que manipula y modifica los solicitudes de entrada y brindar cosas como archivos estáticos o páginas de errores. también en donde agregas tus propios servios al contenedor de inyección de dependencias \(posteriormente habrá más sobre esto\).
+* Los archivos **Program.cs** y **Startup.cs** configuraran el servidor web y la canalización de ASP.NET Core. La clase `Startup` es donde agregas el middleware que manipula y modifica los solicitudes de entrada y brindar cosas como archivos estáticos o páginas de errores. también en donde agregas tus propios servicios al contenedor de inyección de dependencias (posteriormente habrá más sobre esto).
 
 * Los directorios **Models**, **Views**, y **Controllers** contiene componentes de la arquitectura Modelo Vista Controlador. Explorarás los tres en el siguiente capitulo.
 
 * El directorio **wwwroot** contiene assets como archivos estáticos como CSS, Javascript e imágenes. Los archivos en `wwwroot` serán despachados como contenido estático y pueden ser empaquetados y minificados automáticamente.
 
-* El archivo **appsettings.json** contiene los parámetros de configuración que la aplicación ASP.NET Core carga al inicio. Puedes almacenar aqui las cadenas de conexión o otras coas que no quieres que estén predefinidas en el código.
+* El archivo **appsettings.json** contiene los parámetros de configuración que la aplicación ASP.NET Core carga al inicio. Puedes almacenar aquí las cadenas de conexión o otras coas que no quieres que estén predefinidas en el código.
 
 ## Tips para Visual Studio Code
 
-Si estas usando Visual Studio Code por primera vez ,aqui tienes un par de tips de ayuda para iniciar:
+Si estas usando Visual Studio Code por primera vez, aquí tienes un par de tips de ayuda para iniciar:
 
 * **Abrir el directorio raíz del proyecto**: En Visual Studio Code, selecciona Archivo > Abrir carpeta. Si Visual Studio Code te solicita instalar los archivos pendientes, presionar clic es Si para agregarlos.
 
@@ -63,7 +63,7 @@ Si estas usando Visual Studio Code por primera vez ,aqui tienes un par de tips d
 
 * **Compila rápidamente**: Usa el atajo `Command-Shift-B` o `Control-Shift-B` para ejecutar la tarea de Build run la cual realiza lo mismo que `dotnet build`.
 
-> Estos tips también aplican para Visual Studio ( Code) en Windows. Si estas usando Visual Studio, necesitaras abrir el archivo de proyecto directamente. Visual Studio te solicitara guardar el archivo de la solución, el cuál debes guardar en el directorio raíz de la solución (la primera carpeta llamado `AspNetCoreTodo`). También puedes crear un proyecto ASP.NET Core directamente o en Visual Studio usando la plantillas disponibles en Archivo - Nuevo Proyecto.
+> Estos tips también aplican para Visual Studio (sin Code) en Windows. Si estas usando Visual Studio, necesitaras abrir el archivo de proyecto directamente. Visual Studio te solicitara guardar el archivo de la solución, el cuál debes guardar en el directorio raíz de la solución (la primera carpeta llamado `AspNetCoreTodo`). También puedes crear un proyecto ASP.NET Core directamente o en Visual Studio usando la plantillas disponibles en Archivo - Nuevo Proyecto.
 
 ### Una nota acerca de Git
 
@@ -74,6 +74,6 @@ cd ..
 git init
 ```
 
-Asegúrate que agregues un archivo `.gitignore` que ignora las carpeta `bin` and `obj`. La plantilla de .gitignore para Visual Studio en el repositorio de Github funciona genial.
+Asegúrate que agregues un archivo `.gitignore` que ignora las carpeta `bin` y `obj`. La plantilla de .gitignore para Visual Studio en el repositorio de Github funciona genial.
 
 Hay mucho más que explorar, así que profundicemos e iniciemos a construir una aplicación.

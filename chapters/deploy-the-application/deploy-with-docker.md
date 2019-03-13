@@ -1,4 +1,4 @@
-## Implementar con Docker
+## Desplegando con Docker
 
 Si no está utilizando una plataforma como Azure, las tecnologías de contenedorización como Docker pueden facilitar la implementación de aplicaciones web en sus propios servidores. En lugar de dedicar tiempo a configurar un servidor con las dependencias que necesita para ejecutar su aplicación, copiar archivos y reiniciar procesos, simplemente puede crear una imagen de Docker que describa todo lo que su aplicación necesita para ejecutar y girarla como un contenedor en cualquier Docker. anfitrión.
 

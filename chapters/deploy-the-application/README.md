@@ -1,4 +1,4 @@
-# Implementar la aplicación
+# Desplegar la aplicación
 Has recorrido un largo camino, pero aún no has terminado. Una vez que has creado una gran aplicación, ¡debes compartirla con el mundo!
 
 Debido a que las aplicaciones ASP.NET Core pueden ejecutarse en Windows, Mac o Linux, existen varias formas diferentes de implementar su aplicación. En este capítulo, te mostraré las formas más comunes (y más fáciles) de estar en línea.

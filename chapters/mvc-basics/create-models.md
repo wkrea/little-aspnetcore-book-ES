@@ -29,7 +29,7 @@ Esta clase define lo que base de datos necesitara para almacenar cada tarea :Un 
 
 * La propiedad **Id** es un GUID o a Identificador Global Único. Los Guid son cadenas largas de letras y números como por ejemplo, `43ec09f2-7f70-4f4b-9559-65011d5781bb`: Por esto GUIDs son aleatorios y son extremadamente improbables que sean duplicados, son utilizas con identificadores únicos. También puede usar un número (entero como un identidad de la base de datos) pero tienes que configurar tu base de datos para siempre incremente el numero cuando un nuevas filas son añadidas a la base de datos. Los Id son generados de forma aleatoria, asi no tienes que preocuparte oir auto incrementarlas.
 
-* La propiedad **IsDone** es un booleano ( valores true/false ), De forma predeterminada, sera falso para todos los nuevos elementos. Después escribirás código para cambiar esta propiedad a true cuando el usuario presiona una casilla de verificación en la visa.
+* La propiedad **IsDone** es un booleano ( valores true/false ), De forma predeterminada, sera falso para todos los nuevos elementos. Después escribirás código para cambiar esta propiedad a true cuando el usuario presiona una casilla de verificación en la vista.
 
 * La propiedad **Title** es una cadena (valor texto). Esta mantendrá el nombre o descripción de la tarea pendiente. El atributo `[Required]` le dice ASP.NET Core que esta cadena no puede ser nula o vaciá.
 

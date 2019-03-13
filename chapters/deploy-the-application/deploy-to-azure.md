@@ -1,4 +1,4 @@
-## Implementar en Azure
+## Desplegar en Azure
 
 La implementación de la aplicación de ASP.NET Core en Azure solo lleva unos pocos pasos. Puede hacerlo a través del portal web de Azure o en la línea de comandos utilizando la CLI de Azure. Voy a cubrir este último.
 
@@ -80,7 +80,7 @@ A continuación, cree un nombre de usuario y contraseña de Azure para la implem
 az webapp deployment user set --user-name nate
 ```
 
-Siga las instrucciones para crear una contraseña. Luego usa `config-local-git` para escupir una URL de Git:
+Siga las instrucciones para crear una contraseña. Luego usa `config-local-git` para generar una URL de Git:
 
 ```
 az webapp deployment source config-local-git -g AspNetCoreTodoGroup -n MyTodoApp --out tsv

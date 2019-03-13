@@ -20,7 +20,7 @@ El primer archivo de migración (con un nombre como `00_CreateIdentitySchema.cs`
 
 > Puede ver una lista de migraciones con `dotnet ef migrations list`.
 
-Si abre su archivo de migración, verá dos métodos llamados `Up` and `Down`:
+Si abre su archivo de migración, verá dos métodos llamados `Up` y `Down`:
 
 **Data/Migrations/<date>_AddItems.cs**
 

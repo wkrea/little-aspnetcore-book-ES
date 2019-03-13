@@ -20,7 +20,7 @@
     * [Crear una nueva clase de servicio](chapters/use-a-database/create-service-class.md)
 * [Agregando más características](chapters/add-more-features/README.md)
     * [Agregar nuevas tareas](chapters/add-more-features/add-todo-items.md)
-    * [Actividades completadas con listas de verificación](chapters/add-more-features/complete-with-checkbox.md)
+    * [Completar las tareas con una casilla de verificación](chapters/add-more-features/complete-with-checkbox.md)
 * [Seguridad e Identidad](chapters/security-and-identity/README.md)
     * [Requerir autenticación](chapters/security-and-identity/require-authentication.md)
     * [Usando identidad en la aplicación](chapters/security-and-identity/using-identity-in-the-application.md)

@@ -91,7 +91,7 @@ El siguiente paso es actualizar la consulta de la base de datos y agregar un fil
 
 ### Actualizar la base de datos
 
-Deberá agregar una nueva propiedad al modelo de entidad `TodoItem` para que cada elemento pueda" recordar "al usuario que lo posee:
+Deberá agregar una nueva propiedad al modelo de entidad `TodoItem` para que cada elemento pueda "recordar" al usuario que lo posee:
 
 **Models/TodoItem.cs**
 
@@ -129,7 +129,7 @@ public async Task<TodoItem[]> GetIncompleteItemsAsync(
 }
 ```
 
-Si ejecuta la aplicación y se registra o inicia sesión, verá una lista de tareas vacía una vez más. Desafortunadamente, cualquier elemento que intentes agregar desaparece en el éter, porque aún no has actualizado la acción `AddItem` para que el usuario la tenga en cuenta.
+Si ejecuta la aplicación y se registra o inicia sesión, verá una lista de tareas vacía una vez más. Desafortunadamente, cualquier tarea que intentes agregar desaparece en el éter, porque aún no has actualizado la acción `AddItem` para que el usuario la tenga en cuenta.
 
 ### Actualizar las acciones AddItem y MarkDone
 
@@ -208,7 +208,7 @@ public async Task<bool> AddItemAsync(
 }
 ```
 
-La cláusula `Where` en el método `MarkDoneAsync` también debe verificar la ID del usuario, por lo que un usuario deshonesto no puede completar los elementos de otra persona adivinando sus ID:
+La cláusula `Where` en el método `MarkDoneAsync` también debe verificar la ID del usuario, por lo que un usuario deshonesto no puede completar las tareas de otra persona adivinando sus ID:
 
 ```csharp
 public async Task<bool> MarkDoneAsync(
