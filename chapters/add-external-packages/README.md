@@ -37,7 +37,7 @@ Debido a que Humanizar será usado para reescribir las fechas mostradas en la vi
 // ...
 ```
 
-Después actualiza la línea que escribe la propiedad `DueAt`para usar el método `Humanize` del paquete Humanizer:
+Después actualiza la línea que escribe la propiedad `DueAt` para usar el método `Humanize` del paquete Humanizer:
 
 ```html
 <td>@item.DueAt.Humanize()</td>

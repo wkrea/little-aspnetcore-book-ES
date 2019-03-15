@@ -1,6 +1,6 @@
 # Conclusión
 
-Gracias por llegar hasta el final de El pequeño libro de ASP.NET Core!. Si este fue útil (o no) me encantaría escuchar tus comentarios. Enviame tus comentarios via Twitter:[https://twitter.com/nbarbettini](https://twitter.com/nbarbettini)
+Gracias por llegar hasta el final de El pequeño libro de ASP.NET Core!. Si este fue útil (o no) me encantaría escuchar tus comentarios. Enviame tus comentarios vía Twitter:[https://twitter.com/nbarbettini](https://twitter.com/nbarbettini)
 
 ## ¿Cómo aprender más?
 
@@ -28,7 +28,7 @@ Happy coding!
 
 Hey, Soy Nate! escribí El pequeño libro en un largo y lleno de cafeína fin de semana porque amo a la comunidad de .NET Y desea regresar un poc de alguna forma. Espero te haya ayudada a prender algo nuevo.
 
-Puedes esta en contacto conmigo en Twitter ([@nbarbettini](https://twitter.com/nbarbettini)) o en mi blog ([https://www.recaffeinate.co](https://www.recaffeinate.co)). También puedes contactarme via correo electrónico en nate@barbettini.com.
+Puedes esta en contacto conmigo en Twitter ([@nbarbettini](https://twitter.com/nbarbettini)) o en mi blog ([https://www.recaffeinate.co](https://www.recaffeinate.co)). También puedes contactarme vía correo electrónico en nate@barbettini.com.
 
 ## Agradecimiento especiales
 

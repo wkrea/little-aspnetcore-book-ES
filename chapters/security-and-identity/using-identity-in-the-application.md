@@ -64,7 +64,7 @@ El valor de `currentUser` nunca debe ser nulo, porque el atributo `[Authorize]` 
 if (currentUser == null) return Challenge();
 ```
 
-Como ahora estás pasando un parámetro `ApplicationUser` a` GetIncompleteItemsAsync() `, deberás actualizar la interfaz `ITodoItemService`:
+Como ahora estás pasando un parámetro `ApplicationUser` a `GetIncompleteItemsAsync()`, deberás actualizar la interfaz `ITodoItemService`:
 
 **Services/ITodoItemService.cs**
 

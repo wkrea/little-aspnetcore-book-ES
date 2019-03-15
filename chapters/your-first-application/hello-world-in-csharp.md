@@ -19,7 +19,7 @@ El comando `dotnet new` crea un nuevo proyecto de .NET con C# como lenguaje pred
 cd CsharpHelloWorld
 ```
 
-`dotnet new console` crea un programa de C# básico que escribe el texto `Hello World!` en la pantalla. El programa esta compuesto por dos archivos: un archivo de proyecto (con extensión `.csproj`) y un archivo de código de C# (con extensión`.cs`). Si abres el primer archivo en un editor de texto, veras esto :
+`dotnet new console` crea un programa de C# básico que escribe el texto `Hello World!` en la pantalla. El programa esta compuesto por dos archivos: un archivo de proyecto (con extensión `.csproj`) y un archivo de código de C# (con extensión `.cs`). Si abres el primer archivo en un editor de texto, veras esto :
 
 **CsharpHelloWorld.csproj**
 

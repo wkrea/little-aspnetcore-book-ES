@@ -153,7 +153,7 @@ Este archivo de configuración le dice a Nginx que haga proxy de las solicitudes
 
 ### Set up Docker Compose
 
-Aquí hay un archivo más para crear. Arriba en el directorio raíz,crea`docker-compose.yml`:
+Aquí hay un archivo más para crear. Arriba en el directorio raíz, crea `docker-compose.yml`:
 
 **docker-compose.yml**
 

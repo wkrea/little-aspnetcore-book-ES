@@ -79,7 +79,7 @@ public async Task<IActionResult> AddItem(TodoItem newItem)
 }
 ```
 
-¿Notas como la nueva acción `AddItem` acepta un parámetro `TodoItem`? Es es el mismo modelo `TodoItem` que creaste en el capitulo _Fundamentos de MVC_ para guardar la información acerca de la tarea. Cuando es usado aque como un parámetro de acción, ASP.NET Core automáticamente ejecuta un proceso llamado **model binding**.
+¿Notas como la nueva acción `AddItem` acepta un parámetro `TodoItem`? Es es el mismo modelo `TodoItem` que creaste en el capítulo _Fundamentos de MVC_ para guardar la información acerca de la tarea. Cuando es usado aque como un parámetro de acción, ASP.NET Core automáticamente ejecuta un proceso llamado **model binding**.
 
 Model binding busca en los datos de la solicitud e intente inteligentemente coincidir los datos con las propiedad del modelo. En otras palabras, cuando el usuario envía el formulario y su navegador POST hacia esta acción, ASP.NET Core obtendrá esta información desde el formulario y la colocara en la variable `newItem`.
 

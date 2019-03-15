@@ -1,4 +1,5 @@
 # Tú primera aplicación
+
 ¿Estas listo para crear tú primera aplicación web con ASP.NET Core? Primero, tendrás que conseguir algunas cosas:
 
 **Tú editor de código favorito.** Puedes usar Atom, Sublime, Notepad o cualquier otro editor de código en el que prefieras escribir código. Si no tienes un editor de código favorito, dale una oportunidad a Visual Studio Code. Es un editor de código gratuito, multiplataforma que tiene gran soporte para escribir código en C#, Javascript, HTML y más. Sólo busca por "Visual Studio Code" sigue las instrucciones para instalarlo.

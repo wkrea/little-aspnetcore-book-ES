@@ -32,7 +32,7 @@ La primera linea de la clase declara un campo privado para tener una referencia 
 
 La línea `public TodoController(ITodoItemService todoItemService)` define un constructor para la clase. El constructor es un método especial que es invocado cada que deseas crear una nueva instancia de la clase (en este caso la clase `TodoController`). Por haber agregado un parámetro `ITodoItemService` al constructor, haz declarado que para crear `TodoController` necesitar proveer un objeto que implementa la interfaz `ITodoItemService`.
 
-> Las interfaces son increíbles ya que ayudan a desacoplar (separar) la lógica de tu aplicación. Debido a que el controlador depende de la interfaz `ITodoItemService`, y no de una clase especifica este no conoce o le importa cual clase es actualmente dada. Esto hará realmente fácil probar parte de la aplicación separadamente, Cubriré la pruebas en detalle en el capitulo _Pruebas automáticas_.
+> Las interfaces son increíbles ya que ayudan a desacoplar (separar) la lógica de tu aplicación. Debido a que el controlador depende de la interfaz `ITodoItemService`, y no de una clase especifica este no conoce o le importa cual clase es actualmente dada. Esto hará realmente fácil probar parte de la aplicación separadamente, Cubriré la pruebas en detalle en el capítulo _Pruebas automáticas_.
 
 Finalmente ahora puedes usar el `ITodoItemService` (a través de la variable privada que declaraste) en tu métodos de acción para obtener los elemento desde la capa de servicio:
 

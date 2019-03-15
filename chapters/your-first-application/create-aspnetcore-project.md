@@ -41,7 +41,7 @@ La plantilla `dotnet new mvc` genera un gran número de archivos y directorio po
 
 * Los archivos **Program.cs** y **Startup.cs** configuraran el servidor web y la canalización de ASP.NET Core. La clase `Startup` es donde agregas el middleware que manipula y modifica los solicitudes de entrada y brindar cosas como archivos estáticos o páginas de errores. También en donde agregas tus propios servicios al contenedor de inyección de dependencias (posteriormente habrá más sobre esto).
 
-* Los directorios **Models**, **Views** y **Controllers** contienen los componentes de la arquitectura Modelo Vista Controlador. Explorarás los tres en el siguiente capitulo.
+* Los directorios **Models**, **Views** y **Controllers** contienen los componentes de la arquitectura Modelo Vista Controlador. Explorarás los tres en el siguiente capítulo.
 
 * El directorio **wwwroot** contiene assets como archivos estáticos como CSS, Javascript e imágenes. Los archivos en `wwwroot` serán despachados como contenido estático y pueden ser empaquetados y minificados automáticamente.
 

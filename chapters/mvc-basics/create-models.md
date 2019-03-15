@@ -25,7 +25,7 @@ namespace AspNetCoreTodo.Models
 }
 ```
 
-Esta clase define lo que base de datos necesitara para almacenar cada tarea :Un ID, un titulo o nombre,si la tarea esta completada y la fecha de termino. Cada linea define una propiedad de la clase:
+Esta clase define lo que base de datos necesitara para almacenar cada tarea :Un ID, un titulo o nombre, si la tarea esta completada y la fecha de termino. Cada linea define una propiedad de la clase:
 
 * La propiedad **Id** es un GUID o un Identificador Global Único. Los Guid son cadenas largas de letras y números como por ejemplo, `43ec09f2-7f70-4f4b-9559-65011d5781bb`. Debido a que los GUIDs son aleatorios y extremadamente improbables que sean repitan, son utilizados frecuentemente con identificadores únicos. También puede usar un número (entero) como un identificador pero tienes que configurar tú base de datos para que siempre incremente el número cuando un nuevas filas son añadidas a la base de datos. Los Id son generados de forma aleatoria, así que no tienes que preocuparte de generarlos.
 

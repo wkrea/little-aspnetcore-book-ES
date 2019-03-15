@@ -57,7 +57,7 @@ ASP.NET Core es un marco de trabajo web creado por Microsoft para desarrollar ap
 ASP.NET Core se ejecuta sobre el entorno de ejecución .NET de Microsoft, similar a la Máquina Virtual de Java (JVM) o el intérprete de Ruby. Puedes escribir aplicaciones ASP.NET Core en un número de lenguajes (C#, Visual Basic y F#). C# es la elección más popular, y es lo que usaremos en este libro. Puedes desarrollar y ejecutar aplicaciones ASP.NET Core en Windows, Mac y Linux.
 
 ## ¿Porqué necesitamos otro marco de trabajo para el desarollo web?
-Al día de hoy,existen gran cantidad de marcos de trabajo web para elegir : Node/Express, Spring, Ruby on Rails, Django,Laravel y muchos más. ¿Cuáles son las ventajas que ASP.NET Core tiene?
+Al día de hoy, existen gran cantidad de marcos de trabajo web para elegir : Node/Express, Spring, Ruby on Rails, Django,Laravel y muchos más. ¿Cuáles son las ventajas que ASP.NET Core tiene?
 
 * **Rapidez.** ASP.NET Core es rápido. Debido a que el código .NET es compilado, este se ejecuta mucho más rápido que el código de lenguajes interpretados como Javascript o Ruby. ASP.NET Core también esta optimizada para multihilos y tareas asíncronas. Es común ver una mejora en la rapidez de 5-10x sobre el código escrito en Node.js.
 
@@ -85,4 +85,4 @@ ASP.NET Core es una re-escritura completa desde los fundamentos de ASP.NET con e
 
 Debido al legado de Katana, la clase `Startup` es el frente y centro, y no hay más `Application_Start` o `Global.asax`. La canalización entera esta manejada por middleware, y no hay una separación entre MVC y Web API: los controladores pueden simplemente retornar vistas, códigos de estado o datos. La inyección de dependencias viene integrada, así que no tienes que instalar y configurar un contenedor como StructureMap o Ninject si no deseas hacerlo. Y el marco de trabajo .NET ha sido optimizado para la velocidad y eficiencia del motor de tiempo de ejecución.
 
-Bien, es suficiente de introducción. ¡Profundicemos en ASP.NET Core!
+Bien, es suficiente de introducción. ¡Profundicemos en ASP.NET Core

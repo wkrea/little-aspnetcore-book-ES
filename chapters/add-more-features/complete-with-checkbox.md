@@ -6,7 +6,7 @@ Agregar tareas a tú lista de tareas es genial, pero eventualmente necesitaras t
 <input type="checkbox" class="done-checkbox">
 ```
 
-Presionando la casilla de verificación no hace nada aun. Al igual que en el capitulo anterior, agregaras este comportamiento usando formularios y acciones. En este caso necesitaras un pequeño código en Javascript.
+Presionando la casilla de verificación no hace nada aun. Al igual que en el capítulo anterior, agregaras este comportamiento usando formularios y acciones. En este caso necesitaras un pequeño código en Javascript.
 
 
 ### Agregar elementos al formulario de la vista
@@ -24,7 +24,7 @@ Primero, actualiza la vista y encierra cada casilla de verificación con un elem
 </td>
 ```
 
-Cuando el bucle `foreach` se ejecuta en la vista e imprime una fila para cada tarea pendiente, existirá una copia de este formulario en cada fila. La entrada oculta que contiene el ID de la tarea a realizar permite que el código de su controlador indique qué casilla se marcó. (Sin él, podría indicar que se marcó * alguna * casilla, pero no cuál.)
+Cuando el bucle `foreach` se ejecuta en la vista e imprime una fila para cada tarea pendiente, existirá una copia de este formulario en cada fila. La entrada oculta que contiene el ID de la tarea a realizar permite que el código de su controlador indique qué casilla se marcó. (Sin él, podría indicar que se marcó *alguna* casilla, pero no cuál.)
 
 Si ejecutas la aplicación ahora mismo, las casillas de verificación aun no hacen nada, porque no hay un botón para submit para decir al navegador para crear una solicitud POST con los datos del formulario. Puedes agregar un botón de submit bajo cada casilla de verificación pero esto seria una mala experiencia de usuario. Idealmente dando clic en una casilla de verificación debería envía el formulario. Puedes lograrlo agregando algo de código de JavaScript.
 
@@ -64,7 +64,7 @@ La función `markCompleted()` hace algunas cosas:
 
 Esto toma responsabilidad del la vista y el código del lado del cliente. Ahora es tiempo de agregar una nueva acción
 
-### Agrega una accion al controlador
+### Agregar una acción al controlador
 
 Como haz probablemente adivinado, necesitas agregar una acción llamada `MarkDone` en el controlador `TodoController`:
 
@@ -90,7 +90,6 @@ public async Task<IActionResult> MarkDone(Guid id)
 Vayamos a través de cada línea de este método de acción. Primero, el método acepta un parámetro `Guid` llamado` id` en la firma del método. A diferencia de la acción `AddItem`, que utiliza un modelo y un modelo de enlace / validación, el parámetro `id` es muy simple. Si los datos de la solicitud entrante incluyen un campo llamado `id`, ASP.NET Core intentará analizarlo como una guía. Esto funciona porque el elemento oculto que agregó al formulario de casilla de verificación se llama `id`.
 
 Como no está utilizando el enlace de modelo, no hay un `ModelState` para verificar la validez. En su lugar, puede verificar el valor GUID directamente para asegurarse de que sea válido. Si, por algún motivo, el parámetro `id` en la solicitud faltaba o no podía analizarse como guid, `id` tendrá un valor de `Guid.Empty`. Si ese es el caso, la acción le dice al navegador que redirija a `/Todo/Index` y actualice la página.
-
 
 A continuación, el controlador debe llamar a la capa de servicio para actualizar la base de datos. Esto será manejado por un nuevo método llamado `MarkDoneAsync` en la interfaz `ITodoItemService`, que devolverá verdadero o falso dependiendo de si la actualización tuvo éxito:
 
@@ -149,4 +148,4 @@ Cambiando la propiedad solo afecta a la copia local de la tarea hasta que el mé
 ### Probando
 
 Ejecuta la aplicación y checa algunas tareas de la lista. Refrescar la página y ellas desaparecerán completamente, porque el filtro `Where()` aplicado en el método `GetIncompleteItemsAsync()`.
-Ahora mismo, la aplicación contiene una sola, lista de tareas compartida. Seria mucho más util si mantuviera registros de una lista de tareas individual para cada usuario. En el siguiente capitulo, agregarás inicio de sesión y características de seguridad al proyecto.
+Ahora mismo, la aplicación contiene una sola, lista de tareas compartida. Seria mucho más util si mantuviera registros de una lista de tareas individual para cada usuario. En el siguiente capítulo, agregarás inicio de sesión y características de seguridad al proyecto.

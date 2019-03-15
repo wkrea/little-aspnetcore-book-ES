@@ -32,7 +32,7 @@ localhost:5000/Home/Contact -> Contact()
 
 Hay un gran número de convenciones (patrones comunes) usados por ASP.NET Core, tales como patrón que `FooController` se convierte en `/Foo`, y la acción `Index` puede ser omitida de la URL. Puedes personalizar este comportamiento si así lo deseas, pero por ahora, usaremos las convenciones predefinidas.
 
-Agrega un nueva acción llamada `Index` al `TodoController`,remplazando el comentario `// Las acciones van aquí`;
+Agrega un nueva acción llamada `Index` al `TodoController`, remplazando el comentario `// Las acciones van aquí`;
 
 ```csharp
 public class TodoController : Controller

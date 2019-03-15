@@ -1,4 +1,5 @@
 # Agregar una clase de servicio
+
 Haz creado un modelo, una vista y un controlador. Antes de usar el modelo y la vista en el controlador, también necesitas escribir código que obtendrá la lista de tareas de los usuarios desde la base de datos.
 
 Puedes escribir este código directamente en el controlador, pero es una mejor práctica mantener tu código separado. ¿Por qué? en una aplicación real grande, tendrás que hacer malabares con muchos asuntos:
@@ -17,7 +18,7 @@ Para este proyecto, usaras dos capa de aplicación: una **capa de presentación*
 
 ## Crear una interfaz
 
-El lenguaje de programación C# incluye el concepto de **interfaces**, donde la definición de los métodos y propiedades de un objeto es separada de la clase que actualmente contiene el código de aquellos métodos y propiedades. Las interfaces hace fácil mantener tus clases desacopladas y fáciles de probar,como veras aquí (y después en el capitulo _Pruebas Automáticas)Usaras una interfaces para represente el servicio que puede interactuá con los elementos en la base de datos.
+El lenguaje de programación C# incluye el concepto de **interfaces**, donde la definición de los métodos y propiedades de un objeto es separada de la clase que actualmente contiene el código de aquellos métodos y propiedades. Las interfaces hace fácil mantener tus clases desacopladas y fáciles de probar, como veras aquí (y después en el capítulo _Pruebas Automáticas)Usaras una interfaces para represente el servicio que puede interactuá con los elementos en la base de datos.
 
 Por convención, el nombre de las interfaces tiene el prefijo "I". Crea un nuevo archivo en el directorio Services:
 
@@ -54,7 +55,7 @@ El tipo `Task` es similar un futuro o promesa, y se usa aquí porque este métod
 
 ## Crear la clase de servicio
 
-Ahora que la interfaz esta definida, estas listo para crear la clase del servicio actual. Cubriré el código de acceso a base de datos a detalle en el capitulo _Usar una base de datos_, así que por ahora solo usaras datos falsos y siempre regresara 2 tareas definidas de forma estática;
+Ahora que la interfaz esta definida, estas listo para crear la clase del servicio actual. Cubriré el código de acceso a base de datos a detalle en el capítulo _Usar una base de datos_, así que por ahora solo usaras datos falsos y siempre regresara 2 tareas definidas de forma estática;
 
 **Services/FakeTodoItemService.cs**
 
