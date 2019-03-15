@@ -47,7 +47,7 @@ public IActionResult Index()
 
 ¿ Recuerdas que el método `GetIncompleteItemsAsync` regresa un `Task<TodoItem[]>`? Regresar un `Task` significa que el método no necesariamente tendrá un resultado, pero puedes usar la palabra clave `await` para asegurarte que tu código espera hasta que el resultado esta listo antes de continuar. 
 
-El patrón de Task es común cuando tu código realiza llamada a la base de datos o una API de servicio, porque no sara capaz de regresar un resultado real hasta que la base de datos (o red) responda.Si haz usado promesas o callbacks en Javascript o otro lenguaje, `Task`es la misma idea: la promesa que habrá un resultado - en algún tiempo futuro.
+El patrón de `Task` es común cuando tu código realiza peticiones a la base de datos o una API de servicio, porque no será capaz de regresar un resultado real hasta que la base de datos (o red) responda.Si haz usado promesas o callbacks en Javascript u otro lenguaje, `Task`es la misma idea: la promesa que habrá un resultado - en algún tiempo futuro.
 
 > Si haz tenido que tratar con el "infierno callback" en el código heredado de Javascript, estas de suerte.
 > Si has tenido que lidiar con el "infierno de devolución de llamada" en un código JavaScript más antiguo, estás de suerte. Tratar con el código asíncrono en .NET es mucho más fácil gracias a la magia de la palabra clave "esperar". `await` permite que su código se detenga en una operación asíncrona, y luego retome lo que dejó cuando la base de datos subyacente o la solicitud de red finaliza. Mientras tanto, su aplicación no está bloqueada, ya que puede procesar otras solicitudes según sea necesario. Este patrón es simple pero requiere un poco de tiempo para acostumbrarse, así que no se preocupe si esto no tiene sentido de inmediato. ¡Sigue siguiéndolo!
@@ -60,7 +60,7 @@ public async Task<IActionResult> Index()
 {
     var items = await _todoItemService.GetIncompleteItemsAsync();
 
-    // Colocal las tareas en un modelo
+    // Coloca las tareas en un modelo
 
     // Pasa la vista al modelo y la genera
 }
@@ -81,7 +81,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-El trabajo del método `ConfigureServices` es agregar cosos al contenedor de servicios, o a la colección de servicios que ASP.NET Core conocerá. La linea `services.AddMvc` agregue el servicio que el sistema interno de ASP.NET Core, necesita (como un experimento, intenta comentario esta linea). Cualquier otro servicio que desees usar en tu aplicación debe ser agregado al conetnerdo de servicios en el `ConfigureServices`.
+El trabajo del método `ConfigureServices` es agregar cosas al contenedor de servicios, o a la colección de servicios que ASP.NET Core conocerá. La linea `services.AddMvc` agregue el servicio que el sistema interno de ASP.NET Core, necesita (como un experimento, intenta comentar esta línea). Cualquier otro servicio que desees usar en tu aplicación debe ser agregado al contenedor de servicios en el método `ConfigureServices`.
 
 Agrega la siguiente linea en cualquier lugar dentro del método `ConfigureServices`,
 

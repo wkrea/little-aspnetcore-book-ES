@@ -193,7 +193,7 @@ Task<bool> AddItemAsync(TodoItem newItem, ApplicationUser user);
 Task<bool> MarkDoneAsync(Guid id, ApplicationUser user);
 ```
 
-Y, por último, actualice las implementaciones del método de servicio en `TodoItemService`. En el método `AddItemAsync`, establece la propiedad` UserId` cuando construyas un `nuevo TodoItem`:
+Y por último, actualice la implementación del método del servicio en `TodoItemService`. En el método `AddItemAsync`, establece la propiedad `UserId` cuando construyas un `nuevo TodoItem`:
 
 ```csharp
 public async Task<bool> AddItemAsync(

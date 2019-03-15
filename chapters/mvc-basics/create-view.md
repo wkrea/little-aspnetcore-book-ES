@@ -1,10 +1,10 @@
 # Crear una vista
 
-Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C#. Si haz escrito páginas usan Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf en Java, ya tienes la idea básico)
+Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C#. Si haz escrito páginas usan Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf en Java, ya tienes la idea básica)
 
-La mayoría del código de las vistas es solo HTML, con ocasionales enunciados de C# agregados para extraer datos de la vista modelo que cambias a texto o HTML. Los enunciados C# es prefijados con el símbolo `@`
+La mayoría del código de las vistas es solo HTML, con ocasionales enunciados de C# necesarios para extraer datos del modelo de la vista y convertirlos a texto o a HTML. Los enunciados C# tienen como prefijo el símbolo `@`
 
-Las vista generada por la acción Index del "" necesita obtener datos en el View Model, (una sección de todo items u mostrando en un bonita tabla para el usuario, Por convención, las vistas va colocadas en la carpeta _Views_ en un subcarperta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acción a con un una extensión`.cshtml`,
+La vista generada por la acción `Index` del controlador `TodoController` necesita obtener los datos de la vista modelo, (una colección de tareas pendientes) y mostrarlas en un tabla atractiva para el usuario. Por convención, las vistas van colocadas en la carpeta _Views_ en una subcarpeta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acción con un una extensión `.cshtml`.
 
 Crea una carpeta llamada `Todo` dentro la carpeta `Views`, y agrega este archivo:
 **Views/Todo/Index.cshtml**

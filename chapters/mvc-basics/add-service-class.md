@@ -9,9 +9,9 @@ Puedes escribir este código directamente en el controlador, pero es una mejor p
 
 Una vez más es posible hacer todas estas cosas en un solo y enorme controlador, que rápidamente se convertiría en difícil de manejar y probar. En lugar es común ver aplicaciones dividen en dos o tres o más capas y tiers de tal forma que cada una maneja uno (y solo una) aspecto de la aplicación. Esto ayuda a mantener el controlador tan simple como sea posible, y hace más fácil probar y cambiar la lógica de negocio y el código de acceso a base de datos después.
 
-Separado tu aplicación en esta forma es a veces llamada **mult-tier** o **n-tier architecture**. En algunos casos los tiers o capas son proyectos completamente separados. Pero otras veces i solo se referencia a como las clases son organizadas y utilizadas. Lo más importante es pensar a cerca de como dividir tu aplicación en piezas manejables y evitar tener controladores o clases enormes que intentan hacer todo.
+Separado tu aplicación en esta forma es a veces llamada **mult-tier** o **n-tier arquitectura**. En algunos casos los tiers o capas son proyectos completamente separados. Pero otras veces i solo se referencia a como las clases son organizadas y utilizadas. Lo más importante es pensar a cerca de como dividir tu aplicación en piezas manejables y evitar tener controladores o clases enormes que intentan hacer todo.
 
-Para este proyecto, usaras dos capa de aplicación: una **capa de presentación** compuesta de controladores y vistas que interactúan con el usuario, y una capa de servicio que combina las reglas del negocio con el código de accesos a base de datos. La capa de presentación ya existe asi que el siguiente paso es construir un servicio que maneja las reglas de negocio para las tareas y las guarda en una base da datos.
+Para este proyecto, usaras dos capa de aplicación: una **capa de presentación** compuesta de controladores y vistas que interactúan con el usuario, y una capa de servicio que combina las reglas del negocio con el código de accesos a base de datos. La capa de presentación ya existe asi que el siguiente paso es crear un servicio que maneja las reglas de negocio para las tareas y las guarda en una base da datos.
 
 > La mayoría de los proyectos grandes usan una arquitectura 3-tier: una capa de presentación, una capa lógica de servicios y una capa de repositorio de datos. Un repositorio es una clase que que solo esta enfocada en código de acceso a base de datos (no lógica de negocios). En esta aplicación, por simplicidad, código combinaras estas en un sola capa de servicio pero siéntete libre de experimentar con diferentes formas de estructurar el código.
 
@@ -19,7 +19,7 @@ Para este proyecto, usaras dos capa de aplicación: una **capa de presentación*
 
 El lenguaje de programación C# incluye el concepto de **interfaces**, donde la definición de los métodos y propiedades de un objeto es separada de la clase que actualmente contiene el código de aquellos métodos y propiedades. Las interfaces hace fácil mantener tus clases desacopladas y fáciles de probar,como veras aquí (y después en el capitulo _Pruebas Automáticas)Usaras una interfaces para represente el servicio que puede interactuá con los elementos en la base de datos.
 
-Por convención, las el nombre de las interfaces tiene el prefijo "I". Crea un nuevo archivo en el directorio Services:
+Por convención, el nombre de las interfaces tiene el prefijo "I". Crea un nuevo archivo en el directorio Services:
 
 **Services/ITodoItemService.cs**
 
@@ -50,7 +50,7 @@ Debido a que esta es una interfaces, no hay ningún código aquí, solo la defin
 
 > Si la sintaxis parece confusa, recuerda "una Tarea(Task) que contiene un arreglo de TodoItems"
 
-El tipo `Task` es similar un futuro o promesa, y es usado aquí porque este métodos sea asíncrono. En otras palabras el método puede no se capaz de regresar la lista de tareas justo porque necesita primero interactuar con la base de datos primero. (Más sobre esto después).
+El tipo `Task` es similar un futuro o promesa, y se usa aquí porque este método sera asíncrono. En otras palabras es posible que el método no pueda ser capaz de regresar la lista de tareas pendientes de forma inmediata porque necesita primero interactuar con la base de datos primero. (Más sobre esto después).
 
 ## Crear la clase de servicio
 
