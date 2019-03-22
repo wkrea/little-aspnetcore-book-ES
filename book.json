@@ -8,11 +8,14 @@
         "paperSize": "a5",
         "fontFamily": "Lato"
     },
-    "plugins": ["expandable-chapters-small", "anchors", "forkmegithub"],
+    "plugins": ["expandable-chapters-small", "anchors", "forkmegithub","analytics"],
     "pluginsConfig": {
         "forkmegithub": {
             "color": "green",
             "url": "https://github.com/jahbenjah/little-aspnetcore-book"
+        },
+        "analytics":{
+            "google":"UA-130293099-1"
         }
     }
 }
