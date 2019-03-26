@@ -9,4 +9,4 @@ El [historial de liberaciones de Github](https://github.com/nbarbettini/little-a
 
 ## Versión más reciente
 
-Siempre puedes obtener la versión más reciente en [littleasp.net/book](http://littleasp.net/book).
+Siempre puedes obtener la versión más reciente en [http://aspnetcoremaster.com/little-aspnetcore-book/](http://aspnetcoremaster.com/little-aspnetcore-book/).

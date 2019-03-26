@@ -28,11 +28,11 @@ No te preocupes, para iniciar no necesitas conocer nada sobre ASP.NET Core (o al
 
 El código de la versión final de la aplicación que construirás está disponible en Github:
 
-[https://www.github.com/nbarbettini/little-aspnetcore-todo](https://www.github.com/nbarbettini/little-aspnetcore-todo)
+[https://github.com/jahbenjah/little-aspnetcore-todo](https://github.com/jahbenjah/little-aspnetcore-todo)
 
 Siéntete libre de descargarlo si quieres ver el producto final, o compararlo mientras escribes tú propio código.
 
-El libro mismo es actualizado frecuentemente con corrección de errores y adición de nuevo contenido. Si estas leyendo un archivo PDF, libro electrónico o versión impresa verifica el sitio web oficial ([littleasp.net/book](http://www.littleasp.net/book)) para ver si hay disponible una versión actualizada. La última página del libro contiene información sobre la versión y el registro de cambios.
+El libro mismo es actualizado frecuentemente con corrección de errores y adición de nuevo contenido. Si estas leyendo un archivo PDF, libro electrónico o versión impresa verifica el sitio web oficial ([http://aspnetcoremaster.com/little-aspnetcore-book/](http://aspnetcoremaster.com/little-aspnetcore-book/)) para ver si hay disponible una versión actualizada. La última página del libro contiene información sobre la versión y el registro de cambios.
 
 ## Leyendo en tu propio lenguaje
 
