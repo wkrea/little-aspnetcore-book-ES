@@ -1,6 +1,6 @@
 # Crear una vista
 
-Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C#. Si haz escrito páginas usan Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf en Java, ya tienes la idea básica)
+Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C#. Si haz escrito páginas usando Handlebars Mustache, ERM en Ruby On Rails o Thymeleaf  en Java, ya tienes la idea básica)
 
 La mayoría del código de las vistas es solo HTML, con ocasionales enunciados de C# necesarios para extraer datos del modelo de la vista y convertirlos a texto o a HTML. Los enunciados C# tienen como prefijo el símbolo `@`
 
@@ -46,9 +46,9 @@ Crea una carpeta llamada `Todo` dentro la carpeta `Views`, y agrega este archivo
 </div>
 ```
 
-En la parte superior del archivo, la directiva `@ model` le dice a Razor a qué modelo espera que se vincule esta vista. Se accede al modelo a través de la propiedad `Model`.
+En la parte superior del archivo, la directiva `@model` le dice a Razor a qué modelo espera que se vincule esta vista. Se accede al modelo a través de la propiedad `Model`.
 
-Suponiendo que hay elementos de tareas pendientes en `Model.Items`, la instrucción` foreach` se desplazará sobre cada tarea pendiente y mostrará una fila de la tabla (elemento `<tr>` ) que contiene el nombre y la fecha de vencimiento de la tarea . También se representa una casilla de verificación que permitirá al usuario marcar la tarea como completa.
+Suponiendo que hay elementos de tareas pendientes en `Model.Items`, la instrucción `foreach` se desplazará sobre cada tarea pendiente y mostrará una fila de la tabla (elemento `<tr>` ) que contiene el nombre y la fecha de vencimiento de la tarea . También se representa una casilla de verificación que permitirá al usuario marcar la tarea como completa.
 
 ## El archivo de diseño
 Quizás se pregunte dónde está el resto del HTML: ¿qué pasa con la etiqueta `<body>` o el encabezado y pie de página de la página? ASP.NET Core utiliza una vista de diseño que define la estructura base en la que se procesan todas las demás vistas. Esta almacenado en `Views/Shared/_Layout.cshtml`.
@@ -74,4 +74,4 @@ table tr.done {
 
 Puedes usar reglas CSS como estas para personalizar como se visualizan y lucen tus páginas.
 
-ASP.NET Core y Razor pueden hacer mucho más, como vistas parciales y vistas generadas en el servidor componentes, pero un simple Layout y una vista es todo lo que necesitaras por ahora. La documentación oficial(en [https://docs.asp.net](https://docs.asp.net) de ASP.NET Core contiene muchos ejemplos si deseas aprender más.
+ASP.NET Core y Razor pueden hacer mucho más, como vistas parciales y vistas generadas en el servidor componentes, pero un simple Layout y una vista es todo lo que necesitaras por ahora. La documentación oficial de ASP.NET Core(en [https://docs.asp.net](https://docs.asp.net)contiene muchos ejemplos si deseas aprender más.

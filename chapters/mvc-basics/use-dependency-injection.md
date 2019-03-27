@@ -66,9 +66,9 @@ public async Task<IActionResult> Index()
 }
 ```
 
-Ya casi terminamos. Has hecho que el `TodoController` dependa de la interface `ITodoItemService`, pero aun no le has dicho a ASP.NET Core que tu deseas el `FakeTodoItemService` sea el servicio actual que use debajo del capo. Parecerá obvio ahora debido a que solo existe una clase que implementa la interfaz `ITodoItemService`, pero después tendrás múltiples clases que implementan la misma interface, asi que ser explicito es necesario.
+Ya casi terminamos. Has hecho que el `TodoController` dependa de la interfaz `ITodoItemService`, pero aun no le has dicho a ASP.NET Core que tu deseas el `FakeTodoItemService` sea el servicio actual que use debajo del capo. Parecerá obvio ahora debido a que solo existe una clase que implementa la interfaz `ITodoItemService`, pero después tendrás múltiples clases que implementan la misma interfaz, asi que ser explicito es necesario.
 
-Declarando (o conectando) cual clase concreta para usar para cada interface se hace en el método `ConfigureServices` de la clase `Startup`. Ahora mismo algo como esto:
+Declarando (o conectando) cual clase concreta para usar para cada interfaz se hace en el método `ConfigureServices` de la clase `Startup`. Ahora mismo algo como esto:
 
 **Startup.cs**
 
