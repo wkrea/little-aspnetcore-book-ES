@@ -81,7 +81,7 @@ Si estas confundido con todos estos nombres, ¡no te preocupes! Estaremos escrib
 ## Nota para los desarrolladores de ASP.NET 4
 Si no has utilizado las versiones previas de ASP.NET, puedes pasar directo al siguiente capítulo.
 
-ASP.NET Core es una re-escritura completa desde los fundamentos de ASP.NET con el objetivo de modernizar el marco de trabajo y finalmente desacoplarlo de System.Web, ISS y Windows. Si recuerdas todo las cosas sobre OWIN/Kataba de ASP.NET 4, estas casi la mitad ahí: el proyecto Katana se convirtió en ASP.NET 5 el cual finalmente fue renombrado como ASP.NET Core.
+ASP.NET Core es una re-escritura completa desde los fundamentos de ASP.NET con el objetivo de modernizar el marco de trabajo y finalmente desacoplarlo de System.Web, ISS y Windows. Si recuerdas todo las cosas sobre OWIN/Katana de ASP.NET 4, estas casi la mitad ahí: el proyecto Katana se convirtió en ASP.NET 5 el cual finalmente fue renombrado como ASP.NET Core.
 
 Debido al legado de Katana, la clase `Startup` es el frente y centro, y no hay más `Application_Start` o `Global.asax`. La canalización entera esta manejada por middleware, y no hay una separación entre MVC y Web API: los controladores pueden simplemente retornar vistas, códigos de estado o datos. La inyección de dependencias viene integrada, así que no tienes que instalar y configurar un contenedor como StructureMap o Ninject si no deseas hacerlo. Y el marco de trabajo .NET ha sido optimizado para la velocidad y eficiencia del motor de tiempo de ejecución.
 
