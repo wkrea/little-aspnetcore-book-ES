@@ -1,5 +1,4 @@
 # Crear un controlador
-
 Actualmente ya hay algunos controladores en la carpeta Controllers, incluyendo `HomeController` que generá la pantalla de bienvenida por defautl cuando visitas `http://localhost:5000`. Puedes ignorar estos controladores por ahora.
 
 Crea un nuevo controlador para la funcionalidad de la lista de tareas y agrega el siguiente código:

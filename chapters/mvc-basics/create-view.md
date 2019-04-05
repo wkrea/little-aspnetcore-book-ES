@@ -1,5 +1,4 @@
 # Crear una vista
-
 Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y código C#. Si haz escrito páginas usando Handlebars Mustache, ERM en Ruby On Rails o Thymeleaf  en Java, ya tienes la idea básica)
 
 La mayoría del código de las vistas es solo HTML, con ocasionales enunciados de C# necesarios para extraer datos del modelo de la vista y convertirlos a texto o a HTML. Los enunciados C# tienen como prefijo el símbolo `@`
@@ -74,4 +73,4 @@ table tr.done {
 
 Puedes usar reglas CSS como estas para personalizar como se visualizan y lucen tus páginas.
 
-ASP.NET Core y Razor pueden hacer mucho más, como vistas parciales y vistas generadas en el servidor componentes, pero un simple Layout y una vista es todo lo que necesitaras por ahora. La documentación oficial de ASP.NET Core(en [https://docs.asp.net](https://docs.asp.net)contiene muchos ejemplos si deseas aprender más.
+ASP.NET Core y Razor pueden hacer mucho más, como vistas parciales y componentes de vistas generadas en el servidor , pero un simple Layout y una vista es todo lo que necesitaras por ahora. La documentación oficial de ASP.NET Core(en [https://docs.asp.net](https://docs.asp.net)contiene muchos ejemplos si deseas aprender más.

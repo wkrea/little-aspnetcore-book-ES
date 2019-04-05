@@ -1,5 +1,4 @@
 # Agregar una clase de servicio
-
 Haz creado un modelo, una vista y un controlador. Antes de usar el modelo y la vista en el controlador, también necesitas escribir código que obtendrá la lista de tareas de los usuarios desde la base de datos.
 
 Puedes escribir este código directamente en el controlador, pero es una mejor práctica mantener tu código separado. ¿Por qué? en una aplicación real grande, tendrás que hacer malabares con muchos asuntos:
@@ -18,7 +17,7 @@ Para este proyecto, usaras dos capa de aplicación: una **capa de presentación*
 
 ## Crear una interfaz
 
-El lenguaje de programación C# incluye el concepto de **interfaces**, donde la definición de los métodos y propiedades de un objeto es separada de la clase que actualmente contiene el código de aquellos métodos y propiedades. Las interfaces hace fácil mantener tus clases desacopladas y fáciles de probar, como veras aquí (y después en el capítulo _Pruebas Automáticas)Usaras una interfaces para represente el servicio que puede interactuá con los elementos en la base de datos.
+El lenguaje de programación C# incluye el concepto de **interfaces**, donde la definición de los métodos y propiedades de un objeto es separada de la clase que actualmente contiene el código de aquellos métodos y propiedades. Las interfaces hace fácil mantener tus clases desacopladas y fáciles de probar, como veras aquí (y después en el capítulo _Pruebas Automáticas_) Usaras una interfaces para represente el servicio que puede interactuá con los elementos en la base de datos.
 
 Por convención, el nombre de las interfaces tiene el prefijo "I". Crea un nuevo archivo en el directorio Services:
 

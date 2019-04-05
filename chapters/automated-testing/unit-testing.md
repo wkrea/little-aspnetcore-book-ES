@@ -154,7 +154,6 @@ using (var context = new ApplicationDbContext(options))
 
 La primera afirmación es una comprobación de validez: nunca debe haber más de un elemento guardado en la base de datos en memoria. Suponiendo que eso sea cierto, la prueba recupera el elemento guardado con `FirstAsync` y luego afirma que las propiedades están establecidas en los valores esperados.
 
-
 > Tanto las pruebas de unitarias como las de integración generalmente siguen el patrón AAA (Arrange-Act-Assert): los objetos y los datos se configuran primero, luego se realiza alguna acción y, finalmente, la prueba verifica (Assert) que ocurrió el comportamiento esperado.
 
 Confirmar un valor de fecha y hora es un poco complicado, ya que la comparación de dos fechas para la igualdad fallará incluso si los componentes de milisegundos son diferentes. En su lugar, la prueba verifica que el valor `DueAt` esté a menos de un segundo del valor esperado.
