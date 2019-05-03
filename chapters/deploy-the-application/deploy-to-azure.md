@@ -6,7 +6,7 @@ La implementación de la aplicación de ASP.NET Core en Azure solo lleva unos po
 
 * Git (usa `git --version` para asegurarte de que esté instalado)
 * El CLI de Azure (siga las instrucciones de instalación en https://github.com/Azure/azure-cli)
-* Una suscripción de Azure (la suscripción gratuita está bien)
+* Una suscripción de Azure (con la suscripción gratuita es suficiente)
 * Un archivo de configuración de implementación en la raíz de su proyecto.
 
 ### Crear un archivo de configuración de implementación
@@ -35,7 +35,6 @@ AspNetCoreTodo.UnitTests
 
 Si acaba de instalar la CLI de Azure por primera vez, ejecute
 
-
 ```
 az login
 ```
@@ -46,7 +45,7 @@ y siga las instrucciones para iniciar sesión en su máquina. Luego, crea un nue
 az group create -l westus -n AspNetCoreTodoGroup
 ```
 
-Esto crea un grupo de recursos en la región oeste de los Estados Unidos. Si está ubicado lejos del oeste de los EE. UU., Use `az account list-locations` para obtener una lista de ubicaciones y encontrar una más cercana a usted.
+Esto crea un grupo de recursos en la región oeste de los Estados Unidos. Si está ubicado lejos del oeste de los Estados Unidos, use `az account list-locations` para obtener una lista de ubicaciones y encontrar una más cercana a usted.
 
 A continuación, cree un plan de Servicio de aplicaciones en el grupo que acaba de crear:
 
@@ -54,7 +53,7 @@ A continuación, cree un plan de Servicio de aplicaciones en el grupo que acaba 
 az appservice plan create -g AspNetCoreTodoGroup -n AspNetCoreTodoPlan --sku F1
 ```
 
-> F1 es el plan de aplicación gratuita. Si desea usar un nombre de dominio personalizado con su aplicación, use el plan D1 ($ 10 / mes) o superior.
+> F1 es el plan de aplicación gratuita. Si desea usar un nombre de dominio personalizado con su aplicación, use el plan D1 ($ 10/mes) o superior.
 
 Ahora cree una aplicación web en el plan del servicio de aplicaciones:
 
@@ -67,7 +66,8 @@ El nombre de la aplicación (`MyTodoApp` arriba) debe ser globalmente único en 
 
 ### Implementa tus archivos de proyecto en Azure
 
-Puede usar Git para enviar sus archivos de aplicación a la aplicación web de Azure. Si su directorio local no ha sido rastreado como un repositorio de Git, ejecute estos comandos para configurarlo:
+Puede usar Git para enviar sus archivos de aplicación a la aplicación web de Azure. Si su directorio local no ha sido inicializado como un repositorio de Git, ejecute estos comandos para configurarlo:
+
 ```
 git init
 git add .
