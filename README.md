@@ -34,14 +34,8 @@ Siéntete libre de descargarlo si quieres ver el producto final, o compararlo mi
 
 El libro mismo es actualizado frecuentemente con corrección de errores y adición de nuevo contenido. Si estas leyendo un archivo PDF, libro electrónico o versión impresa verifica el sitio web oficial ([http://aspnetcoremaster.com/little-aspnetcore-book/](http://aspnetcoremaster.com/little-aspnetcore-book/)) para ver si hay disponible una versión actualizada. La última página del libro contiene información sobre la versión y el registro de cambios.
 
-## Leyendo en tu propio lenguaje
-
-Gracias a algunos fantásticos contribuidores multilingües. El pequeño libro de ASP.NET Core ha sido traducido a otros lenguajes:
-
-* [**ASP.NET Core El Kitabı**](https://sahinyanlik.gitbooks.io/kisa-asp-net-core-kitabi/)(Turco)
-
-* [**简明 ASP.NET Core 手册**](https://windsting.github.io/little-aspnetcore-book/book/)(Chino)
-
+**Puedes obtener una versión final por una modica donación**
+[little-aspnetcore-book-ES.pdf](wallas.drive)
 
 ## ¿A quién está dirigido este libro?
 Si eres nuevo en la programación, esté libro te introducirá los patrones y conceptos utilizados para desarrollar aplicaciones web modernas. Aprenderás como construir una aplicación web (y cómo se ensamblan todas las piezas) ¡construyendo algo desde el inicio! A pesar de que este pequeño libro no es capaz de cubrir absolutamente todo lo que necesitas conocer acerca de la programación te dará un punto de inicio de tal forma que puedas aprender tópicos más avanzados.
